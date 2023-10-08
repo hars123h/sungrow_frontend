@@ -5,6 +5,9 @@ import { ContextApi } from '../App';
 import axios from 'axios';
 import BASE_URL from '../api_url';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import logo from '../images/sungrow/logo_25_m.png'
+import eyeopen from '../images/sungrow/eyeopen.svg'
+import eyeclosed from '../images/sungrow/eyeclosed.svg'
 
 const ForgotPassword = () => {
 
@@ -19,11 +22,28 @@ const ForgotPassword = () => {
     } = useContext(ContextApi);
 
     const [secret, setSecret] = useState('password')
-    // const [pwd, setPwd] = useState('')
     const [newPwd, setNewPwd] = useState('')
     const [otpfield, setOTPfield] = useState('');
     const [otp, setOtp] = useState('');
     const [mobno, setMobno] = useState('')
+    const [phoneError, setPhoneError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
+    const [passwordError, setPasswordError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
+    const [smsError, setSmsError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
 
     const secrethandel = () => {
         if (secret === 'password') {
@@ -34,35 +54,29 @@ const ForgotPassword = () => {
         }
     }
 
-    const handleMessage = () => {
-        // if (mobno.length !== 10) {
-        //     toaster('Invalid Mobile No, please enter a valid number');
-        //     return;
-        // }
-        fetch(`https://www.fast2sms.com/dev/bulkV2?authorization=27b58V4YOqBDMgWvNjapz1k9IHlrJfynC6w0hceRAZGoLimK3PuJC7OoiV4N2B6DjfwWKzb0lhgEetPH&variables_values=${otpfield}&route=otp&numbers=${mobno}`)
-            .then((response) => {
-                console.log(response);
-                toaster('OTP sent successfully');
-            })
-            .catch(error => toaster('Something went wrong'));
-    }
-
     const validatePassword = password => /[a-zA-Z]/.test(password) && /[0-9!@#$%^&*(),.?":{}|<>]/.test(password);
 
     const handleRegister = async () => {
-
-        // if (otp !== otpfield) {
-        //     toaster('Otp does not match')
-        // }
-
-        if (newPwd.length < 6) {
-            toaster('Password must contain at least 6 characters!');
-            return;
+        if (mobno.length === 0) {
+            setPhoneError({ show: 'show-error', message: 'Phone Number can not be empty' })
+            return
+        }
+        if (mobno.length !== 10) {
+            setPhoneError({ show: 'show-error', message: 'Mobile Number is composed of 10 number' })
+            return
+        }
+        if (newPwd.length === 0) {
+            setPasswordError({ show: 'show-error', message: 'Password can not be empty' })
+            return
         }
 
-        else if (validatePassword(newPwd) === false) {
-            toaster('Password must contain letters and numbers or special symbols');
-            return;
+        if (otp.length === 0) {
+            setSmsError({ show: 'show-error', message: 'SMS code can not be empty' })
+            return
+        }
+        if (otp !== otpfield) {
+            toaster('SMS verification code not matched', 'fail')
+            return
         }
 
         else {
@@ -75,118 +89,175 @@ const ForgotPassword = () => {
                     setOTPfield('')
                     setOtp('')
                     setNewPwd('')
-                    toaster('Password successfully updated!');
+                    toaster('Password successfully updated!', 'success');
                     setTimeout(() => {
                         navigate('/login')
                     }, 3000);
                 })
-                .catch(error => toaster('Some Error Occured'));
+                .catch(error => toaster('Some Error Occured', 'fail'));
         }
 
     }
 
-    console.log(otpfield);
+    const handleMessage = () => {
+        if (mobno.length === 0) {
+            setPhoneError({ show: 'show-error', message: 'Phone Number can not be empty' })
+            return
+        }
+        if (mobno.length !== 10) {
+            setPhoneError({ show: 'show-error', message: 'Mobile Number is composed of 10 number' })
+            return
+        }
+        if (newPwd.length === 0) {
+            setPasswordError({ show: 'show-error', message: 'Password can not be empty' })
+            return
+        }
+        // fetch(`https://www.fast2sms.com/dev/bulkV2?authorization=27b58V4YOqBDMgWvNjapz1k9IHlrJfynC6w0hceRAZGoLimK3PuJC7OoiV4N2B6DjfwWKzb0lhgEetPH&variables_values=${otpfield}&route=otp&numbers=${mobno}`)
+        //     .then((response) => {
+        //         console.log(response);
+        //         toaster('OTP sent successfully');
+        //     })
+        //     .catch(error => toaster('Something went wrong'));
+
+        console.log("otp", otpfield);
+
+    }
+
+    const handelchange = (e) => {
+
+        if (e.target.id === 'phone_number') {
+            setMobno(e.target.value)
+            if (e.target.value.length === 0) {
+                setPhoneError({ show: 'show-error', message: 'Phone Number can not be empty' })
+                return
+            }
+            else if (e.target.value.length !== 10) {
+                setPhoneError({ show: 'show-error', message: 'Mobile Number is composed of 10 number' })
+                return
+            }
+            else {
+                setPhoneError({ show: '', message: '' })
+                return
+            }
+        }
+
+        if (e.target.id === 'password') {
+            setNewPwd(e.target.value)
+            if (e.target.value.length === 0) {
+                setPasswordError({ show: 'show-error', message: 'Password can not be empty' })
+                return
+            }
+            else {
+                setPasswordError({ show: '', message: '' })
+                return
+            }
+        }
+
+        if (e.target.id === 'sms_invitation_code') {
+            setOtp(e.target.value)
+            if (e.target.value.length === 0) {
+                setSmsError({ show: 'show-error', message: 'SMS code can not be empty' })
+                return
+            }
+            else {
+                setSmsError({ show: '', message: '' })
+                return
+            }
+        }
+
+    }
+
 
     return (
         <>
-            <div className="bg-white  after:contents-[' '] after:fixed h-screen ">
-                <div className="w-full mx-auto max-w-[800px]">
 
-                    <header className="h-[50px] leading-[50px] block mb-[10px]">
-                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed bg-[rgb(1,77,173)] z-[9999] flex flex-wrap items-center  ">
-
-                            <Link to={'/account'} className="w-[60px] h-[50px] left-0 text-center text-white text-[22px] absolute z-[2] flex justify-center items-center ">
-                                <LiaAngleLeftSolid size={22} />
-                            </Link>
-
-                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 text-white ' >Change Login Password</h2>
-
-                        </div>
-                    </header>
-
-                    <div className="m-[10px] p-[10px] relative">
-
-                        <div className="mb-5 relative">
-
-                            <div className="px-[10px] relative border-0 border-solid border-[rgba(215, 215, 215, 0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                <div className="flex items-center flex-wrap h-full text-center z-10">
-                                    <p className='text-sm text-[#818393] mr-1'>+91</p>
-                                </div>
-                                <div className="flex items-center relative flex-1">
-                                    <input onChange={e => { setMobno(e.target.value); setOTPfield(String(Math.floor(100000 + Math.random() * 900000))) }}
-                                        type="number"
-                                        name="mobno"
-                                        id="mobno"
-                                        className=' fillArea w-full h-[50px] text-base px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent '
-                                        maxLength={11}
-                                        size={11}
-                                        placeholder=''
-                                    />
-                                    <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                    <label className='placeholder text-[#818393] text-sm left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>TEL</label>
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mb-5 relative">
-
-                            <div className="px-[10px] relative border-0 border-solid border-[rgba(215, 215, 215, 0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                <input onChange={e => { setNewPwd(e.target.value) }}
-                                    type={secret}
-                                    name="new password"
-                                    id="new password"
-                                    className='flex-1 fillArea w-full h-[50px] text-base px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent '
-                                    placeholder=''
-
-                                />
-                                <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                <label className='placeholder text-[#818393] text-sm left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>New Password</label>
-                                <div className={` right-[10px] h-full text-center bg-no-repeat bg-[center_center]  bg-[length:30px] z-10 `} onClick={secrethandel}>
-                                    {
-                                        secret === 'password' ?
-                                            <AiFillEyeInvisible size={22} />
-                                            :
-                                            <AiFillEye size={22} />
-                                    }
-                                </div>
-
-                            </div>
-                        </div>
-
-                        {/* <div className="mb-5 relative">
-
-                            <div className="px-[10px] relative border-0 border-solid border-[rgba(215,215,215,0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                <input onChange={e => setOtp(e.target.value)}
-                                    type="text"
-                                    name="otp"
-                                    id="otp"
-                                    className='flex-1 fillArea w-full h-[50px] text-base px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent '
-                                    placeholder=''
-
-                                />
-                                <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                <label className='placeholder text-[#818393] text-sm left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>Verification code (OTP)</label>
-                                <div className={` right-[10px] h-full text-center bg-no-repeat bg-[center_center]  bg-[length:30px] z-10 `} onClick={handleMessage}>
-                                    <p className='text-sm text-[rgba(52,86,255,0.9)]'>Send</p>
-                                </div>
-
-                            </div>
-                        </div> */}
-
-                        <div className="flex flex-wrap items-center my-10 w-full justify-end ">
-
-                            <Link to={`/login`} className='text-[#1f3d70] bg-white border-[1px] border-[#1f3d70] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>SIGN IN</Link>
-
-                            <button className='ml-[10px] flex-1 text-white bg-[#00aa75] border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative ' onClick={handleRegister}>
-                                Reset Password
-                            </button>
-                        </div>
-
-                    </div>
-
+            <section className="forgot-page flex flex-col">
+                <div className="forgot-page-header flex items-center justify-center">
+                    <img src={logo} alt="Your Image" className='w-3/4 ' />
                 </div>
-            </div>
+                <div className="forgot-page-content flex-1 flex flex-col items-center">
+                    <div className="forgot-page-content-title bold">
+                        RESET PASSWORD
+                    </div>
+                    <div className="forgot-page-content-box w-full">
+                        <div className="item">
+                            <div data-v-466dae23="" className="phone-number-container">
+                                <label data-v-466dae23="" htmlFor="phone_number"></label>
+                                <div data-v-466dae23="" className="input-container flex w-full input-container">
+                                    <div data-v-466dae23="" className="flex items-center prefix">
+                                        <span data-v-466dae23="" className="countryCode">+91</span></div>
+                                    <input
+                                        onChange={e => { handelchange(e); setOTPfield(String(Math.floor(100000 + Math.random() * 900000))) }}
+                                        data-v-466dae23=""
+                                        type="text"
+                                        id="phone_number"
+                                        placeholder="Phone Number"
+                                        className="input-field w-full input-autofill"
+                                    />
+                                </div>
+                            </div>
+                            <div className={`error ${phoneError.show}`}>
+                                <span>{phoneError.message}</span>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div data-v-0f114eeb="" className="input-container light">
+                                <label data-v-0f114eeb="" htmlFor="password"></label>
+                                <div data-v-0f114eeb="" className="flex items-center input-content input-container">
+                                    <input
+                                        onChange={handelchange}
+                                        data-v-0f114eeb=""
+                                        autoComplete="off"
+                                        id="password"
+                                        type={secret}
+                                        placeholder="Enter New Password"
+                                        className="input-field w-full input-autofill hasSuff"
+                                    />
+                                    <div onClick={secrethandel} data-v-0f114eeb="" className="suffix-icon">
+                                        <img data-v-0f114eeb="" src={secret === 'password' ? eyeclosed : eyeopen} alt="suffix Icon" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`error ${passwordError.show}`} >
+                                <span>{passwordError.message}</span>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div data-v-0f114eeb="" className="input-container light">
+                                <label data-v-0f114eeb="" htmlFor="sms_invitation_code"></label>
+                                <div data-v-0f114eeb="" className="flex items-center input-content input-container">
+                                    <input
+                                        onChange={handelchange}
+                                        data-v-0f114eeb=""
+                                        autoComplete="off"
+                                        id="sms_invitation_code"
+                                        type="text"
+                                        placeholder="Enter SMS verification code"
+                                        className="input-field w-full input-autofill hasSuff"
+                                    />
+                                    <div data-v-0f114eeb=""
+                                        className="suffix-icon">
+                                        <button onClick={handleMessage} data-v-0df625cb="" type="primary" className="btn button flex items-center justify-center button-link default" data-v-0f114eeb="">
+                                            Send
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`error ${smsError.show}`} >
+                                <span>{smsError.message}</span>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <button onClick={handleRegister} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">
+                                CONFIRM
+                            </button>
+                            <Link to={'/login'} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-text default w-full mt-3 text-[orange]">
+                                CANCEL
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }

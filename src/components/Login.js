@@ -5,6 +5,9 @@ import BASE_URL from '../api_url';
 import applogo from '../images/appLogo.png'
 import Tradmark from './Tradmark';
 import { ContextApi } from '../App';
+import logo from '../images/sungrow/logo_25_m.png'
+import eyeopen from '../images/sungrow/eyeopen.svg'
+import eyeclosed from '../images/sungrow/eyeclosed.svg'
 
 const Login = () => {
 
@@ -19,6 +22,20 @@ const Login = () => {
     const [mobno, setmobno] = useState('');
     const [pwd, setpwd] = useState('');
     const [bloackedUsers, setBlockedUsers] = useState([]);
+    const [phoneError, setPhoneError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
+    const [passwordError, setPasswordError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
+    const [secret, setSecret] = useState('password')
+
 
     const getBlockedUsers = async () => {
         const dataRes = await axios.get(`${BASE_URL}/get_blocked_users`).then(res => res.data);
@@ -31,16 +48,27 @@ const Login = () => {
     }
 
     const handleSignIn = async () => {
+        if (mobno.length === 0) {
+            setPhoneError({ show: 'show-error', message: 'Phone Number can not be empty' })
+            return
+        }
+        if (mobno.length !== 10) {
+            setPhoneError({ show: 'show-error', message: 'Mobile Number is composed of 10 number' })
+            return
+        }
+        if (pwd.length === 0) {
+            setPasswordError({ show: 'show-error', message: 'Password can not be empty' })
+            return
+        }
         if (bloackedUsers.includes(String(mobno))) {
-            toaster('You are blocked by the administrator!');
+            toaster('You are blocked by the administrator!', 'fail');
             return;
         }
-        setLoading(true);
-
         await axios.post(`${BASE_URL}/login`, { mobno, pwd })
             .then(({ data }) => {
                 if (data.user_details === null) {
-                    throw "Could not login/something went wrong";
+                    toaster('Username or password error', 'fail')
+                    return
                 }
                 localStorage.setItem('uid', data.user_details._id);
                 setUser(data.user_details._id)
@@ -53,7 +81,7 @@ const Login = () => {
                 console.log(error);
                 setTimeout(() => {
                     setLoading(false);
-                    toaster("Some thing went wrong")
+                    toaster("Some thing went wrong", 'fail')
                 }, 1000);
             });
     }
@@ -62,112 +90,113 @@ const Login = () => {
         getBlockedUsers();
     }, [])
 
+    const handelchange = (e) => {
+
+        if (e.target.id === 'phoneNumber') {
+            setmobno(e.target.value)
+            if (e.target.value.length === 0) {
+                setPhoneError({ show: 'show-error', message: 'Phone Number can not be empty' })
+                return
+            }
+            else if (e.target.value.length !== 10) {
+                setPhoneError({ show: 'show-error', message: 'Mobile Number is composed of 10 number' })
+                return
+            }
+            else {
+                setPhoneError({ show: '', message: '' })
+                return
+            }
+        }
+
+        if (e.target.id === 'password') {
+            setpwd(e.target.value)
+            if (e.target.value.length === 0) {
+                setPasswordError({ show: 'show-error', message: 'Password can not be empty' })
+                return
+            }
+            else {
+                setPasswordError({ show: '', message: '' })
+                return
+            }
+        }
+
+    }
+
+    const secrethandel = () => {
+        if (secret === 'password') {
+            setSecret('text')
+        }
+        else {
+            setSecret('password')
+        }
+    }
+
 
     return (
         <>
 
-            <div className="signupMain bgimg01 after:bg-white">
-
-                <div className="max-w-[800px] mx-auto">
-
-                    <div className="flex relative items-center min-h-[90vh] flex-wrap mx-auto">
-
-                        <div className="w-full">
-
-                            <div className="mx-[10px] px-[10px]">
-                                <h4 className='text-[32px] text-[#1f3d70] font-bold '>Hello!</h4>
-                                <p className='text-xl leading-none'>Welcome to Kraft.</p>
-                            </div>
-
-                            <div className="bg-white mt-5 mb-[50px] mx-[10px] pt-10 px-5 pb-5 relative rounded-lg">
-
-                                <div className="">
-
-                                    <div className="mb-5 relative">
-
-                                        <div className="px-[10px] relative border-0 border-solid border-[rgba(215, 215, 215, 0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                            <div className="flex items-center flex-wrap h-full text-center z-10">
-                                                <p className='text-sm text-[#818393] leading-none mr-1'>+91</p>
-                                            </div>
-                                            <div className="flex items-center relative flex-1">
-                                                <input
-                                                    onChange={e => setmobno(e.target.value)}
-                                                    type="number"
-                                                    name="mob"
-                                                    id="mob"
-                                                    className=' fillArea w-full h-[50px] text-base leading-none px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent flex-1 '
-                                                    maxLength={11}
-                                                    size={11}
-                                                    placeholder=''
-                                                />
-                                                <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                                <label className='placeholder text-[#818393] text-sm leading-none left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>TEL</label>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="mb-5 relative">
-
-                                        <div className="px-[10px] relative border-0 border-solid border-[rgba(215, 215, 215, 0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                            <input
-                                                onChange={e => setpwd(e.target.value)}
-                                                type="password"
-                                                name="pass"
-                                                id="pass"
-                                                className='flex-1 fillArea w-full h-[50px] text-base leading-none px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent '
-                                                placeholder=''
-
-                                            />
-                                            <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                            <label className='placeholder text-[#818393] text-sm leading-none left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>Login password</label>
-
-                                        </div>
-                                    </div>
-
-                                    <div className="my-10">
-                                        <Link to={`/forgotpassword`} className='text-sm leading-none text-[rgba(52,86,255,0.9)]'>Forgot your password?</Link>
-                                    </div>
-
-
-                                    <div className="flex flex-wrap items-center my-10 w-full justify-end ">
-
-                                        <Link to={`/signup`} className='text-[#1f3d70] bg-white border-[1px] border-[#1f3d70] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>SIGN UP</Link>
-
-                                        <button className='ml-[10px] flex-1 text-white bg-[#00aa75] border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative ' onClick={handleSignIn}>
-                                            LOG IN
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div className="flex max-w-lg m-[10px] p-[10px] items-start flex-wrap ">
-
-                                <div className="w-20 p-1 bg-white rounded-2xl ">
-                                    <img src={applogo} alt="appLogo" />
-                                </div>
-
-                                <Link to={`/download`} className="flex-1 ml-[10px]">
-                                    <h3 className='p-0 m-0 text-2xl text-[#3468a3] font-bold'>Kraft</h3>
-                                    <p className=' p-0 m-0 pb-[10px] text-base leading-none text-[#818393]'>
-                                        Rest assured financial management, quality service, low risk investment, 100% return
-                                    </p>
-                                </Link>
-
-                            </div>
-
-                        </div>
-
-
+            <section className="login-page">
+                <div className="login-page-header flex items-center justify-center">
+                    <img src={logo} alt="Your Image" className='w-3/4 ' />
+                </div> <div className="login-page-content flex flex-col items-center">
+                    <div className="login-page-content-title bold">
+                        LOGIN
                     </div>
-
-
-                    <Tradmark />
-
-
+                    <div className="login-page-content-box w-full">
+                        <div className="item">
+                            <div data-v-466dae23="" className="phone-number-container">
+                                <label data-v-466dae23="" htmlFor="phoneNumber">Phone Number</label>
+                                <div data-v-466dae23="" className="input-container flex w-full input-container">
+                                    <div data-v-466dae23="" className="flex items-center prefix">
+                                        <span data-v-466dae23="" className="countryCode">+91</span>
+                                    </div>
+                                    <input
+                                        onChange={handelchange}
+                                        data-v-466dae23=""
+                                        type="text"
+                                        id="phoneNumber"
+                                        placeholder="Input Phone Number"
+                                        className="input-field w-full input-autofill"
+                                    />
+                                </div>
+                            </div>
+                            <div className={`error ${phoneError.show}`}>
+                                <span>{phoneError.message}</span>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div data-v-0f114eeb="" className="input-container light">
+                                <label data-v-0f114eeb="" htmlFor="password">Password</label>
+                                <div data-v-0f114eeb="" className="flex items-center input-content input-container">
+                                    <input
+                                        onChange={handelchange}
+                                        data-v-0f114eeb=""
+                                        autoComplete="off"
+                                        id="password"
+                                        type={secret}
+                                        placeholder="Input Password"
+                                        className="input-field w-full input-autofill hasSuff"
+                                    />
+                                    <div onClick={secrethandel} data-v-0f114eeb="" className="suffix-icon">
+                                        <img data-v-0f114eeb="" src={secret === 'password' ? eyeclosed : eyeopen} alt="suffix Icon" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={`error ${passwordError.show}`} >
+                                <span>{passwordError.message}</span>
+                            </div>
+                        </div>
+                        <div className="flex justify-end">
+                            <Link to={'/forgotpassword'} href="/forgotPassword" className="item forgot">Forgot?</Link>
+                        </div>
+                        <div className="item">
+                            <button onClick={handleSignIn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">
+                                LOGIN
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
         </>
     )
