@@ -42,6 +42,7 @@ import v7 from './images/v7.png'
 import v8 from './images/v8.png'
 import Message from './components/Message';
 import Article from './components/Article';
+import Company from './components/Company';
 
 export const ContextApi = createContext();
 
@@ -178,8 +179,8 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/invest' element={<Invest />} />
-            <Route path='/account' element={<Account />} />
+            <Route path='/products' element={<Invest />} />
+            <Route path='/settings' element={<Account />} />
             <Route path='/deposit' element={<Deposit />} />
             <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} />
             <Route path='/deposit_records' element={<DepositRecords />} />
@@ -199,6 +200,7 @@ function App() {
             <Route path='/task' element={<Task />} />
             <Route path='/message' element={<Message />} />
             <Route path='/article' element={<Article />} />
+            <Route path='/company' element={<Company />} />
           </Routes>
 
         </BrowserRouter>
