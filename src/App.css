@@ -8745,7 +8745,7 @@ body {
     height: 60px;
     margin-right: 12px;
     width: 60px;
-}   
+}
 
 .company-page-content .values-title {
     font-weight: 500;
@@ -8764,6 +8764,114 @@ body {
     background: rgba(255, 166, 0, 0.15);
     border-radius: 24px 24px 0 0;
     padding: 16px 22px;
+}
+
+.deposit-page {
+    background-color: #fff;
+    color: #212121;
+    min-height: 100vh;
+}
+
+.deposit-page-content {
+    padding: 24px 16px 88px;
+}
+
+.deposit-page-content .input-amount {
+    background: orange;
+    border-radius: 32px;
+    color: #fff;
+    margin-bottom: 16px;
+    padding: 24px;
+}
+
+.deposit-page-content .input-amount .title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.deposit-page-content .input-amount .currentBalance {
+    opacity: .6;
+}
+
+.deposit-page-content .input-amount-choose {
+    grid-gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 24px;
+}
+
+.deposit-page-content .input-amount-choose-item {
+    background-color: hsla(0, 0%, 100%, .2);
+    border-radius: 20px;
+    font-weight: 600;
+    margin: 4px;
+    padding: 16px;
+    text-align: center;
+}
+
+.deposit-page-content .input-amount-content {
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 24px;
+}
+
+.deposit-page-content .input-amount-content input {
+    background-color: orange;
+    border: none;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .2);
+    font-size: 50px;
+    font-weight: 700;
+    height: 54px;
+    padding: 16px;
+    width: 100%;
+}
+
+.deposit-page-content .amount-radio-item {
+    border: 1px solid rgba(189, 24, 116, .2);
+    border-radius: 12px;
+    margin-top: 16px;
+    padding: 16px;
+    position: relative;
+}
+
+.deposit-page-content .amount-radio-item-title {
+    color: #212121;
+    font-weight: 500;
+}
+
+.deposit-page-content .amount-radio-item-content {
+    color: orange;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.deposit-page-bottom {
+    background-color: #fff;
+    bottom: 0;
+    padding: 16px 22px;
+}
+
+.deposit-page-bottom .close {
+    background: rgba(255, 166, 0, 0.15);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 10px;
+    padding: 10px;
+    width: 50px;
+}
+
+.deposit-page-bottom button {
+    background: orange;
+    border: none;
+    border-radius: 14px;
+    font-size: 24px;
+    height: 50px;
+}
+
+.deposit-page-bottom button.van-button--disabled {
+    /* background: rgba(255, 166, 0); */
+    box-shadow: 0 4px 20px 0 rgba(205, 30, 130, .3);
 }
 
 /* rgba(255, 166, 0, 0.15) */

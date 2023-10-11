@@ -352,7 +352,7 @@ const Home = () => {
                                 Current Balance
                             </div>
                             <div className="balance-value bold">
-                                ₹16.00
+                                ₹{userDetails?.balance?.toFixed(2)}
                             </div>
                         </div>
                         <div>
@@ -365,14 +365,14 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="routers">
-                        <div className="routers-item text-center">
+                        <Link to={'/deposit'} className="routers-item text-center">
                             <div>
                                 <svg className='inline-block' xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49" fill="none">
                                     <path d="M33.137 14.6722L25.6124 7.14756C24.7333 6.26852 23.3093 6.26852 22.4302 7.14756L14.8705 14.7073C14.8142 14.7636 14.8142 14.8515 14.8705 14.9078L16.2629 16.3002C16.3191 16.3564 16.407 16.3564 16.4633 16.3002L22.6377 10.1187C22.7256 10.0308 22.8768 10.0941 22.8768 10.2172L22.8768 42.3586C22.8768 42.4359 22.9401 42.4992 23.0174 42.4992L24.9865 42.4992C25.0639 42.4992 25.1272 42.4359 25.1272 42.3586L25.1272 10.182C25.1272 10.0554 25.2783 9.99567 25.3663 10.0836L31.5442 16.2615C31.6004 16.3178 31.6883 16.3178 31.7446 16.2615L33.137 14.8691C33.1933 14.8163 33.1933 14.7249 33.137 14.6722Z" fill="black"></path>
                                 </svg>
                             </div>
                             <div className="title">Deposit</div>
-                        </div>
+                        </Link>
                         <div className="routers-item text-center">
                             <div>
                                 <svg className='inline-block' xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49" fill="none">
