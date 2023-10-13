@@ -256,21 +256,21 @@ const Deposit = () => {
                     </div>
                 </div> */}
             </>
-            <section class="deposit-page flex flex-col">
-                <div class="deposit-page-content flex-1">
-                    <div class="input-amount">
-                        <div class="text-center">
-                            <div class="title">Deposit</div>
-                            <div class="currentBalance">Current Balance₹{userDetails?.balance?.toFixed(2)}</div>
+            <section className="deposit-page flex flex-col">
+                <div className="deposit-page-content flex-1">
+                    <div className="input-amount">
+                        <div className="text-center">
+                            <div className="title">Deposit</div>
+                            <div className="currentBalance">Current Balance₹{userDetails?.balance?.toFixed(2)}</div>
                         </div>
-                        <div class="input-amount-choose">
+                        <div className="input-amount-choose">
 
                             {amount.map((data, index) =>
                                 <QuickAmountCard key={index} id={index} selected={selected} setSelected={setSelected} amount={data} setDeposit={setDeposit} />
                             )}
 
                         </div>
-                        <div class="flex items-center input-amount-content">
+                        <div className="flex items-center input-amount-content">
                             ₹
                             <input
                                 onChange={e => { setDeposit(e.target.value); setSelected() }}
@@ -280,40 +280,40 @@ const Deposit = () => {
                             />
                         </div>
                     </div>
-                    <div class="title">Select the deposit channel</div>
-                    <div class="amount-radio">
-                        <div name="4cb3f823-34e3-5892-c52a-8d9926746fe1" class="amount-radio-item flex items-center justify-between">
-                            <div class="amount-radio-item-title">Pay             100-50000</div>
-                            <div class="amount-radio-item-content">₹100 ~ ₹50000</div>
+                    <div className="title">Select the deposit channel</div>
+                    <div className="amount-radio">
+                        <div name="4cb3f823-34e3-5892-c52a-8d9926746fe1" className="amount-radio-item flex items-center justify-between">
+                            <div className="amount-radio-item-title">Pay             100-50000</div>
+                            <div className="amount-radio-item-content">₹100 ~ ₹50000</div>
                         </div>
-                        <div name="1398051d-22e3-0ebe-c51a-1975ddeea29d" class="amount-radio-item flex items-center justify-between">
-                            <div class="amount-radio-item-title">Pay             100-50000</div>
-                            <div class="amount-radio-item-content">₹100 ~ ₹50000</div>
+                        <div name="1398051d-22e3-0ebe-c51a-1975ddeea29d" className="amount-radio-item flex items-center justify-between">
+                            <div className="amount-radio-item-title">Pay             100-50000</div>
+                            <div className="amount-radio-item-content">₹100 ~ ₹50000</div>
                         </div>
-                        <div name="9a8d686f-4003-2f30-f2a2-101c3d0791e7" class="amount-radio-item flex items-center justify-between">
-                            <div class="amount-radio-item-title">Pay        100-50000</div>
-                            <div class="amount-radio-item-content">₹100 ~ ₹50000</div>
+                        <div name="9a8d686f-4003-2f30-f2a2-101c3d0791e7" className="amount-radio-item flex items-center justify-between">
+                            <div className="amount-radio-item-title">Pay        100-50000</div>
+                            <div className="amount-radio-item-content">₹100 ~ ₹50000</div>
                         </div>
-                        <div name="894381a1-4e6d-49cf-3760-e5a98077ac6a" class="amount-radio-item flex items-center justify-between">
-                            <div class="amount-radio-item-title">Pay        100-50000</div>
-                            <div class="amount-radio-item-content">₹100 ~ ₹50000</div>
+                        <div name="894381a1-4e6d-49cf-3760-e5a98077ac6a" className="amount-radio-item flex items-center justify-between">
+                            <div className="amount-radio-item-title">Pay        100-50000</div>
+                            <div className="amount-radio-item-content">₹100 ~ ₹50000</div>
                         </div>
-                        <div name="9ff4331a-5804-2dbf-481d-4e0ff1c85eb3" class="amount-radio-item flex items-center justify-between">
-                            <div class="amount-radio-item-title">Pay             100-50000</div>
-                            <div class="amount-radio-item-content">₹100 ~ ₹50000</div>
+                        <div name="9ff4331a-5804-2dbf-481d-4e0ff1c85eb3" className="amount-radio-item flex items-center justify-between">
+                            <div className="amount-radio-item-title">Pay             100-50000</div>
+                            <div className="amount-radio-item-content">₹100 ~ ₹50000</div>
                         </div>
                     </div>
                 </div>
-                <div class="deposit-page-bottom fixed w-full">
-                    <div class="flex">
-                        <Link to={'/home'} class="close flex items-center justify-center">
+                <div className="deposit-page-bottom fixed w-full">
+                    <div className="flex">
+                        <Link to={'/home'} className="close flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885Z" fill="orange"></path>
                             </svg>
                         </Link>
-                        <button class="van-button van-button--primary van-button--normal van-button--disabled van-button--block" disabled={true}>
-                            <div class="van-button__content">
-                                <span class="van-button__text">
+                        <button className="van-button van-button--primary van-button--normal van-button--disabled van-button--block" disabled={true}>
+                            <div className="van-button__content">
+                                <span className="van-button__text">
                                     NEXT
                                 </span>
                             </div>

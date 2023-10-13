@@ -373,14 +373,14 @@ const Home = () => {
                             </div>
                             <div className="title">Deposit</div>
                         </Link>
-                        <div className="routers-item text-center">
+                        <Link to={'/widthdraw'} className="routers-item text-center">
                             <div>
                                 <svg className='inline-block' xmlns="http://www.w3.org/2000/svg" width="48" height="49" viewBox="0 0 48 49" fill="none">
                                     <path d="M14.8703 34.3161L22.3949 41.8407C23.274 42.7198 24.698 42.7198 25.5771 41.8407L33.1369 34.2809C33.1931 34.2247 33.1931 34.1368 33.1369 34.0805L31.7445 32.6881C31.6882 32.6318 31.6003 32.6318 31.544 32.6881L25.3696 38.8695C25.2817 38.9575 25.1305 38.8942 25.1305 38.7711L25.1305 6.62971C25.1305 6.55236 25.0672 6.48906 24.9899 6.48906L23.0208 6.48906C22.9435 6.48906 22.8802 6.55236 22.8802 6.62971L22.8802 38.8063C22.8802 38.9328 22.729 38.9926 22.6411 38.9047L16.4631 32.7268C16.4069 32.6705 16.319 32.6705 16.2627 32.7268L14.8703 34.1192C14.8141 34.1719 14.8141 34.2634 14.8703 34.3161Z" fill="black"></path>
                                 </svg>
                             </div>
                             <div className="title">Withdraw</div>
-                        </div>
+                        </Link>
                     </div>
                     <div className="transections hidden" >
                         <div className="flex items-center justify-between">
@@ -396,7 +396,7 @@ const Home = () => {
                     <div className="flex-1 recommended">
                         <div className="title">Explore More</div>
                         <div className="recommended-items">
-                            <div className="flex items-center flex-col">
+                            <Link to={'/commissionInfo'} className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
@@ -416,7 +416,7 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div className="recommended-items-title">Commission</div>
-                            </div>
+                            </Link>
                             <div className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center">
                                     <div>
