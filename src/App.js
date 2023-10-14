@@ -43,6 +43,7 @@ import v8 from './images/v8.png'
 import Message from './components/Message';
 import Article from './components/Article';
 import Company from './components/Company';
+import Myteams from './components/Myteams';
 
 export const ContextApi = createContext();
 
@@ -179,28 +180,29 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/home' element={<Home />} />
-            <Route path='/products' element={<Invest />} />
-            <Route path='/settings' element={<Account />} />
+            {/* <Route path='/products' element={<Invest />} /> */}
+            {/* <Route path='/settings' element={<Account />} /> */}
             <Route path='/deposit' element={<Deposit />} />
-            <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} />
-            <Route path='/deposit_records' element={<DepositRecords />} />
+            {/* <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} /> */}
+            {/* <Route path='/deposit_records' element={<DepositRecords />} /> */}
             <Route path='/commissionInfo' element={<Invite />} />
-            <Route path='/vip' element={<Vip />} />
-            <Route path='/orders' element={<Order />} />
-            <Route path='/bankCard' element={<BankCard />} />
-            <Route path='/bankCardAdd' element={<BankCardAdd />} />
+            {/* <Route path='/vip' element={<Vip />} /> */}
+            {/* <Route path='/orders' element={<Order />} /> */}
+            {/* <Route path='/bankCard' element={<BankCard />} /> */}
+            {/* <Route path='/bankCardAdd' element={<BankCardAdd />} /> */}
             <Route path='/widthdraw' element={<Widthdrawl />} />
-            <Route path='/widthdrawlrecords' element={<WidthdrawlRecords />} />
-            <Route path='/changewidthdrawlpassword' element={<WpasswordChange />} />
-            <Route path='/widthdrawlpassword' element={<WithdrawlPassword />} />
-            <Route path='/changepassword' element={<ChangePassword />} />
+            {/* <Route path='/widthdrawlrecords' element={<WidthdrawlRecords />} /> */}
+            {/* <Route path='/changewidthdrawlpassword' element={<WpasswordChange />} /> */}
+            {/* <Route path='/widthdrawlpassword' element={<WithdrawlPassword />} /> */}
+            {/* <Route path='/changepassword' element={<ChangePassword />} /> */}
             <Route path='/forgotpassword' element={<ForgotPassword />} />
             <Route path='/comissions' element={<Comissions />} />
-            <Route path='/update' element={<UpdateData />} />
-            <Route path='/task' element={<Task />} />
-            <Route path='/message' element={<Message />} />
-            <Route path='/article' element={<Article />} />
+            {/* <Route path='/update' element={<UpdateData />} /> */}
+            {/* <Route path='/task' element={<Task />} /> */}
+            {/* <Route path='/message' element={<Message />} /> */}
+            {/* <Route path='/article' element={<Article />} /> */}
             <Route path='/company' element={<Company />} />
+            <Route path='/team' element={<Myteams />} />
           </Routes>
 
         </BrowserRouter>

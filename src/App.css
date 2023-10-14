@@ -9183,4 +9183,128 @@ body {
     font-weight: 700;
 }
 
+.team-page[data-v-d8c3c738] {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.team-page-header[data-v-d8c3c738] {
+    background-image: url(./images/sungrow/teamBg.png);
+    background-position: 50%;
+    background-size: cover;
+    color: #fff;
+    height: 220px;
+    min-width: 100%;
+    padding: 16px 0;
+}
+
+.team-page-header .header-title[data-v-d8c3c738] {
+    font-size: 18px;
+    padding-top: 16px;
+}
+
+.team-page-content[data-v-d8c3c738] {
+    color: #212121;
+    padding: 40px 16px 60px;
+}
+
+.team-page-content-tabs[data-v-d8c3c738] {
+    background: rgba(255, 166, 0, 0.15);
+    border-radius: 60px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.team-page-content-tabs>div[data-v-d8c3c738] {
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.team-page-content-tabs>div.active[data-v-d8c3c738] {
+    background: orange;
+    border-radius: 60px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 16px;
+}
+
+.team-page-content-details[data-v-d8c3c738] {
+    background: #fff;
+    border-radius: 32px;
+    margin-top: 16px;
+    padding: 16px;
+}
+
+.team-page-content-details.left[data-v-d8c3c738] {
+    border-top-left-radius: 0;
+}
+
+.team-page-content-details .statistics[data-v-d8c3c738] {
+    background: rgba(255, 166, 0, 0.30);
+    border-radius: 22px;
+    padding: 12px 24px;
+}
+
+.team-page-content-details .statistics .value[data-v-d8c3c738] {
+    color: orange;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.team-page-content-details .statistics .value[data-v-d8c3c738] {
+    color: orange;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.van-divider {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border: 0 solid #ebedf0;
+    color: #969799;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 16px 0;
+}
+
+.team-page-content-details .content-item[data-v-d8c3c738] {
+    margin-bottom: 16px;
+    opacity: .5;
+}
+
+.team-page-content-details .content-item.active[data-v-d8c3c738] {
+    font-weight: 600;
+    opacity: 1;
+}
+
+.team-page-bottom[data-v-d8c3c738] {
+    background: #f8f9fa;
+    border-radius: 24px 24px 0 0;
+    bottom: 0;
+    padding: 16px 22px;
+}
+
+.team-page-bottom .shareLink[data-v-d8c3c738] {
+    color: orange;
+    margin-bottom: 24px;
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+}
+
+.team-page-header .icon[data-v-d8c3c738] {
+    left: 16px;
+    top: 16px;
+    z-index: 10;
+}
+
 /* rgba(255, 166, 0, 0.15) */
