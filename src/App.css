@@ -9307,4 +9307,91 @@ body {
     z-index: 10;
 }
 
+.tasks-page {
+    background-color: #fff;
+    color: #212121;
+    min-height: 100vh;
+}
+
+.tasks-page-header, .tasks-page-header-content {
+    background: orange;
+}
+
+.tasks-page-header {
+    color: #fff;
+    height: 200px;
+}
+
+.tasks-page-header-content {
+    padding-bottom: 24px;
+    z-index: 10;
+}
+
+.tasks-page-header, .tasks-page-header-content {
+    background: orange;
+}
+
+.tasks-page-header .icon {
+    left: 16px;
+    top: 16px;
+    z-index: 11;
+}
+
+.tasks-page-header .header-title {
+    font-size: 18px;
+    padding-top: 16px;
+}
+
+.tasks-page-header .title {
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+.tasks-page-content {
+    background-color: #fff;
+    border-top-left-radius: 60px;
+    margin-top: -50px;
+    padding: 24px 16px;
+    z-index: 9;
+}
+
+
+.tasks-page-content-item{
+    border-radius: 15px;
+    background: #80808014;
+    padding: 15px;
+    margin: 10px;
+}
+
+.tasks-page-content-item .title{
+    line-height: 1;
+
+}
+
+.tasks-page-content-item .subtitle{
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.tasks-page-content-item .progress-bar{
+    background-color: white;
+    border-radius: 10px;
+    height: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.tasks-page-content-item .progress-value{
+    background: #5cd5fb;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.progress-tips{
+    color: orange;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+
 /* rgba(255, 166, 0, 0.15) */

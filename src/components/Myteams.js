@@ -97,7 +97,7 @@ const Myteams = () => {
 
                             {toogle === 'lvl1' &&
 
-                                lvl1.map(element => {
+                                lvl1.map(element =>
                                     <div data-v-d8c3c738="" className="flex items-center justify-between content-item">
                                         <div data-v-d8c3c738="">
                                             <div data-v-d8c3c738="">
@@ -110,13 +110,13 @@ const Myteams = () => {
                                         </div>
                                         <div data-v-d8c3c738="" className="status">Inactive</div>
                                     </div>
-                                })
+                                )
 
                             }
 
                             {toogle === 'lvl2' &&
 
-                                lvl2.map(element => {
+                                lvl2.map(element =>
                                     <div data-v-d8c3c738="" className="flex items-center justify-between content-item">
                                         <div data-v-d8c3c738="">
                                             <div data-v-d8c3c738="">
@@ -129,13 +129,13 @@ const Myteams = () => {
                                         </div>
                                         <div data-v-d8c3c738="" className="status">Inactive</div>
                                     </div>
-                                })
+                                )
 
                             }
 
                             {toogle === 'lvl3' &&
 
-                                lvl3.map(element => {
+                                lvl3.map(element =>
                                     <div data-v-d8c3c738="" className="flex items-center justify-between content-item">
                                         <div data-v-d8c3c738="">
                                             <div data-v-d8c3c738="">
@@ -148,7 +148,7 @@ const Myteams = () => {
                                         </div>
                                         <div data-v-d8c3c738="" className="status">Inactive</div>
                                     </div>
-                                })
+                                )
 
                             }
 

@@ -428,7 +428,7 @@ const Home = () => {
                                 </div>
                                 <div className="recommended-items-title">My Team</div>
                             </Link>
-                            <div className="flex items-center flex-col">
+                            <Link to={'/tasks'} className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
@@ -438,7 +438,7 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div className="recommended-items-title">Task System</div>
-                            </div>
+                            </Link>
                             <div className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center">
                                     <div>
