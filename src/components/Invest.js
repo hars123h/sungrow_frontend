@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 import Tradmark from './Tradmark'
 import hot from '../images/hot.svg'
 import ProductCard from './ProductCard'
-import img202 from '../images/201.png'
+import img202 from '../images/sungrow/teamBg.png'
 import img302 from '../images/301.png'
 import { ContextApi } from '../App'
 
@@ -15,32 +15,8 @@ const Invest = () => {
 
     const { userDetails, setUserDetails, getUserDetails, user, toaster } = useContext(ContextApi);
 
-
-    const [stable, setStable] = useState('-top-[5px] bg-white font-bold text-[#0aa496] text-xl')
-    const [welfare, setWelfare] = useState('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-    const [activity, setActivity] = useState('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-    const [activelist, setActivelist] = useState('stable')
     const [totalEarn, setTotalEarn] = useState(0)
-
-
-    const swiperHandel = name => {
-        setActivelist(name)
-        if (name === 'stable') {
-            setStable('-top-[5px] bg-white font-bold text-[#0aa496] text-xl')
-            setWelfare('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-            setActivity('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-        }
-        else if (name === 'welfare') {
-            setStable('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-            setWelfare('-top-[5px] bg-white font-bold text-[#0aa496] text-xl')
-            setActivity('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-        }
-        else {
-            setStable('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-            setWelfare('bg-[rgba(255,255,255,0.3)] text-white text-lg ')
-            setActivity('-top-[5px] bg-white font-bold text-[#0aa496] text-xl')
-        }
-    }
+    const [toogle, setToogle] = useState('Super')
 
 
     useEffect(() => {
@@ -80,7 +56,9 @@ const Invest = () => {
 
     }, [])
 
-    console.log(totalEarn);
+    const handelTooglle = (name) => {
+        setToogle(name)
+    }
 
 
 
@@ -89,7 +67,7 @@ const Invest = () => {
     return (
         <>
 
-            <div className="mx-auto mb-28 bgimg">
+            {/* <div className="mx-auto mb-28 bgimg">
                 <div className="w-full mx-auto max-w-[800px]" >
 
                     <Link to={`/orders`}>
@@ -122,11 +100,9 @@ const Invest = () => {
 
                     <div className="relative -top-[120px] mx-auto z-[1]">
 
-                        {/* itemlist */}
 
                         <div className="m-[10px]">
 
-                            {/* toogle */}
 
                             <div className="mx-auto relative overflow-hidden p-0 z[1] ">
 
@@ -169,7 +145,6 @@ const Invest = () => {
 
                             </div>
 
-                            {/* list */}
 
                             <div className="">
 
@@ -233,13 +208,13 @@ const Invest = () => {
                                                 plan_daily_earning={45500}
                                             />
 
-                                            {/* <ProductCard
+                                            <ProductCard
                                                 product_image={img202}
                                                 product_type={0}
                                                 plan_cycle={60}
                                                 plan_amount={100000}
                                                 plan_daily_earning={90000}
-                                            /> */}
+                                            />
 
                                         </div>
                                     </div>
@@ -278,7 +253,7 @@ const Invest = () => {
                                                 plan_daily_earning={4600}
                                             />
 
-                                            {/* <ProductCard
+                                            <ProductCard
                                                 product_type={5}
                                                 plan_cycle={3}
                                                 plan_amount={30000}
@@ -290,7 +265,7 @@ const Invest = () => {
                                                 plan_cycle={3}
                                                 plan_amount={50000}
                                                 plan_daily_earning={37500}
-                                            /> */}
+                                            />
 
                                         </div>
                                     </div>
@@ -301,7 +276,7 @@ const Invest = () => {
                                     <div className="block bg-white -top-[10px] pt-[10px] px-[5px] h-screen pb-12 relative z-[2] rounded-[7px] ">
                                         <div className="flex flex-wrap items-center justify-between h-3/5">
 
-                                            {/* <ProductCard
+                                            <ProductCard
                                                 product_type={1}
                                                 product_image={img302}
                                                 plan_cycle={20}
@@ -373,7 +348,7 @@ const Invest = () => {
                                                 plan_amount={2700}
                                                 plan_daily_earning={3483}
                                                 active={false}
-                                            /> */}
+                                            />
 
                                             <div className="h-[50px] relative overflow-hidden text-xs translate-z-0 mx-auto my-auto ">
                                                 <div className="h-[50px] leading-[50px] text-center text-[#cfd0d9]">No more data</div>
@@ -394,10 +369,148 @@ const Invest = () => {
                     </div>
 
                 </div>
-            </div>
+            </div> */}
 
             {/* footer  */}
-            <Navbar />
+            {/* <Navbar /> */}
+
+            <section data-v-d8c3c738="" className="team-page flex flex-col">
+                <div data-v-d8c3c738="">
+                    <div className="van-sticky">
+                        <div data-v-d8c3c738="" className="team-page-header">
+                            <div data-v-d8c3c738="" className="flex items-center justify-center relative">
+                                {/* <Link to={'/home'}>
+                                    <svg data-v-d8c3c738="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className="icon absolute">
+                                        <path data-v-d8c3c738="" d="M9.9688 11.5347L9.96878 11.5347C9.84576 11.6555 9.74774 11.7993 9.68031 11.9579C9.61287 12.1165 9.57735 12.2869 9.57576 12.4593C9.57417 12.6316 9.60655 12.8026 9.67105 12.9625C9.73544 13.1221 9.83059 13.2674 9.95106 13.3903L9.96945 13.4087L9.97009 13.4093L16.3048 19.6299L16.3048 19.6299L16.3069 19.632C16.4708 19.7978 16.5628 20.0214 16.5632 20.2545C16.5635 20.4876 16.4722 20.7115 16.3088 20.8778C16.1455 21.0441 15.9233 21.1394 15.6902 21.1432C15.4572 21.1471 15.232 21.059 15.0632 20.8982L15.0632 20.8982L15.0611 20.8962L8.72467 14.6743L8.72425 14.6739L8.68666 14.6367L8.68665 14.6368L8.68451 14.6346C8.4004 14.3452 8.17607 14.0028 8.02432 13.6267C7.87258 13.2507 7.7964 12.8484 7.80013 12.443C7.80386 12.0375 7.88743 11.6367 8.04607 11.2635C8.20471 10.8903 8.4353 10.552 8.72468 10.268C8.72469 10.268 8.72469 10.268 8.7247 10.268L15.0616 4.04657L15.0616 4.04655L15.0637 4.04453C15.2324 3.88369 15.4576 3.79567 15.6907 3.79949C15.9237 3.80332 16.1459 3.89867 16.3093 4.06496C16.4726 4.23125 16.564 4.45513 16.5636 4.68822C16.5633 4.92131 16.4712 5.1449 16.3074 5.31069L16.2487 5.37012H16.2465L9.9688 11.5347Z" fill="white" stroke="white" strokeWidth="0.4"></path>
+                                    </svg>
+                                </Link> */}
+                                <div data-v-d8c3c738="" className="text-center bold flex header-title">
+                                    Investable Products
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-v-d8c3c738="" className="team-page-content flex-1">
+                    <div data-v-d8c3c738="" className="team-page-content-tabs">
+                        <div onClick={() => handelTooglle('Super')} data-v-d8c3c738="" data-key="0" className={`${toogle === 'Super' && 'active'}`}>
+                            Super
+                        </div>
+                        <div onClick={() => handelTooglle('Give Back')} data-v-d8c3c738="" data-key="1" className={`${toogle === 'Give Back' && 'active'}`}>
+                            Give Back
+                        </div>
+                        <div onClick={() => handelTooglle('Snap Up')} data-v-d8c3c738="" data-key="2" className={`${toogle === 'Snap Up' && 'active'}`}>
+                            Snap Up
+                        </div>
+                    </div>
+                    <div data-v-d8c3c738="" className="team-page-content-details left">
+
+                        {/* <div data-v-d8c3c738="" role="separator" className="van-divider van-divider--hairline"></div> */}
+                        <div data-v-d8c3c738="" className="content flex flex-wrap">
+
+                            {toogle === 'Super' &&
+
+
+                                <>
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                        product_no={1}
+                                    />
+
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                        product_no={2}
+
+                                    />
+
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                        product_no={3}
+
+                                    />
+                                </>
+
+
+                            }
+
+                            {toogle === 'Give Back' &&
+
+                                <>
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                    />
+
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                    />
+
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                    />
+                                </>
+
+                            }
+
+                            {toogle === 'Snap Up' &&
+
+                                <>
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                    />
+
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                    />
+
+                                    <ProductCard
+                                        product_image={img202}
+                                        product_type={0}
+                                        plan_cycle={60}
+                                        plan_amount={495}
+                                        plan_daily_earning={190}
+                                    />
+                                </>
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                <Navbar />
+            </section>
+
         </>
     )
 }

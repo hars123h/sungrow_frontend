@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { RiVipLine } from 'react-icons/ri'
-import { BiRightArrowAlt } from 'react-icons/bi'
+import { BsArrowUpRight } from 'react-icons/bs'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { ContextApi } from '../App'
 import axios from 'axios'
 import BASE_URL from '../api_url'
 
-const ProductCard = ({ active, pre_sale, long_plan_state, product_type, product_image, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle, handleClick }) => {
+const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_type, product_image, plan_name, plan_type, plan_amount, plan_daily_earning, plan_cycle, handleClick }) => {
 
     Date.prototype.addDays = function (days) {
         this.setDate(this.getDate() + parseInt(days));
@@ -22,7 +22,6 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_type, product_
         toaster, getUserDetails
     } = useContext(ContextApi);
 
-    const [vipColor, setVipColor] = useState('text-[#b3bdc4]')
     const [pop, setpop] = useState(false)
     const [quantity, setQuantity] = useState(1)
 
@@ -102,9 +101,6 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_type, product_
 
 
     useEffect(() => {
-        if (product_type > 0) {
-            setVipColor('text-[#ffa74f]')
-        }
         getUserDetails();
 
     }, [product_type])
@@ -230,7 +226,7 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_type, product_
 
                                             <div className="">
                                                 <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
-                                                    {/* <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em> */}
+                                                    <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
                                                     {quantity}</p>
                                             </div>
 
@@ -286,65 +282,30 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_type, product_
 
 
 
-            <div className="w-full p-[5px]">
+            <div className="w-1/2 p-[5px]">
                 <div className="shadow-[0_-3px_30px_1px_rgba(80,35,0,0.1)] p-[10px] bg-white backdrop-blur-sm relative rounded-[7px] ">
 
-                    <div className="mb-[10px] overflow-hidden bg-center bg-no-repeat bg-[length:90%_90%] cardBg bg-[#f8f8f8] rounded-[3px]">
+                    <div className="mb-[10px] overflow-hidden bg-center bg-no-repeat bg-[length:90%_90%] cardBg bg-[#fcfcfc] rounded-[3px]">
                         <img src={product_image} alt="" className={`w-full `} />
                     </div>
 
-                    <div className="mb-[10px]">
-
-                        <h3 className='text-[22px] text-[#4b4d5e] leading-none font-bold'>
-                            {plan_cycle}
-                            <span className='text-sm text-[#818393] leading-none'>Days</span>
-                        </h3>
-
-                        <p className='text-[#818393] leading-5'>Income Days</p>
-
+                    <div className="flex justify-between">
+                        <div className="">
+                            <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
+                                <RiVipLine size={26} className={`text-[orange] font-light `} />
+                            </p>
+                        </div>
+                        <h2 className='text-2xl'>Container Products {product_no && product_no}</h2>
                     </div>
 
                     <div className="mb-[10px]">
                         <div className="">
 
-                            <div className="flex flex-wrap items-center py-[5px]">
-                                <div className="flex-1 flex items-center">
-
-                                    <div className="flex-1 mr-[10px] whitespace-normal break-all">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Required Level</p>
-                                    </div>
-
-                                    <div className="">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
-                                            <RiVipLine size={26} className={`${vipColor} font-light `} />
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </div>
-
                             <div className="flex flex-wrap items-center py-[5px] border-0 border-t-[1px] border-[rgba(245,245,245,0.5)] border-solid">
                                 <div className="flex-1 flex items-center">
 
                                     <div className="flex-1 mr-[10px] whitespace-normal break-all">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Invest Price</p>
-                                    </div>
-
-                                    <div className="">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
-                                            <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
-
-                                            {plan_amount.toFixed(2)}</p>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div className="flex flex-wrap items-center py-[5px] border-0 border-t-[1px] border-[rgba(245,245,245,0.5)] border-solid">
-                                <div className="flex-1 flex items-center">
-
-                                    <div className="flex-1 mr-[10px] whitespace-normal break-all">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Day Income</p>
+                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Day Income:</p>
                                     </div>
 
                                     <div className="">
@@ -361,7 +322,24 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_type, product_
                                 <div className="flex-1 flex items-center">
 
                                     <div className="flex-1 mr-[10px] whitespace-normal break-all">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Total Revenue</p>
+                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>IncomeDays :</p>
+                                    </div>
+
+                                    <div className="">
+                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
+                                            <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
+
+                                            {plan_cycle}</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div className="flex flex-wrap items-center py-[5px] border-0 border-t-[1px] border-[rgba(245,245,245,0.5)] border-solid">
+                                <div className="flex-1 flex items-center">
+
+                                    <div className="flex-1 mr-[10px] whitespace-normal break-all">
+                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Revenue</p>
                                     </div>
 
                                     <div className="">
@@ -377,20 +355,32 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_type, product_
                         </div>
                     </div>
 
-                    {active !== false ?
-                        <div className="text-[rgba(75,169,88,0.9)] py-[5px] justify-end flex" onClick={handelClick}>
-                            <p className='font-bold text-lg flex items-center'>
-                                Invest now
-                                <BiRightArrowAlt size={20} />
-                            </p>
+                    <div className="flex items-center justify-between">
+
+                        <div className="text-[orange] text-xl font-bold">
+                            <em className=' p-0 px-[2px] border-0  font-light not-italic leading-none '>₹</em>
+                            {plan_amount.toFixed(2)}
                         </div>
-                        :
-                        <div className="text-[rgba(204,204,204,0.9)] py-[5px] justify-end flex">
-                            <p className='font-bold text-lg flex items-center'>
-                                Stop selling
-                            </p>
+
+                        {/* {active !== false ?
+                            <div className="text-[rgba(75,169,88,0.9)] py-[5px] justify-end flex" onClick={handelClick}>
+                                <p className='font-bold text-lg flex items-center'>
+                                    Invest now
+                                    <BiRightArrowAlt size={20} />
+                                </p>
+                            </div>
+                            :
+                            <div className="text-[rgba(204,204,204,0.9)] py-[5px] justify-end flex">
+                                <p className='font-bold text-lg flex items-center'>
+                                    Stop selling
+                                </p>
+                            </div>
+                        } */}
+                        <div onClick={handelClick} className="w-14 h-14 bg-[orange] rounded-full font-bold flex justify-center items-center text-white">
+                            <BsArrowUpRight size={20} />
+
                         </div>
-                    }
+                    </div>
 
                 </div>
             </div>

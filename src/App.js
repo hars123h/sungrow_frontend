@@ -180,7 +180,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/home' element={<Home />} />
-            {/* <Route path='/products' element={<Invest />} /> */}
+            <Route path='/products' element={<Invest />} />
             {/* <Route path='/settings' element={<Account />} /> */}
             <Route path='/deposit' element={<Deposit />} />
             {/* <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} /> */}
