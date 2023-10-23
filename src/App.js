@@ -181,7 +181,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/home' element={<Home />} />
             <Route path='/products' element={<Invest />} />
-            {/* <Route path='/settings' element={<Account />} /> */}
+            <Route path='/settings' element={<Account />} />
             <Route path='/deposit' element={<Deposit />} />
             {/* <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} /> */}
             {/* <Route path='/deposit_records' element={<DepositRecords />} /> */}
@@ -191,7 +191,7 @@ function App() {
             {/* <Route path='/bankCard' element={<BankCard />} /> */}
             {/* <Route path='/bankCardAdd' element={<BankCardAdd />} /> */}
             <Route path='/widthdraw' element={<Widthdrawl />} />
-            {/* <Route path='/widthdrawlrecords' element={<WidthdrawlRecords />} /> */}
+            <Route path='/widthdrawlrecords' element={<WidthdrawlRecords />} />
             {/* <Route path='/changewidthdrawlpassword' element={<WpasswordChange />} /> */}
             {/* <Route path='/widthdrawlpassword' element={<WithdrawlPassword />} /> */}
             {/* <Route path='/changepassword' element={<ChangePassword />} /> */}

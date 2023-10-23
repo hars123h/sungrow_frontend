@@ -289,13 +289,13 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
                         <img src={product_image} alt="" className={`w-full `} />
                     </div>
 
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-center">
                         <div className="">
-                            <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
+                            <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>
                                 <RiVipLine size={26} className={`text-[orange] font-light `} />
                             </p>
                         </div>
-                        <h2 className='text-2xl'>Container Products {product_no && product_no}</h2>
+                        <h2 className='text-xl'>Container Products</h2>
                     </div>
 
                     <div className="mb-[10px]">
@@ -305,12 +305,12 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
                                 <div className="flex-1 flex items-center">
 
                                     <div className="flex-1 mr-[10px] whitespace-normal break-all">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Day Income:</p>
+                                        <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>Day Income:</p>
                                     </div>
 
                                     <div className="">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
-                                            <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
+                                        <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>
+                                            <em className=' p-0 px-[2px] border-0 text-sm font-light not-italic leading-none '>₹</em>
 
                                             {plan_daily_earning.toFixed(2)}</p>
                                     </div>
@@ -322,12 +322,12 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
                                 <div className="flex-1 flex items-center">
 
                                     <div className="flex-1 mr-[10px] whitespace-normal break-all">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>IncomeDays :</p>
+                                        <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>IncomeDays :</p>
                                     </div>
 
                                     <div className="">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
-                                            <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
+                                        <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>
+                                            <em className=' p-0 px-[2px] border-0 text-sm font-light not-italic leading-none '>₹</em>
 
                                             {plan_cycle}</p>
                                     </div>
@@ -339,12 +339,12 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
                                 <div className="flex-1 flex items-center">
 
                                     <div className="flex-1 mr-[10px] whitespace-normal break-all">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>Revenue</p>
+                                        <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>Revenue</p>
                                     </div>
 
                                     <div className="">
-                                        <p className='text-base text-[#4b4d5e] break-all whitespace-normal'>
-                                            <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
+                                        <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>
+                                            <em className=' p-0 px-[2px] border-0 text-sm font-light not-italic leading-none '>₹</em>
 
                                             {(plan_cycle * plan_daily_earning).toFixed(2)}</p>
                                     </div>
@@ -357,7 +357,7 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
 
                     <div className="flex items-center justify-between">
 
-                        <div className="text-[orange] text-xl font-bold">
+                        <div className="text-[orange] text-lg font-bold">
                             <em className=' p-0 px-[2px] border-0  font-light not-italic leading-none '>₹</em>
                             {plan_amount.toFixed(2)}
                         </div>
@@ -376,7 +376,7 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
                                 </p>
                             </div>
                         } */}
-                        <div onClick={handelClick} className="w-14 h-14 bg-[orange] rounded-full font-bold flex justify-center items-center text-white">
+                        <div onClick={handelClick} className="w-[10vw] max-w-md max-h-md h-[10vw] bg-[orange] rounded-full font-bold flex justify-center items-center text-white">
                             <BsArrowUpRight size={20} />
 
                         </div>
