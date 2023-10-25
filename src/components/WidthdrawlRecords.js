@@ -5,6 +5,7 @@ import { LiaAngleLeftSolid } from 'react-icons/lia';
 import axios from 'axios'
 import { ContextApi } from '../App';
 import { FiArrowLeft } from 'react-icons/fi'
+import { BsArrowUp } from 'react-icons/bs';
 
 const WidthdrawlRecords = () => {
 
@@ -71,11 +72,11 @@ const WidthdrawlRecords = () => {
 
                     <div className="mx-auto relative z-[1]">
                         <div className="m-[5px]">
-                            <ul>
+                            <ul className='p-3'>
 
                                 {withdrawal_list?.map((data, index) =>
 
-                                    <li key={index} className='my-[5px] p-[10px] bg-[rgba(255,255,255,0.6)] rounded-[7px] flex flex-col items-stretch'>
+                                    <li key={index} className='my-[5px] p-[10px] bg-[#f8f9fb] rounded-[7px] flex space-x-1 items-center'>
 
                                         {/* <div className="flex-1">
                                             <p className='text-[#666]'>{nameMapper[String(data.status)]}</p>
@@ -89,7 +90,7 @@ const WidthdrawlRecords = () => {
                                             </p>
                                         </div> */}
 
-                                        <div className="flex justify-between items-center">
+                                        {/* <div className="flex justify-between items-center">
                                             <p>Result</p>
                                             {nameMapper[String(data.status)] === 'success' ?
                                                 <p className='text-green-600'>Payment Succeeded</p>
@@ -117,12 +118,55 @@ const WidthdrawlRecords = () => {
                                         <div className="flex justify-between items-center">
                                             <p className='text-[#666]'>Submit Time</p>
                                             <p className='text-[#666]'>{new Date(data.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</p>
+                                        </div> */}
+
+                                        <div className="text-[orange] w-10 h-10 rounded-full border border-[orange] flex justify-center items-center">
+                                            <BsArrowUp size={25} />
+                                        </div>
+
+                                        <div className="flex-1 flex justify-between">
+
+                                            <div className="">
+                                                <p>Withdrawl</p>
+                                                <p className='text-[#666] text-sm'>{new Date(data.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</p>
+                                            </div>
+
+
+                                            {nameMapper[String(data.status)] === 'success' &&
+                                                <div className={` text-right text-[#29a635] `}>
+                                                    <p className='font-bold '>
+                                                        <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                    </p>
+                                                    <p>Successfully ended</p>
+                                                </div>
+                                            }
+                                            {nameMapper[String(data.status)] === 'pending' &&
+
+                                                <div className={` text-right text-[orange] `}>
+                                                    <p className='font-bold '>
+                                                        <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                    </p>
+                                                    <p>Initiate withdrawl</p>
+                                                </div>
+                                            }
+                                            {nameMapper[String(data.status)] === 'declined' &&
+
+                                                <div className={` text-right text-[red] `}>
+                                                    <p className='font-bold '>
+                                                        <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                    </p>
+                                                    <p>Declined</p>
+                                                </div>
+                                            }
+
                                         </div>
 
                                     </li>
 
-                                )
-                                }
+                                )}
 
                             </ul>
 

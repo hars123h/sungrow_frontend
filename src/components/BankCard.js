@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ContextApi } from '../App';
 import chip from '../images/Chip.svg'
 import { AiOutlinePlus } from 'react-icons/ai';
+import { FiArrowLeft } from 'react-icons/fi';
+import { CgCreditCard } from 'react-icons/cg'
 
 const BankCard = () => {
 
@@ -31,45 +33,41 @@ const BankCard = () => {
 
     return (
         <>
-            <div className="after:bg-white after:contents-[' '] after:fixed ">
+            <div className=" after:contents-[' '] after:fixed ">
                 <div className="w-full mx-auto max-w-[800px]">
 
-                    <header className="h-[50px] leading-[50px] block">
-                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed bg-[rgb(1,77,173)] z-[9999] flex flex-wrap items-center  ">
+                    <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
+                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed z-[9999] flex flex-wrap items-center  ">
 
-                            <Link to={'/account'} className="w-[60px] h-[50px] left-0 text-center text-white text-[22px] absolute z-[2] flex justify-center items-center ">
-                                <LiaAngleLeftSolid size={22} />
+                            <Link to={'/settings'} className="w-[60px] h-[50px] left-0 text-center text-[22px] absolute z-[2] flex justify-center items-center ">
+                                <FiArrowLeft size={22} />
                             </Link>
 
-                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 text-white ' >My Bank Account</h2>
+                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 ' >Bank</h2>
 
                         </div>
                     </header>
 
-                    <div className="mx-auto relative z-[1]">
+                    <div className="mx-auto relative z-[1] p-3">
 
                         {userDetails?.bank_details?.fullName !== '' &&
-                            <div className="">
-                                <div className="m-[10px] px-5 py-[10px] relative bankcard rounded-[7px]">
+                            <div className="text-white">
+                                <div className="bg-[orange] rounded-md p-5" >
 
-                                    <div className="m-auto relative">
-                                        <p className='text-white text-sm tracking-[2px]'>IFSC:{userDetails?.bank_details?.ifsc}</p>
+                                    <div className="flex items-center text-white space-x-3 text-lg">
+                                        <CgCreditCard />
+
+                                        <p>{userDetails?.bank_details?.bankAccount.toString().replace(/\d{4}(?=.)/g, '$& ')}</p>
                                     </div>
 
-                                    <div className="py-[10px]">
-                                        <h3 className='font-bold text-[26px] text-white'>{userDetails?.bank_details?.bankAccount.toString().replace(/\d{4}(?=.)/g, '$& ')}</h3>
+                                    <div className="mt-5 text-3xl">
+                                        {userDetails?.bank_details?.ifsc}
                                     </div>
 
-                                    <div className="">
-                                        <span className='text-white font-light text-xs leading-4'>CARD HOLDER</span>
-                                        <p className='text-white text-sm tracking-[2px]'>{userDetails?.bank_details?.fullName}</p>
-                                    </div>
+                                    <p className=''>{userDetails?.bank_details?.fullName}</p>
 
-                                    <div className="w-[45px] top-5 right-[10px] absolute z-[2]">
-                                        <img src={chip} alt="" className='w-full opacity-20' />
-                                    </div>
+                                    <p className='text-right text-5xl mt-3 font-bold'>ONE</p>
 
-                                    <div className="shading"></div>
 
                                 </div>
                             </div>

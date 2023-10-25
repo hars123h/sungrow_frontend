@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ContextApi } from '../App';
 import BASE_URL from '../api_url';
 import axios from 'axios';
+import { FiArrowLeft } from 'react-icons/fi';
 
 const UpdateData = () => {
 
@@ -19,6 +20,18 @@ const UpdateData = () => {
 
     const [name, setName] = useState(userDetails?.name)
     const [email, setEmail] = useState(userDetails?.email)
+    const [nameError, setnameError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
+    const [emailError, setEmailError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
 
 
     const handleRegister = async () => {
@@ -41,10 +54,38 @@ const UpdateData = () => {
 
     }
 
+    const handelchange = (e) => {
+
+        if (e.target.id === 'name') {
+            setName(e.target.value)
+            if (e.target.value.length === 0) {
+                setnameError({ show: 'show-error', message: 'Name can not be empty' })
+                return
+            }
+            else {
+                setnameError({ show: '', message: '' })
+                return
+            }
+        }
+
+        if (e.target.id === 'email') {
+            setEmail(e.target.value)
+            if (e.target.value.length === 0) {
+                setEmailError({ show: 'show-error', message: 'Email can not be empty' })
+                return
+            }
+            else {
+                setEmailError({ show: '', message: '' })
+                return
+            }
+        }
+
+    }
+
 
     return (
         <>
-            <div className="bg-white  after:contents-[' '] after:fixed h-screen ">
+            {/* <div className="bg-white  after:contents-[' '] after:fixed h-screen ">
                 <div className="w-full mx-auto max-w-[800px]">
 
                     <header className="h-[50px] leading-[50px] block mb-[10px]">
@@ -124,7 +165,7 @@ const UpdateData = () => {
 
                         <div className="flex flex-wrap items-center my-10 w-full justify-end ">
 
-                            {/* <Link to={`/login`} className='text-[#1f3d70] bg-white border-[1px] border-[#1f3d70] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>SIGN IN</Link> */}
+                            <Link to={`/login`} className='text-[#1f3d70] bg-white border-[1px] border-[#1f3d70] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>SIGN IN</Link>
 
                             <button className=' flex-1 text-white bg-[#00aa75] border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative ' onClick={handleRegister}>
                                 Confirm
@@ -134,6 +175,75 @@ const UpdateData = () => {
                     </div>
 
                 </div>
+            </div> */}
+
+            <div className="">
+                <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
+                    <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed z-[9999] flex flex-wrap items-center  ">
+
+                        <Link to={'/settings'} className="w-[60px] h-[50px] left-0 text-center text-[22px] absolute z-[2] flex justify-center items-center ">
+                            <FiArrowLeft size={22} />
+                        </Link>
+
+                        <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 ' >Edit Profile</h2>
+
+                    </div>
+                </header>
+
+                <div className="">
+                    <div className="login-page-content-box w-full">
+                        <div className="item">
+                            <div data-v-466dae23="" className="phone-number-container">
+                                <label data-v-466dae23="" htmlFor="phoneNumber">Name</label>
+                                <div data-v-466dae23="" className="input-container flex w-full input-container">
+                                    <input
+                                        onChange={handelchange}
+                                        data-v-466dae23=""
+                                        type="text"
+                                        id="name"
+                                        placeholder="Input Name"
+                                        className="input-field w-full input-autofill"
+                                    />
+                                </div>
+                            </div>
+                            <div className={`error ${nameError.show}`}>
+                                <span>{nameError.message}</span>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div data-v-0f114eeb="" className="input-container light">
+                                <label data-v-0f114eeb="" htmlFor="password">Email</label>
+                                <div data-v-0f114eeb="" className="flex items-center input-content input-container">
+                                    <input
+                                        onChange={handelchange}
+                                        data-v-0f114eeb=""
+                                        autoComplete="off"
+                                        id="email"
+                                        type='email'
+                                        placeholder="Enter Email"
+                                        className="input-field w-full input-autofill hasSuff"
+                                    />
+                                </div>
+                            </div>
+                            <div className={`error ${emailError.show}`} >
+                                <span>{emailError.message}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="withdraw-page-bottom fixed w-full">
+                    <div className="flex">
+                        <Link to={'/settings'} className="close flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885Z" fill="orange"></path>
+                            </svg>
+                        </Link>
+                        <button onClick={handleRegister} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
+                    </div>
+                </div>
+
             </div>
 
         </>
