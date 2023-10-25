@@ -7,6 +7,11 @@ import ProductCard from './ProductCard'
 import img202 from '../images/sungrow/teamBg.png'
 import img302 from '../images/301.png'
 import { ContextApi } from '../App'
+import s1 from '../images/sungrow/s1.png'
+import s2 from '../images/sungrow/s2.png'
+import s3 from '../images/sungrow/s3.png'
+import s4 from '../images/sungrow/s4.png'
+
 
 const Invest = () => {
 
@@ -413,33 +418,59 @@ const Invest = () => {
 
                                 <>
                                     <ProductCard
-                                        product_image={img202}
+                                        product_image={s1}
                                         product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
+                                        plan_cycle={37}
+                                        plan_amount={535}
+                                        plan_daily_earning={214}
                                         product_no={1}
                                     />
 
                                     <ProductCard
-                                        product_image={img202}
+                                        product_image={s2}
                                         product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
+                                        plan_cycle={37}
+                                        plan_amount={1701}
+                                        plan_daily_earning={680.57}
                                         product_no={2}
-
                                     />
 
                                     <ProductCard
-                                        product_image={img202}
+                                        product_image={s3}
                                         product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
+                                        plan_cycle={37}
+                                        plan_amount={5157}
+                                        plan_daily_earning={2114.37}
                                         product_no={3}
-
                                     />
+
+                                    <ProductCard
+                                        product_image={s4}
+                                        product_type={0}
+                                        plan_cycle={37}
+                                        plan_amount={11000}
+                                        plan_daily_earning={4620}
+                                        product_no={4}
+                                    />
+
+                                    <ProductCard
+                                        product_image={s1}
+                                        product_type={0}
+                                        plan_cycle={37}
+                                        plan_amount={2100.3}
+                                        plan_daily_earning={9031.29}
+                                        product_no={5}
+                                    />
+
+                                    <ProductCard
+                                        product_image={s2}
+                                        product_type={0}
+                                        plan_cycle={37}
+                                        plan_amount={50000}
+                                        plan_daily_earning={22000}
+                                        product_no={6}
+                                    />
+
                                 </>
 
 
@@ -449,27 +480,57 @@ const Invest = () => {
 
                                 <>
                                     <ProductCard
-                                        product_image={img202}
-                                        product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
+                                        product_image={s1}
+                                        product_type={1}
+                                        plan_cycle={1}
+                                        plan_amount={235}
+                                        plan_daily_earning={352.5}
+                                        product_no={1}
                                     />
 
                                     <ProductCard
-                                        product_image={img202}
-                                        product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
+                                        product_image={s2}
+                                        product_type={2}
+                                        plan_cycle={3}
+                                        plan_amount={1701}
+                                        plan_daily_earning={1020.6}
+                                        product_no={2}
                                     />
 
                                     <ProductCard
-                                        product_image={img202}
-                                        product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
+                                        product_image={s3}
+                                        product_type={3}
+                                        plan_cycle={3}
+                                        plan_amount={5157}
+                                        plan_daily_earning={3094.2}
+                                        product_no={3}
+                                    />
+
+                                    <ProductCard
+                                        product_image={s4}
+                                        product_type={4}
+                                        plan_cycle={3}
+                                        plan_amount={11000}
+                                        plan_daily_earning={7700}
+                                        product_no={4}
+                                    />
+
+                                    <ProductCard
+                                        product_image={s1}
+                                        product_type={5}
+                                        plan_cycle={3}
+                                        plan_amount={21003}
+                                        plan_daily_earning={14702.1}
+                                        product_no={5}
+                                    />
+
+                                    <ProductCard
+                                        product_image={s2}
+                                        product_type={6}
+                                        plan_cycle={3}
+                                        plan_amount={50000}
+                                        plan_daily_earning={40000}
+                                        product_no={6}
                                     />
                                 </>
 
@@ -478,29 +539,7 @@ const Invest = () => {
                             {toogle === 'Snap Up' &&
 
                                 <>
-                                    <ProductCard
-                                        product_image={img202}
-                                        product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
-                                    />
-
-                                    <ProductCard
-                                        product_image={img202}
-                                        product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
-                                    />
-
-                                    <ProductCard
-                                        product_image={img202}
-                                        product_type={0}
-                                        plan_cycle={60}
-                                        plan_amount={495}
-                                        plan_daily_earning={190}
-                                    />
+                                 <div className="text-center mx-auto">No Plans</div>
                                 </>
 
                             }

@@ -327,7 +327,7 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
 
                                     <div className="">
                                         <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>
-                                            <em className=' p-0 px-[2px] border-0 text-sm font-light not-italic leading-none '>₹</em>
+                                            {/* <em className=' p-0 px-[2px] border-0 text-sm font-light not-italic leading-none '>₹</em> */}
 
                                             {plan_cycle}</p>
                                     </div>
