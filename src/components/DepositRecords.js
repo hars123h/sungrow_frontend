@@ -4,6 +4,8 @@ import { LiaAngleLeftSolid } from 'react-icons/lia'
 import { Link, useNavigate } from 'react-router-dom'
 import BASE_URL from '../api_url';
 import { ContextApi } from '../App';
+import { FiArrowLeft } from 'react-icons/fi';
+import { BsArrowDown, BsArrowUp } from 'react-icons/bs';
 
 const DepositRecords = () => {
 
@@ -47,45 +49,83 @@ const DepositRecords = () => {
 
     return (
         <>
-            <div className="bg-[#e0f2f1]  after:contents-[' '] after:fixed h-screen ">
+            <div className="  after:contents-[' '] after:fixed h-screen ">
                 <div className="w-full mx-auto max-w-[800px]">
 
-                    <header className="h-[50px] leading-[50px] block mb-[10px]">
-                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed bg-[rgb(1,77,173)] z-[9999] flex flex-wrap items-center  ">
+                    <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
+                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed z-[9999] flex flex-wrap items-center  ">
 
-                            <Link to={'/account'} className="w-[60px] h-[50px] left-0 text-center text-white text-[22px] absolute z-[2] flex justify-center items-center ">
-                                <LiaAngleLeftSolid size={22} />
+                            <Link to={'/settings'} className="w-[60px] h-[50px] left-0 text-center text-[22px] absolute z-[2] flex justify-center items-center ">
+                                <FiArrowLeft size={22} />
                             </Link>
 
-                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 text-white ' >Deposit Records</h2>
+                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 ' >Deposit Records</h2>
 
                         </div>
                     </header>
+                    <div className="flex justify-between items-center p-5 bg-[#f8f9fb]">
+                        <p>Total Deposit Amount: </p>
+                        <p>
+                            <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
+                            {userDetails?.recharge_amount?.toFixed(2)}
+                        </p>
+                    </div>
 
                     <div className="mx-auto relative z-[1]">
                         <div className="m-[5px]">
-                            <ul>
+                            <ul className='p-3'>
 
                                 {recharge_list?.map((data, index) =>
 
-                                    <li key={index} className='my-[5px] p-[10px] bg-[rgba(255,255,255,0.6)] rounded-[7px] flex flex-wrap items-stretch'>
+                                    <li key={index} className='my-[5px] p-[10px] bg-[#f8f9fb] rounded-[7px] flex space-x-1 items-center'>
 
-                                        <div className="flex-1">
-                                            <p className='text-[#666]'>{nameMapper[String(data.status)]}</p>
-                                            <span className='text-sm text-[#999]'>{new Date(data.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</span>
+                                        <div className="text-[orange] w-10 h-10 rounded-full border border-[orange] flex justify-center items-center">
+                                            <BsArrowDown size={25} />
                                         </div>
 
-                                        <div className="">
-                                            <p>
-                                                <em className=' p-0 px-[2px] border-0 text-base font-light not-italic leading-none '>₹</em>
-                                                {new Intl.NumberFormat().format(data.recharge_value)}
-                                            </p>
+                                        <div className="flex-1 flex justify-between">
+
+                                            <div className="">
+                                                <p>Deposit</p>
+                                                <p className='text-[#666] text-sm'>{new Date(data.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</p>
+                                            </div>
+
+
+                                            {nameMapper[String(data.status)] === 'success' &&
+                                                <div className={` text-right text-[#29a635] `}>
+                                                    <p className='font-bold '>
+                                                        <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
+                                                        {new Intl.NumberFormat().format(data.recharge_value)}
+                                                    </p>
+                                                    <p>Successfully ended</p>
+                                                </div>
+                                            }
+                                            {nameMapper[String(data.status)] === 'pending' &&
+
+                                                <div className={` text-right text-[orange] `}>
+                                                    <p className='font-bold '>
+                                                        <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                    </p>
+                                                    <p>Initiate deposit</p>
+                                                </div>
+                                            }
+                                            {nameMapper[String(data.status)] === 'declined' &&
+
+                                                <div className={` text-right text-[red] `}>
+                                                    <p className='font-bold '>
+                                                        <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                    </p>
+                                                    <p>Declined</p>
+                                                </div>
+                                            }
+
                                         </div>
 
                                     </li>
 
-                                )
-                                }
+                                )}
 
                             </ul>
 
@@ -98,7 +138,6 @@ const DepositRecords = () => {
 
                 </div>
             </div>
-
 
         </>
     )

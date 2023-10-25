@@ -139,23 +139,22 @@ const Widthdrawl = () => {
         }
     }, [])
 
-    // useEffect(() => {
-    //     // console.log(wpwd2);
+    useEffect(() => {
 
-    //     if (wpwd2 === 'undefined') {
-    //         toaster('Set Trade Password')
-    //         setTimeout(() => {
-    //             navigate('/widthdrawlpassword')
-    //         }, 3000);
-    //     }
+        if (wpwd2 === 'undefined') {
+            toaster('Set Trade Password')
+            setTimeout(() => {
+                navigate('/widthdrawlpassword')
+            }, 3000);
+        }
 
-    //     else if (userDetails?.bank_details.bankAccount.length === 0) {
-    //         toaster("Add bank details first")
-    //         setTimeout(() => {
-    //             navigate('/bankcardadd')
-    //         }, 3000);
-    //     }
-    // }, [])
+        else if (userDetails?.bank_details.bankAccount.length === 0) {
+            toaster("Add bank details first")
+            setTimeout(() => {
+                navigate('/bankcardadd')
+            }, 3000);
+        }
+    }, [])
 
 
     // console.log(bank_details,'withdrawl');
@@ -308,7 +307,7 @@ const Widthdrawl = () => {
                     <div className="input-amount">
                         <div className="text-center">
                             <div className="title">Withdraw</div>
-                            <div className="withdrawBalance">Withdraw Balance₹0.00
+                            <div className="withdrawBalance">Withdraw Balance {(Number(userDetails?.balance)).toFixed(2)}
                             </div>
                         </div>
                         <div className="flex items-center input-amount-content">
@@ -328,13 +327,17 @@ const Widthdrawl = () => {
                             style={{ width: '100%' }}
                         />
                     </div>
-                    <div className="select-bank">
+                    {/* <div className="select-bank">
                         <div className="title">Select receiving bank card</div>
                         <div role="radiogroup" className="select-bank-content van-radio-group">
-                            
+                            {userDetails?.bank_details?.fullName &&
+                                <div className="">
+                                    <input type='radio' className='' />{userDetails?.bank_details?.bankAccount} ({userDetails?.bank_details?.fullName})
+                                </div>
+                            }
                         </div>
-                    </div>
-                    <div className="withdraw-page-content-tips">
+                    </div> */}
+                    <div className="withdraw-page-content-tips mt-5">
                         <div className="text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="61" height="60" viewBox="0 0 61 60" fill="none" className='inline-block'>
                                 <path d="M30.5 3.75C16.0026 3.75 4.25 15.5026 4.25 30C4.25 44.4975 16.0025 56.25 30.5 56.25C44.9975 56.25 56.75 44.4975 56.75 30C56.75 15.5026 44.9975 3.75 30.5 3.75ZM30.5 52.5C18.0736 52.5 8 42.4264 8 30C8 17.5736 18.0736 7.5 30.5 7.5C42.9264 7.5 53 17.5736 53 30C53 42.4264 42.9264 52.5 30.5 52.5Z" fill="#FF8F0C"></path>
@@ -386,7 +389,7 @@ const Widthdrawl = () => {
                                 <path d="M5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885Z" fill="orange"></path>
                             </svg>
                         </Link>
-                        <button data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">NEXT</button>
+                        <button onClick={handleWithdrawal} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">NEXT</button>
                     </div>
                 </div>
             </section>

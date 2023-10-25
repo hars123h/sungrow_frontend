@@ -23,6 +23,8 @@ import { RxCross1 } from 'react-icons/rx'
 import logo from '../images/sungrow/logo_25_m.png'
 import companyImg from '../images/sungrow/companyImg.png'
 import telegram from '../images/sungrow/telegram.svg'
+import axios from 'axios'
+import BASE_URL from '../api_url'
 
 
 
@@ -79,9 +81,9 @@ const Home = () => {
                     // setOTPfield('');
                     setPwd('');
                     toaster('Password successfully updated!');
-                    setTimeout(() => {
-                        navigate('/account')
-                    }, 3000);
+                    setWpwd("hidden")
+
+
                 })
                 .catch(error => toaster('Some Error Occured'));
         }
@@ -290,6 +292,7 @@ const Home = () => {
                                             type="password"
                                             placeholder="Set Trade Password"
                                             className="van-field__control"
+                                            onChange={(e)=>setPwd(e.target.value)}
                                         />
                                     </div>
                                 </div>
@@ -302,7 +305,7 @@ const Home = () => {
                                 <span className="van-button__text">CANCEL</span>
                             </div>
                         </button>
-                        <button type="button" className="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left text-[rgb(196,71,58)] orange_bg" >
+                        <button onClick={handleRegister} type="button" className="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left text-[rgb(196,71,58)] orange_bg" >
                             <div className="van-button__content">
                                 <span className="van-button__text">CONFIRM</span>
                             </div>
