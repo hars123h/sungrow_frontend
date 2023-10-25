@@ -110,9 +110,9 @@ const Home = () => {
                         <div className="tip">
                             Business Integration of container shipping by three Japanese shipping companies.
                         </div>
-                        <div className="btn">
+                        <Link to={'/company'} className="btn">
                             Company Profile
-                        </div>
+                        </Link>
                         <img src={companyImg} alt="Your Image" className="absolute" />
                     </div>
                     <div className="home-page-content-balances">

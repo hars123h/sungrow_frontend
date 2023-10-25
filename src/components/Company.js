@@ -152,13 +152,13 @@ const Company = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white fixed w-full bottom-0 rounded-[24px_24px_0_0] ">
+                {/* <div className="bg-white fixed w-full bottom-0 rounded-[24px_24px_0_0] ">
                     <div className="company-page-bottom  w-full">
                         <button data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">
                             Download APP
                         </button>
                     </div>
-                </div>
+                </div> */}
             </section>
         </>
     )
