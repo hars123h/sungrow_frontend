@@ -183,7 +183,7 @@ function App() {
             <Route path='/products' element={<Invest />} />
             <Route path='/settings' element={<Account />} />
             <Route path='/deposit' element={<Deposit />} />
-            {/* <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} /> */}
+            <Route path="/recharge_window/:recharge_value" element={<RechargeWindow />} />
             <Route path='/deposit_records' element={<DepositRecords />} />
             <Route path='/commissionInfo' element={<Invite />} />
             <Route path='/vip' element={<Vip />} />

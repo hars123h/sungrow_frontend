@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { ContextApi } from '../App';
 import { LiaAngleLeftSolid } from 'react-icons/lia';
+import { FiArrowLeft } from 'react-icons/fi';
 
 const DateDifference = (date1, date2) => {
 
@@ -64,14 +65,14 @@ const Order = () => {
             <div className="bg-[#e0f2f1]  after:contents-[' '] after:fixed min-h-screen">
                 <div className="w-full mx-auto max-w-[800px]">
 
-                    <header className="h-[50px] leading-[50px] block mb-[10px]">
-                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed bg-[rgb(1,77,173)] z-[9999] flex flex-wrap items-center  ">
+                <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
+                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed z-[9999] flex flex-wrap items-center  ">
 
-                            <Link to={'/account'} className="w-[60px] h-[50px] left-0 text-center text-white text-[22px] absolute z-[2] flex justify-center items-center ">
-                                <LiaAngleLeftSolid size={22} />
+                            <Link to={'/settings'} className="w-[60px] h-[50px] left-0 text-center text-[22px] absolute z-[2] flex justify-center items-center ">
+                                <FiArrowLeft size={22} />
                             </Link>
 
-                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 text-white ' >Plan Records</h2>
+                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 ' >Balance Records</h2>
 
                         </div>
                     </header>

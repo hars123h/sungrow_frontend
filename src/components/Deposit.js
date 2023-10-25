@@ -16,6 +16,8 @@ const Deposit = () => {
     const [Deposit, setDeposit] = useState('')
     const [selected, setSelected] = useState()
     const [amounts, setAmounsts] = useState({});
+    const [disableHandel, setDisableHandel] = useState(true)
+    const [disableclass, setDisableclass] = useState('van-button--disabled')
 
 
     useEffect(() => {
@@ -61,6 +63,20 @@ const Deposit = () => {
         getData()
 
     }, [])
+
+    useEffect(() => {
+
+        if(Deposit===0){
+            setDisableHandel(true)
+            setDisableclass('van-button--disabled')
+        }
+        else{
+            setDisableHandel(false)
+            setDisableclass('')
+        }
+      
+    }, [Deposit,setDeposit])
+    
 
 
     return (
@@ -311,7 +327,7 @@ const Deposit = () => {
                                 <path d="M5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885Z" fill="orange"></path>
                             </svg>
                         </Link>
-                        <button className="van-button van-button--primary van-button--normal van-button--disabled van-button--block" disabled={true}>
+                        <button onClick={handleRecharge} className={`van-button van-button--primary van-button--normal ${disableclass} van-button--block`} disabled={disableHandel}>
                             <div className="van-button__content">
                                 <span className="van-button__text">
                                     NEXT
