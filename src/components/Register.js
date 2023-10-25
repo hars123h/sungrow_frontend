@@ -83,14 +83,14 @@ const Register = () => {
             return
         }
 
-        if (otp.length === 0) {
-            setSmsError({ show: 'show-error', message: 'SMS code can not be empty' })
-            return
-        }
-        if (otp !== otpfield) {
-            toaster('SMS verification code not matched', 'fail')
-            return
-        }
+        // if (otp.length === 0) {
+        //     setSmsError({ show: 'show-error', message: 'SMS code can not be empty' })
+        //     return
+        // }
+        // if (otp !== otpfield) {
+        //     toaster('SMS verification code not matched', 'fail')
+        //     return
+        // }
 
         // setLoading(true);
 
@@ -305,7 +305,7 @@ const Register = () => {
                                     <span>{invtError.message}</span>
                                 </div>
                             </div>
-                            <div className="item">
+                            {/* <div className="item">
                                 <div data-v-0f114eeb="" className="input-container light">
                                     <label data-v-0f114eeb="" htmlFor="sms_invitation_code">SMS Invitation Code</label>
                                     <div data-v-0f114eeb="" className="flex items-center input-content input-container">
@@ -328,7 +328,7 @@ const Register = () => {
                                 <div className={`error ${smsError.show}`} >
                                     <span>{smsError.message}</span>
                                 </div>
-                            </div>
+                            </div> */}
                             <div onClick={handleRegister} className="item"><button data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">
                                 SIGN UP
                             </button>
