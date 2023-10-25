@@ -330,7 +330,9 @@ const Widthdrawl = () => {
                     </div>
                     <div className="select-bank">
                         <div className="title">Select receiving bank card</div>
-                        <div role="radiogroup" className="select-bank-content van-radio-group"></div>
+                        <div role="radiogroup" className="select-bank-content van-radio-group">
+                            
+                        </div>
                     </div>
                     <div className="withdraw-page-content-tips">
                         <div className="text-center">

@@ -5,6 +5,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import { ContextApi } from '../App'
 import axios from 'axios'
 import BASE_URL from '../api_url'
+import { FiArrowLeft } from 'react-icons/fi'
+import eyeopen from '../images/sungrow/eyeopen.svg'
+import eyeclosed from '../images/sungrow/eyeclosed.svg'
 
 const WpasswordChange = () => {
 
@@ -22,6 +25,28 @@ const WpasswordChange = () => {
     const [pwd, setPwd] = useState('')
     const [otpfield, setOTPfield] = useState('');
     const [otp, setOtp] = useState('');
+    const [passwordError, setPasswordError] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
+
+    const handelchange = (e) => {
+
+        if (e.target.id === 'password') {
+            setPwd(e.target.value)
+            if (e.target.value.length === 0) {
+                setPasswordError({ show: 'show-error', message: 'Password can not be empty' })
+                return
+            }
+            else {
+                setPasswordError({ show: '', message: '' })
+                return
+            }
+        }
+
+    }
 
     const secrethandel = () => {
         if (secret === 'password') {
@@ -66,7 +91,7 @@ const WpasswordChange = () => {
                     setPwd('');
                     toaster('Password successfully updated!');
                     setTimeout(() => {
-                        navigate('/account')
+                        navigate('/settings')
                     }, 3000);
                 })
                 .catch(error => toaster('Some Error Occured'));
@@ -77,73 +102,51 @@ const WpasswordChange = () => {
 
     return (
         <>
-            <div className="bg-white  after:contents-[' '] after:fixed h-screen ">
+            <div className="">
                 <div className="w-full mx-auto max-w-[800px]">
 
-                    <header className="h-[50px] leading-[50px] block mb-[10px]">
-                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed bg-[rgb(1,77,173)] z-[9999] flex flex-wrap items-center  ">
+                <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
+                        <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed z-[9999] flex flex-wrap items-center  ">
 
-                            <Link to={'/account'} className="w-[60px] h-[50px] left-0 text-center text-white text-[22px] absolute z-[2] flex justify-center items-center ">
-                                <LiaAngleLeftSolid size={22} />
+                            <Link to={'/settings'} className="w-[60px] h-[50px] left-0 text-center text-[22px] absolute z-[2] flex justify-center items-center ">
+                                <FiArrowLeft size={22} />
                             </Link>
 
-                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 text-white ' >Change Trade Password</h2>
+                            <h2 className='left-0 right-0 text-center font-bold text-lg absolute z-[1] flex-1 ' >My Bank Card</h2>
 
                         </div>
                     </header>
 
                     <div className="m-[10px] p-[10px] relative">
 
-                        <div className="mb-5 relative">
-
-                            <div className="px-[10px] relative border-0 border-solid border-[rgba(215, 215, 215, 0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                <input onChange={e => { setPwd(e.target.value); setOTPfield(String(Math.floor(100000 + Math.random() * 900000))) }}
-                                    type={secret}
-                                    name="pwd"
-                                    id="pwd"
-                                    className='flex-1 fillArea w-full h-[50px] text-base px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent '
-                                    placeholder=''
-
-                                />
-                                <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                <label className='placeholder text-[#818393] text-sm left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>Setup Password</label>
-                                <div className={` right-[10px] h-full text-center bg-no-repeat bg-[center_center]  bg-[length:30px] z-10 `} onClick={secrethandel}>
-                                    {
-                                        secret === 'password' ?
-                                            <AiFillEyeInvisible size={22} />
-                                            :
-                                            <AiFillEye size={22} />
-                                    }
+                    <div className="item">
+                            <div data-v-0f114eeb="" className="input-container light">
+                                <label data-v-0f114eeb="" htmlFor="password">Password</label>
+                                <div data-v-0f114eeb="" className="flex items-center input-content input-container">
+                                    <input
+                                        onChange={handelchange}
+                                        data-v-0f114eeb=""
+                                        autoComplete="off"
+                                        id="password"
+                                        type={secret}
+                                        placeholder="Input Password"
+                                        className="input-field w-full input-autofill hasSuff"
+                                    />
+                                    <div onClick={secrethandel} data-v-0f114eeb="" className="suffix-icon">
+                                        <img data-v-0f114eeb="" src={secret === 'password' ? eyeclosed : eyeopen} alt="suffix Icon" />
+                                    </div>
                                 </div>
-
+                            </div>
+                            <div className={`error ${passwordError.show}`} >
+                                <span>{passwordError.message}</span>
                             </div>
                         </div>
-
-                        {/* <div className="mb-5 relative">
-
-                            <div className="px-[10px] relative border-0 border-solid border-[rgba(215,215,215,0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                <input onChange={e => setOtp(e.target.value)}
-                                    type="text"
-                                    name="otp"
-                                    id="otp"
-                                    className='flex-1 fillArea w-full h-[50px] text-base px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent '
-                                    placeholder=''
-
-                                />
-                                <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                <label className='placeholder text-[#818393] text-sm left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>Verification code (OTP)</label>
-                                <div className={` right-[10px] h-full text-center bg-no-repeat bg-[center_center]  bg-[length:30px] z-10 `} onClick={handleMessage}>
-                                    <p className='text-sm text-[rgba(52,86,255,0.9)]'>Send</p>
-                                </div>
-
-                            </div>
-                        </div> */}
 
                         <div className="flex flex-wrap items-center my-10 w-full justify-end ">
 
                             {/* <Link to={`/login`} className='text-[#1f3d70] bg-white border-[1px] border-[#1f3d70] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative '>SIGN IN</Link> */}
 
-                            <button className=' flex-1 text-white bg-[#00aa75] border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative ' onClick={handleRegister}>
+                            <button className=' flex-1 text-white bg-[orange] border-0 border-[rgba(215,215,215,0.6)] h-11 leading-10 px-5 text-center text-base block border-solid rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative ' onClick={handleRegister}>
                                 Confirm
                             </button>
                         </div>

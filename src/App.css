@@ -8018,7 +8018,7 @@ input::placeholder {
 }
 
 .van-tabs__wrap .van-tabs__nav--card .van-tab.van-tab--active {
-    background: #bd1874;
+    background: orange;
     border-radius: 60px;
     font-size: 24px;
     font-weight: 700
@@ -8035,7 +8035,7 @@ input::placeholder {
 }
 
 .van-notice-bar__content {
-    color: #bd1874;
+    color: orange;
     font-weight: 500
 }
 
@@ -8045,7 +8045,7 @@ input::placeholder {
 
 .van-stepper .van-stepper__minus,
 .van-stepper .van-stepper__plus {
-    background: #bd1874;
+    background: orange;
     border: 0;
     border-radius: 50%;
     color: #fff;
@@ -8056,7 +8056,7 @@ input::placeholder {
 .van-stepper .van-stepper__minus--disabled,
 .van-stepper .van-stepper__plus--disabled {
     background: #fcecf5;
-    color: #bd1874
+    color: orange
 }
 
 .van-stepper .van-stepper__minus:before,
@@ -8075,7 +8075,7 @@ input::placeholder {
     background: inherit;
     border: 0;
     border-radius: 2px;
-    color: #bd1874;
+    color: orange;
     flex: 1;
     font-size: 24px;
     font-weight: 700;
@@ -8118,9 +8118,9 @@ input::placeholder {
 
 .van-dialog {
     background: #fff;
-    border: 1px solid #bd1874;
+    border: 1px solid orange;
     border-radius: 100%;
-    color: #bd1874;
+    color: orange;
     padding: 64px 16px
 }
 
@@ -8130,7 +8130,7 @@ input::placeholder {
 }
 
 .van-dialog .van-dialog__header {
-    color: #bd1874
+    color: orange;
 }
 
 .van-dialog .van-dialog__footer {
@@ -8146,7 +8146,7 @@ input::placeholder {
 }
 
 .van-dialog .van-dialog__footer .van-dialog__confirm {
-    background: #bd1874
+    background: orange
 }
 
 .van-dialog .van-dialog__footer .van-dialog__confirm .van-button__text {
@@ -8154,7 +8154,7 @@ input::placeholder {
 }
 
 .van-dialog .van-dialog__footer .van-dialog__cancel {
-    color: #bd1874
+    color: orange
 }
 
 .van-overlay {
@@ -8174,7 +8174,7 @@ body {
     background-color: #f8f9fa;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    color: #bd1874;
+    color: orange;
     font-size: 20px;
     padding-bottom: 32px;
     padding-top: 16px
@@ -8381,7 +8381,7 @@ body {
 
 .home-page .contact-popup-input,
 .home-page .redeemed-popup-input {
-    border: 1px solid #bd1874;
+    border: 1px solid orange;
     border-radius: 12px;
     font-size: 16px;
     height: 54px;
@@ -8459,7 +8459,7 @@ body {
 }
 
 .phone-number-container .input-container .prefix[data-v-466dae23] {
-    color: #bd1874;
+    color: orange;
     font-size: 16px;
     margin-right: 12px;
 }
@@ -9179,7 +9179,7 @@ body {
 
 .commissionInfo-page-content-bottom button[data-v-05d1a9d0] {
     background: #fff!important;
-    color: #bd1874!important;
+    color: orange!important;
     font-weight: 700;
 }
 
@@ -9393,5 +9393,12 @@ body {
     margin-bottom: 10px;
 }
 
+.orange_bg{
+    background: orange !important;
+}
+
+.text_Black{
+    color: orange !important;
+}
 
 /* rgba(255, 166, 0, 0.15) */

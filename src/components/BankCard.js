@@ -33,7 +33,7 @@ const BankCard = () => {
 
     return (
         <>
-            <div className=" after:contents-[' '] after:fixed ">
+            <div className=" ">
                 <div className="w-full mx-auto max-w-[800px]">
 
                     <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
@@ -43,7 +43,7 @@ const BankCard = () => {
                                 <FiArrowLeft size={22} />
                             </Link>
 
-                            <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 ' >Bank</h2>
+                            <h2 className='left-0 right-0 text-center font-bold text-lg absolute z-[1] flex-1 ' >My Bank Card</h2>
 
                         </div>
                     </header>
@@ -73,17 +73,17 @@ const BankCard = () => {
                             </div>
                         }
 
-                        <Link to={'/bankcardadd'} className='bg-[#eee] my-[30px] mx-[10px] p-[10px] text-[#4b4d5e] block text-center rounded-[7px]' >
-                            <AiOutlinePlus size={25} className='mx-2 inline-block align-bottom' />
-
-                            Add Bank card
-
-
-                        </Link>
-
                     </div>
 
+                    <Link to={'/bankcardadd'} className='bg-[orange] my-[30px] p-[10px] text-[white] w-[90vw] text-center rounded-3xl fixed bottom-0 flex items-center justify-center mx-5' >
+                        <AiOutlinePlus size={25} className='mx-2 align-bottom' />
+
+                        Add Bank card
+
+                    </Link>
+
                 </div>
+
             </div>
 
         </>

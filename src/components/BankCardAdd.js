@@ -52,20 +52,28 @@ const BankCardAdd = () => {
 
     const handleSubmit = async () => {
         // console.log(userDetails.wpwd,wpwd);
-        if (userDetails.wpwd === wpwd) {
-            setLoading(true)
-            await axios.post(`${BASE_URL}/bank_details`, { user_id: localStorage.getItem('uid'), bank_details: details })
-                .then(() => {
-                    setLoading(false)
-                    toaster('Bank details added successfully!');
-                    navigate('/account')
-                })
-                .catch(() => { setLoading(false); toaster('Some error Occured') }
-                );
-        } else {
-            setLoading(false)
-            toaster('Incorrect withdrawal password!');
+        if (details.bankAccount.length === 0) {
+            toaster('Account number can not be empty')
+            return
         }
+        if(details.fullName.length===0){
+            toaster('Name can not be empty')
+            return
+        }
+        if(details.ifsc.length===0){
+            toaster('IFSC code cannot be empty')
+            return
+        }
+        setLoading(true)
+        await axios.post(`${BASE_URL}/bank_details`, { user_id: localStorage.getItem('uid'), bank_details: details })
+            .then(() => {
+                setLoading(false)
+                toaster('Bank details added successfully!');
+                navigate('/account')
+            })
+            .catch(() => { setLoading(false); toaster('Some error Occured') }
+            );
+
     }
 
     useEffect(() => {
@@ -125,56 +133,6 @@ const BankCardAdd = () => {
 
     return (
         <>
-
-            {/* {pop &&
-                <div className="fixed top-0 right-0 left-0 bottom-0 z-[9999] p-5 flex flex-wrap justify-center items-center">
-
-                    <div className="before:content-[''] fixed top-0 left-0 right-0 bottom-0 bg-[rgba(46,46,46,0.1)] z-[1] backdrop-blur-[3px]"></div>
-
-                    <div className="max-w-[600px] w-full -top-[20%] relative mx-auto p-5 bg-white backdrop-blur-sm shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] z-[2] rounded-[15px]">
-                        <div className="">
-
-                            <h4 className='font-bold my-[5px] text-lg text-[#333]'>Trade Password</h4>
-
-                            <div className="py-[5px] mb-5 relative">&nbsp;</div>
-
-                            <div className="mb-5 relative">
-
-                                <div className="px-[10px] relative border-0 border-solid border-[rgba(215, 215, 215, 0.6)] bg-[rgb(246,246,246)] rounded-[7px] flex items-center flex-wrap">
-                                    <input
-                                        onChange={e => setWpwd(e.target.value)}
-                                        type="password"
-                                        name="wpwd"
-                                        id="wpwd"
-                                        className='flex-1 fillArea w-full h-[50px] text-base leading-none px-[5px] py-[10px] appearance-none select-text outline-none border-0 border-[#e0e0e0] border-solid text-[#1e2531] font-medium bg-transparent '
-                                        placeholder='Please enter the trade password'
-
-                                    />
-                                    <div className="cut bg-transparent rounded-[10px] h-5 left-[10px] absolute -top-5 translate-y-0 w-[100px] transition-transform delay-0 eas duration-200"></div>
-                                    <label className='placeholder text-[#818393] text-sm leading-none left-[10px] pointer-events-none absolute origin-[0_50%] transition-all duration-200  '>Bank IFSC</label>
-
-                                </div>
-                            </div>
-
-                            <div className="px-[5px] py-10 mb-5 relative">
-                                <div className="flex flex-wrap items-stretch w-full ">
-
-                                    <div onClick={() => setpop(!pop)} className="bg-[#818393] text-center flex-1 h-[45px] leading-[45px] px-5 text-base text-white block rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative  ">
-                                        Cancel
-                                    </div>
-
-                                    <div onClick={handleSubmit} className="bg-[#00aa75] flex-1 text-center ml-[10px] h-[45px] leading-[45px] px-5 text-base text-white block rounded-[500px] transition-all active:translate-y-1 duration-500 overflow-hidden relative  ">
-                                        Sure Add
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-            } */}
 
             <div className=" after:contents-[' '] after:fixed ">
                 <div className="w-full mx-auto max-w-[800px]">
@@ -319,7 +277,7 @@ const BankCardAdd = () => {
                                 <path d="M5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885Z" fill="orange"></path>
                             </svg>
                         </Link>
-                        <button onClick={() => setpop(!pop)} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
+                        <button onClick={handleSubmit} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
                     </div>
                 </div>
             </div>

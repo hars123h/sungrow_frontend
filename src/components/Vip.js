@@ -12,9 +12,10 @@ import v6 from '../images/v6.png'
 import v7 from '../images/v7.png'
 import v8 from '../images/v8.png'
 import { ContextApi } from '../App'
+import { FiArrowLeft } from 'react-icons/fi'
 
 const Vip = () => {
-    
+
     const { vipimg, setVipimg } = useContext(ContextApi);
 
     return (
@@ -24,14 +25,14 @@ const Vip = () => {
 
                     <div>
 
-                        <header className="h-[50px] leading-[50px] block">
-                            <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed bg-[rgb(1,77,173)] z-[9999] flex flex-wrap items-center  ">
+                        <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
+                            <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed z-[9999] flex flex-wrap items-center  ">
 
-                                <Link to={'/home'} className="w-[60px] h-[50px] left-0 text-center text-white text-[22px] absolute z-[2] flex justify-center items-center ">
-                                    <LiaAngleLeftSolid size={22} />
+                                <Link to={'/settings'} className="w-[60px] h-[50px] left-0 text-center text-[22px] absolute z-[2] flex justify-center items-center ">
+                                    <FiArrowLeft size={22} />
                                 </Link>
 
-                                <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 text-white ' >VIP Description</h2>
+                                <h2 className='left-0 right-0 text-center text-lg font-medium absolute z-[1] flex-1 ' >VIP</h2>
 
                             </div>
                         </header>
@@ -186,7 +187,7 @@ const Vip = () => {
 
                                 </div>
 
-                                <p className='leading-tight text-[#4b4d5e]'>You need to upgrade vip to get product purchase rights. If you need to purchase vip 1
+                                <p className='leading-tight bg-[orange] p-5 text-[white] rounded-lg'>You need to upgrade vip to get product purchase rights. If you need to purchase vip 1
                                     products, You need to invest enough in fixed income products.</p>
 
                             </div>
