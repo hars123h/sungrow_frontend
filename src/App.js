@@ -44,6 +44,7 @@ import Message from './components/Message';
 import Article from './components/Article';
 import Company from './components/Company';
 import Myteams from './components/Myteams';
+import BalanceRecord from './components/BalanceRecord';
 
 export const ContextApi = createContext();
 
@@ -187,7 +188,7 @@ function App() {
             <Route path='/deposit_records' element={<DepositRecords />} />
             <Route path='/commissionInfo' element={<Invite />} />
             <Route path='/vip' element={<Vip />} />
-            <Route path='/orders' element={<Order />} />
+            {/* <Route path='/orders' element={<Order />} /> */}
             <Route path='/bankCard' element={<BankCard />} />
             <Route path='/bankCardAdd' element={<BankCardAdd />} />
             <Route path='/widthdraw' element={<Widthdrawl />} />
@@ -203,6 +204,7 @@ function App() {
             {/* <Route path='/article' element={<Article />} /> */}
             <Route path='/company' element={<Company />} />
             <Route path='/team' element={<Myteams />} />
+            <Route path='/balancerecord' element={<BalanceRecord />} />
           </Routes>
 
         </BrowserRouter>

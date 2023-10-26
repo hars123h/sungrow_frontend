@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import BASE_URL from '../api_url';
 import { ContextApi } from '../App';
-import logo from '../images/sungrow/logo_25_m.png'
+import logo from '../images/sungrow/logo_25_m.jpg'
 import eyeopen from '../images/sungrow/eyeopen.svg'
 import eyeclosed from '../images/sungrow/eyeclosed.svg'
 

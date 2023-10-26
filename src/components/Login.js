@@ -5,7 +5,7 @@ import BASE_URL from '../api_url';
 import applogo from '../images/appLogo.png'
 import Tradmark from './Tradmark';
 import { ContextApi } from '../App';
-import logo from '../images/sungrow/logo_25_m.png'
+import logo from '../images/sungrow/logo_25_m.jpg'
 import eyeopen from '../images/sungrow/eyeopen.svg'
 import eyeclosed from '../images/sungrow/eyeclosed.svg'
 

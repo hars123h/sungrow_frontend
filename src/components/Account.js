@@ -11,7 +11,7 @@ import Logoutimg from '../images/LogOut.svg'
 import axios from 'axios'
 import BASE_URL from '../api_url'
 import { ContextApi } from '../App'
-import logo from '../images/sungrow/logo_25_m.png'
+import logo from '../images/sungrow/logo_25_m.jpg'
 import { BiEditAlt, BiLogOut } from 'react-icons/bi'
 import { LiaAngleRightSolid } from 'react-icons/lia'
 import { AiOutlineCreditCard } from 'react-icons/ai'
@@ -134,7 +134,7 @@ const Account = () => {
 
                     </Link>
 
-                    <Link to={'/orders'} className=" flex items-center justify-between my-5">
+                    <Link to={'/balancerecord'} className=" flex items-center justify-between my-5">
 
                         <div className=" flex items-center space-x-3">
                             <div className="bg-[#cfc1c13b] text-[#565151] w-10 h-10 rounded-full flex justify-center items-center">
