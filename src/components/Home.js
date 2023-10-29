@@ -96,19 +96,17 @@ const Home = () => {
 
             <div className="home-page flex flex-col">
                 <div className='h-[78px] opacity-100'>
-                    <div className="van-sticky van-sticky--fixed bg-white">
+                    <div className=" bg-white">
                         <div className="text-center home-page-header">
                             <img src={logo} alt="Your Image" className='w-36 h-auto inline' />
                         </div>
                     </div>
                 </div>
-                <div className="home-page-placeholder">
-
-                </div>
+                <div className="home-page-placeholder"></div>
                 <div className="home-page-content flex flex-col flex-1">
                     <div className="home-page-content-company relative">
                         <div className="tip">
-                            Business Integration of container shipping by three Japanese shipping companies.
+                            Sungrow is a Chinese company focused on solar technologies. The company specializes in research and development
                         </div>
                         <Link to={'/company'} className="btn">
                             Company Profile
@@ -292,7 +290,7 @@ const Home = () => {
                                             type="password"
                                             placeholder="Set Trade Password"
                                             className="van-field__control"
-                                            onChange={(e)=>setPwd(e.target.value)}
+                                            onChange={(e) => setPwd(e.target.value)}
                                         />
                                     </div>
                                 </div>

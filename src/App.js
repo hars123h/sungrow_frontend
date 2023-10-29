@@ -200,7 +200,7 @@ function App() {
             <Route path='/comissions' element={<Comissions />} />
             <Route path='/update' element={<UpdateData />} />
             <Route path='/tasks' element={<Task />} />
-            {/* <Route path='/message' element={<Message />} /> */}
+            <Route path='/message' element={<Message />} />
             {/* <Route path='/article' element={<Article />} /> */}
             <Route path='/company' element={<Company />} />
             <Route path='/team' element={<Myteams />} />

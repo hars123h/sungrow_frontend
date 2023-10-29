@@ -22,143 +22,26 @@ const Company = () => {
                         </svg>
                     </Link>
                 </div>
-                <div className="company-page-content flex-1">
-                    <div className="title bold">CORPORATE PROFILE</div>
-                    <div className="profile"><div className="profile-content">
-                        <div className="flex items-center justify-between">
-                            <span className="label">COMPANY NAME</span>
-                            <span className="value">Ocean Network Express Pte. Ltd.</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                            <span className="label">CEO</span>
-                            <span className="value">Jeremy Nixon</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                            <span className="label">LOCATION</span>
-                            <span className="value">7 Straits View,#16-01 Marina One East Tower,Singapore 018936</span>
-                        </div>
-                        <div className="flex items-center justify-between">
-                            <span className="label">DATE OF ESTABLISHMENT</span>
-                            <span className="value">July 7th, 2017</span>
-                        </div>
-                        <div>
-                            <div className="label">BUSINESS DOMAIN</div>
-                            <div className="value">
-                                Container Shipping Businesses(Including worldwide terminal operation except for Japan)
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="title bold">
-                        OCEAN NETWORK EXPRESS
-                    </div>
-                    <div className="companyInfos">
-                        <div>
-                            Business Integration of container shipping by three Japanese shipping companies.
-                        </div>
-                        <div>
-                            Business Integration of container shipping by three Japanese shipping companies.
-                            Ocean Network Express was established on July 7, 2017 by the integration of 'K' Line, MOL and NYK.
-                            The Holding company was set up in Japan on July 7th 2017 and simultaneously a business management
-                            company was established in Singapore. Regional headquarters have been established in Hong Kong, Singapore,
-                            UK, USA and Brazil and services commenced in April 2018.
-                        </div>
-                        <div>Providing a wide service coverage with the 7th largest fleet in the world.</div>
-                        <div>
-                            In April 2017, 'K' Line, MOL and NYK, started services as "THE Alliance" with other major shipping companies.
-                            Ocean Network Express will continue to provide services as an alliance member. In addition to this alliance,
-                            we are continuing to further strengthen our services to Asia, Latin America and Africa regions.
-                            We will further expand the number of ports in the future to Asia, North America, Europe,
-                            the Mediterranean Sea and the Middle East, also planning to expand our direct service to perform a wide service coverage.
-                            Our fleet size is 1,505,181 TEU which is the 7th largest in the world (as of June 2022).
-                            Operations will be performed through a fleet of 205 vessels, including 35 super-large ships,
-                            such as the world largest 20,000TEU container-ships, in a service network covering over 120 countries around the world.
-                        </div>
-                    </div>
-                    <div className="title bold">CORE VALUES</div>
-                    <div className="values"><div className="flex">
-                        <img src={la} alt="" />
-                        <div>
-                            <div className="values-title">
-                                Lean &amp; Agile
-                            </div>
-                            <div className="values-content">
-                                Breaking through conventions to make ideas into reality quickly
-                            </div>
-                        </div>
-                    </div>
-                        <div className="flex">
-                            <img src={tw} alt="" />
-                            <div>
-                                <div className="values-title">Teamwork</div>
-                                <div className="values-content">
-                                    Respect individual diversity to build a team that can work together to create new value
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex">
-                            <img src={bp} alt="" />
-                            <div>
-                                <div className="values-title">Best Practice</div>
-                                <div className="values-content">
-                                    Continuing to improve ourselves based on the knowledge cultivated internally and externally to deliver the best services
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex">
-                            <img src={cl} alt="" />
-                            <div>
-                                <div className="values-title">Challenge</div>
-                                <div className="values-content">
-                                    Leveraging on individual strengths and continuing to meet challenge without fear of failure
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex">
-                            <img src={qualilty} alt="" />
-                            <div>
-                                <div className="values-title">Quality</div>
-                                <div className="values-content">
-                                    Pursuing the best quality that always exceeds customer expectations
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex">
-                            <img src={relaibility} alt="" />
-                            <div>
-                                <div className="values-title">Reliability</div>
-                                <div className="values-content">
-                                    Delivering stable, sustainable and professional services
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex">
-                            <img src={invo} alt="" />
-                            <div>
-                                <div className="values-title">Innovation</div>
-                                <div className="values-content">
-                                    Delivering services that contribute to the customer’s business through self innovation and creativity
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex">
-                            <img src={cs} alt="" />
-                            <div>
-                                <div className="values-title">Customer Satisfaction</div>
-                                <div className="values-content">
-                                    Focus on customer needs well and deliver satisfaction that exceeds expectations
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className="p-5">
+
+                <h1 className='mb-3 font-bold mt-10'>ABOUT SUNGROW</h1>
+                    
+
+                    Sungrow Power Supply Co., Ltd. (“Sungrow”) is the world’s most bankable inverter brand with over 405GW installed worldwide as of June 2023. Founded in 1997 by University Professor Cao Renxian, Sungrow is a leader in the research and development of solar inverters with the largest dedicated R&D team in the industry and a broad product portfolio offering PV inverter solutions and energy storage systems for utility-scale, commercial & industrial, and residential applications, as well as internationally recognized floating PV plant solutions, NEV driving solutions, EV charging solutions and renewable hydrogen production systems. With a strong 26-year track record in the PV space, Sungrow products power over 150 countries worldwide.
+
+                    <br />
+                    <br />
+
+
+
+                    Sungrow possesses a dynamic technical R&D team that represents 40% of the personnel in the Company. The Company has also invested in its own in-house testing center approved by SGS, CSA, and TÜV Rheinland. Sungrow has the world’s largest inverter factory, with a global annual production capacity of 305GW, including 25 GW outside China.
+                    <br />
+                    <br />
+
+
+
+                    Offering a wide range of solutions and services, Sungrow is committed to providing clean power for all and is steadfast in its efforts to become the global leader in clean power conversion technology. Learn more about Sungrow by visiting .
                 </div>
-                {/* <div className="bg-white fixed w-full bottom-0 rounded-[24px_24px_0_0] ">
-                    <div className="company-page-bottom  w-full">
-                        <button data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">
-                            Download APP
-                        </button>
-                    </div>
-                </div> */}
             </section>
         </>
     )

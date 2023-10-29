@@ -69,7 +69,7 @@ const BankCardAdd = () => {
             .then(() => {
                 setLoading(false)
                 toaster('Bank details added successfully!');
-                navigate('/account')
+                navigate('/settings')
             })
             .catch(() => { setLoading(false); toaster('Some error Occured') }
             );
@@ -236,7 +236,7 @@ const BankCardAdd = () => {
                                             onChange={handelchange}
                                             data-v-0f114eeb=""
                                             autoComplete="off"
-                                            id="name"
+                                            id="fullName"
                                             type='text'
                                             placeholder="Enter Name"
                                             className="input-field w-full input-autofill hasSuff"
@@ -255,7 +255,7 @@ const BankCardAdd = () => {
                                             onChange={handelchange}
                                             data-v-466dae23=""
                                             type="text"
-                                            id="account"
+                                            id="bankAccount"
                                             placeholder="Input Account Number"
                                             className="input-field w-full input-autofill"
                                         />

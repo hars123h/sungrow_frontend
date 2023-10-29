@@ -17,14 +17,20 @@ const Myteams = () => {
 
     const getUserDetails = async () => {
         // const details = await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data);
-        const arr1 = await axios.post(`${BASE_URL}/lvl1`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data.level1);
-        const arr2 = await axios.post(`${BASE_URL}/lvl2`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data.level2);
-        const arr3 = await axios.post(`${BASE_URL}/lvl3`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data.level3);
+        await axios.post(`${BASE_URL}/lvl1`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
+            setLvl1(data.level1);
+            
+        });
+        await axios.post(`${BASE_URL}/lvl2`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
+            setLvl2( data.level2);
+           
+        });
+        await axios.post(`${BASE_URL}/lvl3`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
+            setLvl3( data.level3);
+           
+        });
 
         // setUserDetails(details);
-        setLvl1(arr1);
-        setLvl2(arr2);
-        setLvl3(arr3);
     }
 
     useEffect(() => {
@@ -35,6 +41,9 @@ const Myteams = () => {
     const handelTooglle = (name) => {
         setToogle(name)
     }
+
+    // console.log(typeof userDetails);
+
 
 
 
@@ -105,8 +114,8 @@ const Myteams = () => {
                                                 <span data-v-d8c3c738="">ID:</span>
                                                 <span data-v-d8c3c738="" className="value">{element?.mobno}</span>
                                             </div> <div data-v-d8c3c738="">
-                                                <span data-v-d8c3c738="">Register Time</span>
-                                                <span data-v-d8c3c738="" className="value">{element?.time?.toDateString()}</span>
+                                                <span data-v-d8c3c738="">Register Time:</span>
+                                                <span data-v-d8c3c738="" className="value">{new Date(element.time).toDateString()}</span>
                                             </div>
                                         </div>
                                         <div data-v-d8c3c738="" className="status">Inactive</div>
@@ -124,8 +133,8 @@ const Myteams = () => {
                                                 <span data-v-d8c3c738="">ID:</span>
                                                 <span data-v-d8c3c738="" className="value">{element?.mobno}</span>
                                             </div> <div data-v-d8c3c738="">
-                                                <span data-v-d8c3c738="">Register Time</span>
-                                                <span data-v-d8c3c738="" className="value">{element?.time?.toDateString()}</span>
+                                                <span data-v-d8c3c738="">Register Time:</span>
+                                                <span data-v-d8c3c738="" className="value">{new Date(element.time).toDateString()}</span>
                                             </div>
                                         </div>
                                         <div data-v-d8c3c738="" className="status">Inactive</div>
@@ -143,8 +152,8 @@ const Myteams = () => {
                                                 <span data-v-d8c3c738="">ID:</span>
                                                 <span data-v-d8c3c738="" className="value">{element?.mobno}</span>
                                             </div> <div data-v-d8c3c738="">
-                                                <span data-v-d8c3c738="">Register Time</span>
-                                                <span data-v-d8c3c738="" className="value">{element?.time?.toDateString()}</span>
+                                                <span data-v-d8c3c738="">Register Time:</span>
+                                                <span data-v-d8c3c738="" className="value">{new Date(element.time).toDateString()}</span>
                                             </div>
                                         </div>
                                         <div data-v-d8c3c738="" className="status">Inactive</div>

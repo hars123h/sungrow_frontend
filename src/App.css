@@ -4419,7 +4419,7 @@ ul {
     justify-content: center;
     left: 50%;
     line-height: 20px;
-    max-width: 70%;
+    max-width: 70% !important;
     min-height: 88px;
     padding: 16px;
     position: fixed;
@@ -4428,7 +4428,7 @@ ul {
     -webkit-transform: translate3d(-50%, -50%, 0);
     transform: translate3d(-50%, -50%, 0);
     white-space: pre-wrap;
-    width: 88px;
+    /* width: 88px; */
     word-break: break-all
 }
 
@@ -8187,7 +8187,7 @@ body {
 }
 
 .home-page-placeholder {
-    background: rgba(255, 166, 0, 0.15);
+    /* background: rgba(255, 166, 0, 0.15); */
     height: 80px
 }
 
