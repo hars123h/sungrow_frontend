@@ -119,7 +119,7 @@ const Home = () => {
                                 Current Balance
                             </div>
                             <div className="balance-value bold">
-                                ₹{userDetails?.balance?.toFixed(2)}
+                                ₹{Number(Number(userDetails?.balance)+Number(userDetails?.recharge_amount)).toFixed(2)}
                             </div>
                         </div>
                         <div>
@@ -127,7 +127,7 @@ const Home = () => {
                                 Withdraw Balance
                             </div>
                             <div className="balance-value bold">
-                                ₹0.00
+                                ₹{userDetails?.balance?.toFixed(2)}
                             </div>
                         </div>
                     </div>
