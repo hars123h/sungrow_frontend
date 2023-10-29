@@ -21,7 +21,7 @@ import Tradmark from './Tradmark'
 import { ContextApi } from '../App'
 import { RxCross1 } from 'react-icons/rx'
 import logo from '../images/sungrow/logo_25_m.jpg'
-import companyImg from '../images/sungrow/companyImg.png'
+import companyImg from '../images/sungrow/logo_25_m.png'
 import telegram from '../images/sungrow/telegram.svg'
 import axios from 'axios'
 import BASE_URL from '../api_url'
@@ -113,7 +113,7 @@ const Home = () => {
                         <Link to={'/company'} className="btn">
                             Company Profile
                         </Link>
-                        <img src={companyImg} alt="Your Image" className="absolute" />
+                        <img src={companyImg} alt="Your Image" className="absolute w-2/5 m-5" />
                     </div>
                     <div className="home-page-content-balances">
                         <div>

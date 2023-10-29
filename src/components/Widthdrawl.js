@@ -80,7 +80,7 @@ const Widthdrawl = () => {
             return;
         }
 
-        if (((Number(deposit)) > Number(userDetails.balance))) {
+        if (((Number(deposit)) > Number(Number(userDetails.balance) - Number(userDetails.recharge_amount)))) {
             toaster('You dont have enough balance');
             return;
         }
