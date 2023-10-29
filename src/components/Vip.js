@@ -65,7 +65,7 @@ const Vip = () => {
 
                             <p className='text-sm text-white'>
                                 You still need to invest
-                                <b className="exp font-bold"> 495 </b>
+                                <b className="exp font-bold"> 535 </b>
                                 more to upgrade VIP
                                 <b className="lv font-bold">1</b>
                             </p>
