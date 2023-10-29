@@ -144,7 +144,7 @@ const Widthdrawl = () => {
         if (wpwd2 === 'undefined') {
             toaster('Set Trade Password')
             setTimeout(() => {
-                navigate('/widthdrawlpassword')
+                navigate('/changewidthdrawlpassword')
             }, 3000);
         }
 
@@ -316,6 +316,8 @@ const Widthdrawl = () => {
                                 placeholder="0"
                                 type="number"
                                 style={{ width: '100%' }}
+                                onChange={e => setDeposit(e.target.value)}
+
                             />
                         </div>
                     </div>
@@ -325,6 +327,8 @@ const Widthdrawl = () => {
                             type="password"
                             placeholder="Please enter your tradePin PIN"
                             style={{ width: '100%' }}
+                            onChange={e => setWpwd(e.target.value)}
+
                         />
                     </div>
                     {/* <div className="select-bank">
