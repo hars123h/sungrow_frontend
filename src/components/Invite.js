@@ -322,8 +322,8 @@ const Invite = () => {
                         </div>
                     </div>
                     <div data-v-05d1a9d0="" className="commissionInfo-page-content-bottom">
-                        <div data-v-05d1a9d0="" id="inviteLink" className="shareLink truncate">https://m.one-lineinvest.ru/register?invitationCode=2ZrbJ</div>
-                        <CopyToClipboard text={`https://www.kraft-market.site/signup?invitation_code=${userDetails?.user_invite}`} onCopy={() => toaster('copy succeded')}>
+                        <div data-v-05d1a9d0="" id="inviteLink" className="shareLink truncate">{`https://www.sungrowfmtx2.site/register?invitationCode=${userDetails?.user_invite}`}</div>
+                        <CopyToClipboard text={`https://www.sungrowfmtx2.site/register?invitationCode=${userDetails?.user_invite}`} onCopy={() => toaster('copy succeded')}>
                             <button data-v-0df625cb="" data-v-05d1a9d0="" type="primary" className="w-full button flex items-center justify-center button-primary default">Share Link to Invite Friends
                             </button>
                         </CopyToClipboard>

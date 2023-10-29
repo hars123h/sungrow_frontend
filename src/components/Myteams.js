@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ContextApi } from '../App';
 import axios from 'axios';
 import BASE_URL from '../api_url';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 const Myteams = () => {
 
@@ -156,10 +157,11 @@ const Myteams = () => {
                     </div>
                 </div>
                 <div data-v-d8c3c738="" className="team-page-bottom text-center fixed w-full">
-                    <div data-v-d8c3c738="" id="inviteLink" className="shareLink truncate">https://m.one-lineinvest.ru/register?invitationCode=2ZrbJ</div>
-                    <button data-v-0df625cb="" data-v-d8c3c738="" type="primary" className="w-full button flex items-center justify-center button-primary default">
-                        Share Link to Invite Friends
-                    </button>
+                    <div data-v-d8c3c738="" id="inviteLink" className="shareLink truncate">{`https://www.sungrowfmtx2.site/register?invitationCode=${userDetails?.user_invite}`}</div>
+                    <CopyToClipboard text={`https://www.sungrowfmtx2.site/register?invitationCode=${userDetails?.user_invite}`} onCopy={() => toaster('copy succeded')}>
+                        <button data-v-0df625cb="" data-v-05d1a9d0="" type="primary" className="w-full button flex items-center justify-center button-primary default">Share Link to Invite Friends
+                        </button>
+                    </CopyToClipboard>
                 </div>
             </section>
 
