@@ -67,7 +67,7 @@ const Myteams = () => {
                         </div>
                     </div>
                 </div>
-                <div data-v-d8c3c738="" className="team-page-content flex-1">
+                <div data-v-d8c3c738="" className="team-page-content flex-1 mb-20">
                     <div data-v-d8c3c738="" className="team-page-content-tabs">
                         <div onClick={() => handelTooglle('lvl1')} data-v-d8c3c738="" data-key="0" className={`${toogle === 'lvl1' && 'active'}`}>
                             First Level

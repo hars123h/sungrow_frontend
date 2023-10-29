@@ -457,7 +457,7 @@ const Invest = () => {
                                         product_image={s1}
                                         product_type={0}
                                         plan_cycle={37}
-                                        plan_amount={21003}
+                                        plan_amount={21000}
                                         plan_daily_earning={9031.29}
                                         product_no={5}
                                     />

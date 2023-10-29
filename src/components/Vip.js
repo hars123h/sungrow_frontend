@@ -96,7 +96,7 @@ const Vip = () => {
                                             </div>
                                             <div className="flex-1 mb-[5px]">
                                                 <p className='py-[2px] leading-tight text-[#4b4d5e] '>Statement of interest</p>
-                                                <p className='py-[2px] leading-tight text-[#4b4d5e]'>When your investment amount reaches 575 rupees, you will be upgraded to this level of VIP</p>
+                                                <p className='py-[2px] leading-tight text-[#4b4d5e]'>When your investment amount reaches 535 rupees, you will be upgraded to this level of VIP</p>
                                             </div>
                                         </div>
                                     </div>
