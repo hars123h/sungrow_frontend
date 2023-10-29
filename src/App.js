@@ -188,7 +188,7 @@ function App() {
             <Route path='/deposit_records' element={<DepositRecords />} />
             <Route path='/commissionInfo' element={<Invite />} />
             <Route path='/vip' element={<Vip />} />
-            {/* <Route path='/orders' element={<Order />} /> */}
+            <Route path='/investment' element={<Order />} />
             <Route path='/bankCard' element={<BankCard />} />
             <Route path='/bankCardAdd' element={<BankCardAdd />} />
             <Route path='/widthdraw' element={<Widthdrawl />} />

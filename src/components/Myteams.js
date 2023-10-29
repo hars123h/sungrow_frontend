@@ -19,15 +19,15 @@ const Myteams = () => {
         // const details = await axios.post(`${BASE_URL}/get_user`, { user_id: localStorage.getItem('uid') }).then(({ data }) => data);
         await axios.post(`${BASE_URL}/lvl1`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
             setLvl1(data.level1);
-            
+
         });
         await axios.post(`${BASE_URL}/lvl2`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
-            setLvl2( data.level2);
-           
+            setLvl2(data.level2);
+
         });
         await axios.post(`${BASE_URL}/lvl3`, { user_id: localStorage.getItem('uid') }).then(({ data }) => {
-            setLvl3( data.level3);
-           
+            setLvl3(data.level3);
+
         });
 
         // setUserDetails(details);
@@ -108,7 +108,7 @@ const Myteams = () => {
                             {toogle === 'lvl1' &&
 
                                 lvl1.map(element =>
-                                    <div data-v-d8c3c738="" className="flex items-center justify-between content-item">
+                                    <div data-v-d8c3c738="" className={`flex items-center justify-between content-item ${element?.plans_purchased?.length > 0 && 'active'}`}>
                                         <div data-v-d8c3c738="">
                                             <div data-v-d8c3c738="">
                                                 <span data-v-d8c3c738="">ID:</span>
@@ -118,7 +118,7 @@ const Myteams = () => {
                                                 <span data-v-d8c3c738="" className="value">{new Date(element.time).toDateString()}</span>
                                             </div>
                                         </div>
-                                        <div data-v-d8c3c738="" className="status">Inactive</div>
+                                        <div data-v-d8c3c738="" className="status">{element?.plans_purchased?.length > 0 ? 'Active' : 'Inactive'}</div>
                                     </div>
                                 )
 
@@ -127,7 +127,7 @@ const Myteams = () => {
                             {toogle === 'lvl2' &&
 
                                 lvl2.map(element =>
-                                    <div data-v-d8c3c738="" className="flex items-center justify-between content-item">
+                                    <div data-v-d8c3c738="" className={`flex items-center justify-between content-item ${element?.plans_purchased?.length > 0 && 'active'}`}>
                                         <div data-v-d8c3c738="">
                                             <div data-v-d8c3c738="">
                                                 <span data-v-d8c3c738="">ID:</span>
@@ -137,7 +137,7 @@ const Myteams = () => {
                                                 <span data-v-d8c3c738="" className="value">{new Date(element.time).toDateString()}</span>
                                             </div>
                                         </div>
-                                        <div data-v-d8c3c738="" className="status">Inactive</div>
+                                        <div data-v-d8c3c738="" className="status">{element?.plans_purchased?.length > 0 ? 'Active' : 'Inactive'}</div>
                                     </div>
                                 )
 
@@ -146,7 +146,7 @@ const Myteams = () => {
                             {toogle === 'lvl3' &&
 
                                 lvl3.map(element =>
-                                    <div data-v-d8c3c738="" className="flex items-center justify-between content-item">
+                                    <div data-v-d8c3c738="" className={`flex items-center justify-between content-item ${element?.plans_purchased?.length > 0 && 'active'}`}>
                                         <div data-v-d8c3c738="">
                                             <div data-v-d8c3c738="">
                                                 <span data-v-d8c3c738="">ID:</span>
@@ -156,7 +156,7 @@ const Myteams = () => {
                                                 <span data-v-d8c3c738="" className="value">{new Date(element.time).toDateString()}</span>
                                             </div>
                                         </div>
-                                        <div data-v-d8c3c738="" className="status">Inactive</div>
+                                        <div data-v-d8c3c738="" className="status">{element?.plans_purchased?.length > 0 ? 'Active' : 'Inactive'}</div>
                                     </div>
                                 )
 
