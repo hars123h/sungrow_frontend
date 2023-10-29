@@ -94,7 +94,7 @@ const WidthdrawlRecords = () => {
                                                 <div className={` text-right text-[#29a635] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.9)}
                                                     </p>
                                                     <p>Successfully ended</p>
                                                 </div>
@@ -104,7 +104,7 @@ const WidthdrawlRecords = () => {
                                                 <div className={` text-right text-[orange] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.9)}
                                                     </p>
                                                     <p>Initiate withdrawl</p>
                                                 </div>
@@ -114,7 +114,7 @@ const WidthdrawlRecords = () => {
                                                 <div className={` text-right text-[red] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.9)}
                                                     </p>
                                                     <p>Declined</p>
                                                 </div>

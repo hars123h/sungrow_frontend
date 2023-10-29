@@ -76,6 +76,9 @@ const Deposit = () => {
         }
       
     }, [Deposit,setDeposit])
+
+
+    console.log(Deposit);
     
 
 

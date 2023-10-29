@@ -105,7 +105,7 @@ const DepositRecords = () => {
                                                 <div className={` text-right text-[orange] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data.recharge_value)}
                                                     </p>
                                                     <p>Initiate deposit</p>
                                                 </div>
@@ -115,7 +115,7 @@ const DepositRecords = () => {
                                                 <div className={` text-right text-[red] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data.recharge_value)}
                                                     </p>
                                                     <p>Declined</p>
                                                 </div>

@@ -132,8 +132,12 @@ const RechargeWindow = () => {
                 </div>
                 <div className='flex flex-col px-4 gap-1 border-b border-gray-100'>
                     {/* <div className='text-sm border-y-2 border-gray-50 py-3 tl'><span >Step 2: Submit Ref No/Reference No/UTR </span></div> */}
-                    <input value={refno} onChange={e => setRefno(e.target.value)} type="text"
-                        placeholder='Input 12-digit here' className=' tp pt-4' />
+                    <input 
+                    value={refno} 
+                    onChange={e => setRefno(e.target.value)} 
+                    type="text"
+                    placeholder='Input 12-digit here' 
+                    className=' tp pt-4 text-black' />
                     <div className='tt text-xs mb-3'>Generally, your transfer will be confirmed within 10 minutes.</div>
                 </div>
             </div>
