@@ -27,6 +27,7 @@ const Widthdrawl = () => {
     const [deposit, setDeposit] = useState()
     const [wpwd, setWpwd] = useState()
     const [wpwd2, setWpwd2] = useState(localStorage.getItem('wpwd'))
+    const [nextBtn, setnextBtn] = useState(false)
 
     const date = new Date()
     date.setHours(0, 0, 0, 0)
@@ -36,7 +37,7 @@ const Widthdrawl = () => {
 
     const isBetween = () => {
         var startTime = '10:00:00';
-        var endTime = '18:00:00';
+        var endTime = '20:00:00';
 
         var currentDate = new Date()
 
@@ -57,6 +58,8 @@ const Widthdrawl = () => {
     }
 
     const handleWithdrawal = async () => {
+
+        setnextBtn(true)
 
         if (Number(deposit) === false || Number(deposit) <= 0) {
             toaster('Enter a valid number');
@@ -259,7 +262,11 @@ const Widthdrawl = () => {
                                 <path d="M5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885Z" fill="orange"></path>
                             </svg>
                         </Link>
-                        <button onClick={handleWithdrawal} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">NEXT</button>
+                        {isBetween() ?
+                            <button onClick={handleWithdrawal} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">NEXT</button>
+                            :
+                            <button onClick={() => toaster('The daily withdrawal time is from 10:00:00 to 20:00:00')} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">NEXT</button>
+                        }
                     </div>
                 </div>
             </section>
