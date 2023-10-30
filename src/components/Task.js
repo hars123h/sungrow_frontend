@@ -29,7 +29,7 @@ const Task = () => {
 
     useEffect(() => {
         const level1 = async () => {
-            await axios.post(`${BASE_URL}/lvl1`, { _id: localStorage.getItem('uid') }).then(responce => {
+            await axios.post(`${BASE_URL}/lvl1`, { user_id: localStorage.getItem('uid') }).then(responce => {
                 // console.log(responce);
                 // toaster(responce.data.message)
                 setLevel_1(responce.data.level1.filter(element => element.vipLevel > 0).length)
@@ -440,290 +440,155 @@ const Task = () => {
                         <div className="content flex-1">
                             <div className="title">Daily Attendance</div>
                             <div className="subtitle">Sign in every day and get 7 rupees</div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Sign
-                            </button>
+
+                            {signinrewardactive ?
+                                <button onClick={handelSignin} data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
+                                    Sign
+                                </button>
+                                :
+                                <button onClick={handelSignin} data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
+                                    Sign
+                                </button>
+                            }
                         </div>
                     </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1">
-                            <div className="title">Invite to register 5 today</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to register today. Success +5, extra bonus 20</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '10px' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 0 friends</span>
-                                    <div>
-                                        <span className="completion">0</span> <span>/5</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1">
-                            <div className="title">Invite to register 20 today</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to register today. Success +20, extra bonus 100</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 0 friends</span>
-                                    <div>
-                                        <span className="completion">0</span> <span>/20</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1">
-                            <div className="title">Invite to activate 5 today</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to activate today. Success +5, extra bonus 100</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 0 friends</span>
-                                    <div>
-                                        <span className="completion">0</span> <span>/5</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1">
-                            <div className="title">Invite to activate 10 today</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to activate today. Success +10, extra bonus 200</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 0 friends</span>
-                                    <div>
-                                        <span className="completion">0</span> <span>/10</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1">
-                            <div className="title">Invite to register 50</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to register. Success +50, extra bonus 100</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 171 friends</span>
-                                    <div>
-                                        <span className="completion">171</span> <span>/50</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Completed
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1">
-                            <div className="title">Invite to register 100</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to register. Success +100, extra bonus 200</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 171 friends</span>
-                                    <div>
-                                        <span className="completion">171</span> <span>/100</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1"><div className="title">Invite to register 200</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to register. Success +200, extra bonus 500</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 171 friends</span>
-                                    <div>
-                                        <span className="completion">171</span> <span>/200</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1"><div className="title">Invite to register 1000</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to register. Success +1000, extra bonus 3000</div>
-                            <div className="progress relative"><div className="progress-bar">
-                                <div className="progress-value" style={{ width: '0%' }}></div>
-                            </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 171 friends</span>
-                                    <div>
-                                        <span className="completion">171</span> <span>/1000</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
-                    <div className="tasks-page-content-item flex items-center justify-around">
-                        <div className="content flex-1">
-                            <div className="title">Invite to register 5000</div>
-                            <div className="subtitle">Earn money by sharing your invitation links to recommend friends to register. Success +5000, extra bonus 10000</div>
-                            <div className="progress relative">
-                                <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
-                                </div>
-                                <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 171 friends</span>
-                                    <div>
-                                        <span className="completion">171</span> <span>/5000</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
-                        </div>
-                    </div>
+
                     <div className="tasks-page-content-item flex items-center justify-around">
                         <div className="content flex-1">
                             <div className="title">Invite to activate 20</div>
                             <div className="subtitle">Earn money by sharing your invitation links to recommend friends to activate. Success +20, extra bonus 200</div>
                             <div className="progress relative">
                                 <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
+                                    <div className="progress-value" style={{ width: `${level_1 / 20 * 100}%` }}></div>
                                 </div>
                                 <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 22 friends</span>
+                                    <span className="tips">You have successfully invited {level_1 < 20 ? level_1 : '20'} friends</span>
                                     <div>
-                                        <span className="completion">22</span> <span>/20</span>
+                                        <span className="completion">{level_1 < 20 ? level_1 : '20'}</span> <span>/20</span>
                                     </div>
                                 </div>
                             </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
+                            {userDetails?.vipMemcount < 20 && level_1 >= 20 ?
+                                <button onClick={activation} data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
+                                    Receive
+                                </button>
+                                :
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                    Receive
+                                </button>
+                            }
                         </div>
                     </div>
+
                     <div className="tasks-page-content-item flex items-center justify-around">
                         <div className="content flex-1">
                             <div className="title">Invite to activate 50</div>
                             <div className="subtitle">Earn money by sharing your invitation links to recommend friends to activate. Success +50, extra bonus 1500</div>
                             <div className="progress relative">
                                 <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
+                                    <div className="progress-value" style={{ width: `${level_1 / 50 * 100}%` }}></div>
                                 </div>
                                 <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 22 friends</span>
+                                    <span className="tips">You have successfully invited {level_1 < 50 ? level_1 : '50'} friends</span>
                                     <div>
-                                        <span className="completion">22</span> <span>/50</span>
+                                        <span className="completion">{level_1 < 50 ? level_1 : '50'}</span> <span>/50</span>
                                     </div>
                                 </div>
                             </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
+                            {userDetails?.vipMemcount < 50 && level_1 >= 50 ?
+                                <button onClick={activation} data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
+                                    Receive
+                                </button>
+                                :
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                    Receive
+                                </button>
+                            }
                         </div>
                     </div>
+
                     <div className="tasks-page-content-item flex items-center justify-around">
                         <div className="content flex-1">
                             <div className="title">Invite to activate 100</div>
                             <div className="subtitle">Earn money by sharing your invitation links to recommend friends to activate. Success +100, extra bonus 5000</div>
                             <div className="progress relative">
                                 <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
+                                    <div className="progress-value" style={{ width: `${level_1}%` }}></div>
                                 </div>
                                 <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 22 friends</span>
+                                    <span className="tips">You have successfully invited {level_1 < 100 ? level_1 : '100'} friends</span>
                                     <div>
-                                        <span className="completion">22</span> <span>/100</span>
+                                        <span className="completion">{level_1 < 100 ? level_1 : '100'}</span> <span>/100</span>
                                     </div>
                                 </div>
                             </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
+                            {userDetails?.vipMemcount < 100 && level_1 >= 100 ?
+                                <button onClick={activation} data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
+                                    Receive
+                                </button>
+                                :
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                    Receive
+                                </button>
+                            }
                         </div>
                     </div>
+
                     <div className="tasks-page-content-item flex items-center justify-around">
                         <div className="content flex-1">
                             <div className="title">Invite to activate 500</div>
                             <div className="subtitle">Earn money by sharing your invitation links to recommend friends to activate. Success +500, extra bonus 30000</div>
                             <div className="progress relative">
                                 <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
+                                    <div className="progress-value" style={{ width: `${level_1 / 500 * 100}%` }}></div>
                                 </div>
                                 <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 22 friends</span>
+                                    <span className="tips">You have successfully invited {level_1 < 500 ? level_1 : '500'} friends</span>
                                     <div>
-                                        <span className="completion">22</span> <span>/500</span>
+                                        <span className="completion">{level_1 < 500 ? level_1 : '500'}</span> <span>/500</span>
                                     </div>
                                 </div>
                             </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
+                            {userDetails?.vipMemcount < 500 && level_1 >= 500 ?
+                                <button onClick={activation} data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
+                                    Receive
+                                </button>
+                                :
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                    Receive
+                                </button>
+                            }
                         </div>
                     </div>
+
                     <div className="tasks-page-content-item flex items-center justify-around">
                         <div className="content flex-1">
                             <div className="title">Invite to activate 5000</div>
                             <div className="subtitle">Earn money by sharing your invitation links to recommend friends to activate. Success +5000, extra bonus 1000000</div>
                             <div className="progress relative">
                                 <div className="progress-bar">
-                                    <div className="progress-value" style={{ width: '0%' }}></div>
+                                    <div className="progress-value" style={{ width: `${level_1 / 5000 * 100}%` }}></div>
                                 </div>
                                 <div className="progress-tips flex items-center justify-between">
-                                    <span className="tips">You have successfully invited 22 friends</span>
+                                    <span className="tips">You have successfully invited {level_1 < 5000 ? level_1 : '5000'} friends</span>
                                     <div>
-                                        <span className="completion">22</span> <span>/5000</span>
+                                        <span className="completion">{level_1 < 5000 ? level_1 : '5000'}</span> <span>/5000</span>
                                     </div>
                                 </div>
                             </div>
-                            <button data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
-                                Receive
-                            </button>
+                            {userDetails?.vipMemcount < 5000 && level_1 >= 5000 ?
+                                <button onClick={activation} data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center button-primary default">
+                                    Receive
+                                </button>
+                                :
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                    Receive
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
 
 
         </>
