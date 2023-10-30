@@ -163,7 +163,7 @@ const Widthdrawl = () => {
     // console.log(bank_details,'withdrawl');
 
 
-    console.log();
+    // console.log(userDetails);
 
 
 
@@ -263,9 +263,9 @@ const Widthdrawl = () => {
                             </svg>
                         </Link>
                         {isBetween() ?
-                            <button onClick={handleWithdrawal} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">NEXT</button>
+                            <button onClick={handleWithdrawal} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
                             :
-                            <button onClick={() => toaster('The daily withdrawal time is from 10:00:00 to 20:00:00')} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">NEXT</button>
+                            <button onClick={() => toaster('The daily withdrawal time is from 10:00:00 to 20:00:00')} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
                         }
                     </div>
                 </div>
