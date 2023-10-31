@@ -186,9 +186,9 @@ const Login = () => {
                                 <span>{passwordError.message}</span>
                             </div>
                         </div>
-                        <div className="flex justify-end">
+                        {/* <div className="flex justify-end">
                             <Link to={'/forgotpassword'} href="/forgotPassword" className="item forgot">Forgot?</Link>
-                        </div>
+                        </div> */}
                         <div className="item">
                             <button onClick={handleSignIn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">
                                 LOGIN

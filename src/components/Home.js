@@ -112,7 +112,7 @@ const Home = () => {
                         <Link to={'/company'} className="btn">
                             Company Profile
                         </Link>
-                        <img src={companyImg} alt="Your Image" className="absolute w-2/5 m-5" />
+                        <img src={companyImg} alt="Your Image" className="absolute w-32 m-8" />
                     </div>
                     <div className="home-page-content-balances">
                         <div>

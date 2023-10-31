@@ -25,9 +25,9 @@ const QuickAmountCard = ({ amount, setDeposit, id, selected, setSelected }) => {
                 </div>
             </div> */}
 
-            <div class="input-amount-choose-item flex flex-col items-center" style={{ backgroundColor: selected === id ? 'white' : '', color: selected === id ? 'orange' : '' }} onClick={() => handelclick(id)}>
-                <span>₹</span>
-                <span>{amount}</span>
+            <div class="input-amount-choose-item flex flex-col items-center text-lg " style={{ backgroundColor: selected === id ? 'white' : '', color: selected === id ? 'orange' : '' }} onClick={() => handelclick(id)}>
+                <span className='font-bold'>₹</span>
+                <span className='font-bold'>{amount}</span>
             </div>
 
         </>

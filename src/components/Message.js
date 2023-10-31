@@ -7,7 +7,7 @@ import { FiArrowLeft } from 'react-icons/fi';
 const Message = () => {
     return (
         <>
-            <div className="bg-[#e0f2f1]  after:contents-[' '] after:fixed h-screen ">
+            <div className="  after:contents-[' '] after:fixed h-screen ">
                 <div className="w-full mx-auto max-w-[800px]">
 
                     <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
