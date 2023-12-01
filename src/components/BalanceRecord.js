@@ -4,23 +4,63 @@ import { Link } from 'react-router-dom'
 import BASE_URL from '../api_url'
 import axios from 'axios'
 import { ContextApi } from '../App'
-import { BsArrowUp } from 'react-icons/bs'
+import { BsArrowDown, BsArrowUp } from 'react-icons/bs'
 
 const BalanceRecord = () => {
 
     const { userDetails, setUserDetails, setUser, getUserDetails, toaster, user } = useContext(ContextApi);
 
 
-    const [datalist, setDatalist] = useState([userDetails?.comissionData,userDetails?.rewardData])
+    const [datalist, setDatalist] = useState([])
+
+    var datac = [];
+
+    userDetails?.comissionData?.map(data => {
+        // setDatalist([...datalist, { type: 'commission', amount: data.comissionAmount, date: data.date, status: 'success' }])
+        // console.log('commission', datalist);
+        datalist.push({ type: 'commission', amount: data.comissionAmount, date: data.date, status: 'success' })
+
+    })
+
+    console.log(datalist);
+
+
 
     useEffect(() => {
+
+
+
+        const getRecharges_list = async () => {
+
+            var datad = [];
+
+            const querySnapshot = await axios.post(`${BASE_URL}/get_user_recharges`, { user_id: localStorage.getItem('uid') })
+                .then(res => res.data);
+            querySnapshot?.map(data => {
+                // setDatalist([...datalist, { type: 'Deposit', amount: data.recharge_value, date: data.time, status: data.status }])
+                // console.log('deposit', datalist);
+                datad.push({ type: 'Deposit', amount: data.recharge_value, date: data.time, status: data.status })
+
+            })
+            console.log(datad);
+            setDatalist([...datad, ...datalist])
+        }
+        getRecharges_list();
+
         const getWithdrawals_list = async () => {
+            var dataw = [];
             const querySnapshot = await axios.post(`${BASE_URL}/get_user_withdrawals`, { user_id: localStorage.getItem('uid') })
                 .then(res => res.data);
-            setDatalist([...datalist, ... querySnapshot]);
+            querySnapshot?.map(data => {
+                // setDatalist([...datalist, { type: 'Withdraw', amount: data.afterDeduction, date: data.time, status: data.status }])
+                // console.log('withdraw', datalist);
+                dataw.push({ type: 'Withdraw', amount: data.afterDeduction, date: data.time, status: data.status })
+            })
+            setDatalist([...datalist, ...dataw])
         }
         getWithdrawals_list();
-    }, []);
+
+    }, [])
 
     const nameMapper = {
         confirmed: 'success',
@@ -28,7 +68,9 @@ const BalanceRecord = () => {
         pending: 'pending'
     }
 
-    console.log(datalist);
+    console.log('last', datalist);
+
+
 
     return (
         <>
@@ -63,14 +105,18 @@ const BalanceRecord = () => {
                                     <li key={index} className='my-[5px] p-[10px] bg-[#f8f9fb] rounded-[7px] flex space-x-1 items-center'>
 
                                         <div className="text-[orange] w-10 h-10 rounded-full border border-[orange] flex justify-center items-center">
-                                            <BsArrowUp size={25} />
+                                            {data?.type === 'Withdraw' ?
+                                                <BsArrowUp size={25} />
+                                                :
+                                                <BsArrowDown size={25} />
+                                            }
                                         </div>
 
                                         <div className="flex-1 flex justify-between">
 
                                             <div className="">
-                                                <p>Withdrawl</p>
-                                                <p className='text-[#666] text-sm'>{new Date(data?.time).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</p>
+                                                <p>{data?.type}</p>
+                                                <p className='text-[#666] text-sm'>{new Date(data?.date).toLocaleString(undefined, { timeZone: 'Asia/Kolkata' })}</p>
                                             </div>
 
 
@@ -78,7 +124,7 @@ const BalanceRecord = () => {
                                                 <div className={` text-right text-[#29a635] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data?.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data?.amount)}
                                                     </p>
                                                     <p>Successfully ended</p>
                                                 </div>
@@ -88,7 +134,7 @@ const BalanceRecord = () => {
                                                 <div className={` text-right text-[orange] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data?.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data?.amount)}
                                                     </p>
                                                     <p>Initiate withdrawl</p>
                                                 </div>
@@ -98,7 +144,7 @@ const BalanceRecord = () => {
                                                 <div className={` text-right text-[red] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
-                                                        {new Intl.NumberFormat().format(data?.withdrawalAmount * 0.1)}
+                                                        {new Intl.NumberFormat().format(data?.amount)}
                                                     </p>
                                                     <p>Declined</p>
                                                 </div>
