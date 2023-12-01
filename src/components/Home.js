@@ -230,7 +230,7 @@ const Home = () => {
                                 </div>
                                 <div className="recommended-items-title">Investment</div>
                             </Link>
-                            <Link to={'https://t.me/Sungrow1'} className="flex items-center flex-col">
+                            <Link to={'https://telegram.me/Sungrowcustomerservice'} className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
