@@ -26,6 +26,8 @@ import telegram from '../images/sungrow/telegram.svg'
 import axios from 'axios'
 import BASE_URL from '../api_url'
 import { FaTelegramPlane } from 'react-icons/fa'
+import { FaDownload } from "react-icons/fa6";
+import Sungrow from '../images/sungrow/Sungrow.apk'
 
 
 
@@ -120,7 +122,7 @@ const Home = () => {
                                 Current Balance
                             </div>
                             <div className="balance-value bold">
-                                ₹{Number(Number(userDetails?.balance)+Number(userDetails?.recharge_amount)).toFixed(2)}
+                                ₹{Number(Number(userDetails?.balance) + Number(userDetails?.recharge_amount)).toFixed(2)}
                             </div>
                         </div>
                         <div>
@@ -207,17 +209,23 @@ const Home = () => {
                                 </div>
                                 <div className="recommended-items-title">Task System</div>
                             </Link>
-                            <Link to={'/message'} className="flex items-center flex-col">
+                            <a href={Sungrow}
+                                download="Sungrow"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center flex-col"
+                            >
                                 <div className="router flex items-center justify-center">
                                     <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
+                                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
                                             <path d="M26.9096 9.18182V1.68182C26.9096 1.50099 26.8377 1.32757 26.7099 1.1997C26.582 1.07183 26.4086 1 26.2278 1C26.0469 1 25.8735 1.07183 25.7456 1.1997C25.6178 1.32757 25.5459 1.50099 25.5459 1.68182V2.62848C24.7544 3.02415 22.7147 4.00426 19.9702 4.99993C16.7036 6.18587 11.7581 7.63452 6.74012 7.80199C6.35396 7.81456 5.98353 7.95795 5.68955 8.20865C5.39557 8.45935 5.19548 8.80249 5.12208 9.18182H2.70503C2.25312 9.18233 1.81985 9.36207 1.5003 9.68163C1.18074 10.0012 1.001 10.4344 1.00049 10.8864V15.6591C1.001 16.111 1.18074 16.5443 1.5003 16.8638C1.81985 17.1834 2.25312 17.3631 2.70503 17.3636H5.12208C5.19424 17.7362 5.38863 18.0739 5.67446 18.3235C5.96029 18.573 6.32122 18.7201 6.70006 18.7413L11.6984 29.9877C11.8325 30.2889 12.0509 30.5448 12.3273 30.7244C12.6038 30.9041 12.9263 30.9998 13.256 31H16.6823C16.7959 31 16.9077 30.9716 17.0076 30.9174C17.1074 30.8632 17.1921 30.7849 17.254 30.6897C17.3159 30.5944 17.353 30.4852 17.362 30.3719C17.371 30.2587 17.3515 30.145 17.3053 30.0412L12.6008 19.456C15.4231 20.0219 17.9882 20.8268 19.9476 21.5372C22.6985 22.535 24.751 23.5188 25.5459 23.917V24.8636C25.5459 25.0445 25.6178 25.2179 25.7456 25.3458C25.8735 25.4736 26.0469 25.5455 26.2278 25.5455C26.4086 25.5455 26.582 25.4736 26.7099 25.3458C26.8377 25.2179 26.9096 25.0445 26.9096 24.8636V17.3636C29.1653 17.3636 31.0005 15.5285 31.0005 13.2727C31.0005 11.017 29.1653 9.18182 26.9096 9.18182Z" fill="orange"></path>
                                             <path fillRule="evenodd" clipRule="evenodd" d="M26.8833 17.9725C27.0475 17.9907 27.2143 18 27.3833 18C29.8686 18 31.8833 15.9853 31.8833 13.5C31.8833 11.0147 29.8686 9 27.3833 9C27.2143 9 27.0475 9.00932 26.8833 9.02746V17.9725Z" fill="#1F4E6A"></path>
-                                        </svg>
+                                        </svg> */}
+                                        <FaDownload className='text-[orange]' size={25} />
                                     </div>
                                 </div>
                                 <div className="recommended-items-title">Messages</div>
-                            </Link>
+                            </a>
                             <Link to={'/investment'} className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center text-[orange]">
                                     <div>
