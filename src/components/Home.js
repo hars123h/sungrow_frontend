@@ -224,7 +224,7 @@ const Home = () => {
                                         <FaDownload className='text-[orange]' size={25} />
                                     </div>
                                 </div>
-                                <div className="recommended-items-title">Messages</div>
+                                <div className="recommended-items-title">Download</div>
                             </a>
                             <Link to={'/investment'} className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center text-[orange]">
