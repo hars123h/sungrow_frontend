@@ -106,7 +106,7 @@ const WidthdrawlRecords = () => {
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
                                                         {new Intl.NumberFormat().format(data.withdrawalAmount * 0.92)}
                                                     </p>
-                                                    <p>Initiate withdrawl</p>
+                                                    <p>{(new Date() - new Date(data.time)) < 300000 ? 'Initiate withdrawl' : 'processing'}</p>
                                                 </div>
                                             }
                                             {nameMapper[String(data.status)] === 'declined' &&
