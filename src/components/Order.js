@@ -65,7 +65,7 @@ const Order = () => {
             <div className=" bg-white after:contents-[' '] after:fixed min-h-screen">
                 <div className="w-full mx-auto max-w-[800px]">
 
-                <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
+                    <header className="h-[50px] leading-[50px] block pb-[10px] bg-[#f8f9fb] border-0 border-b-[1px] border-[#e7e8ea]">
                         <div className="max-w-[800px] h-[50px] leading-[50px] left-0 right-0 top-0 mx-auto fixed z-[9999] flex flex-wrap items-center  ">
 
                             <Link to={'/settings'} className="w-[60px] h-[50px] left-0 text-center text-[22px] absolute z-[2] flex justify-center items-center ">
@@ -103,6 +103,7 @@ const Order = () => {
 
                                                     <div className="p-3 text-base font-semibold bg-confirm rounded-t-lg bg-[orange] text-white">Plan Details</div>
                                                     <div className='p-3'>
+                                                        <div className='mb-1'>plan amount: &#8377;{element.plan_amount}</div>
                                                         <div className='mb-1'>earn: &#8377;{DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning}</div>
                                                         <div className='mb-1'>total revenue: {element.plan_daily_earning * element.plan_cycle}</div>
                                                         <div className='mb-1'>time: {element.date_purchased}</div>
@@ -128,6 +129,7 @@ const Order = () => {
 
                                                     <div className="p-3 text-base font-semibold bg-confirm rounded-t-lg bg-[orange] text-white">Plan Details</div>
                                                     <div className='p-3'>
+                                                        <div className='mb-1'>plan amount: &#8377;{element.plan_amount}</div>
                                                         <div className='mb-1'>earn: &#8377;{DateDifference(new Date(element.date_purchased), new Date(element.date_till_rewarded)) * element.quantity * element.plan_daily_earning}</div>
                                                         <div className='mb-1'>total revenue: {element.plan_daily_earning * element.plan_cycle}</div>
                                                         <div className='mb-1'>time: {element.date_purchased}</div>

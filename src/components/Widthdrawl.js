@@ -242,7 +242,7 @@ const Widthdrawl = () => {
                                         <circle cx="3" cy="3" r="3" fill="#FF8F0C"></circle>
                                     </svg>
                                 </span>
-                                4% of the withdrawal amount will be charged as tax for each withdrawal
+                                8% of the withdrawal amount will be charged as tax for each withdrawal
                             </li>
                             <li>
                                 <span>

@@ -230,7 +230,7 @@ const Home = () => {
                                 </div>
                                 <div className="recommended-items-title">Investment</div>
                             </Link>
-                            <div className="flex items-center flex-col">
+                            <Link to={'https://t.me/Sungrow1'} className="flex items-center flex-col">
                                 <div className="router flex items-center justify-center">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" fill="none">
@@ -249,7 +249,7 @@ const Home = () => {
                                     </div>
                                 </div>
                                 <div className="recommended-items-title">Contact Us</div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -273,11 +273,11 @@ const Home = () => {
                                 <span className="van-button__text">CANCEL</span>
                             </div>
                         </button>
-                        <button type="button" className="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left text-[rgb(196,71,58)] orange_bg" >
+                        <Link to='https://t.me/Sungrow1' type="button" className="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left text-[rgb(196,71,58)] orange_bg" >
                             <div className="van-button__content">
                                 <span className="van-button__text">JOIN</span>
                             </div>
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <div className={`van-overlay z-[2003] ${wpwd}`} ></div>

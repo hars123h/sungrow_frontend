@@ -13,7 +13,7 @@ import img3 from '../images/asml/assets/asset 3.png';
 import img4 from '../images/asml/assets/asset 4.png';
 import img5 from '../images/asml/assets/asset 5.png';
 import img6 from '../images/asml/assets/asset 6.png';
-import qr from '../images/qr.jpg';
+import qr from '../images/sungrow/qr.jpg';
 import paymentlogo from '../images/paymentlogo.jpg';
 
 const RechargeWindow = () => {
@@ -115,9 +115,9 @@ const RechargeWindow = () => {
             <div className="options items-start justify-center text-white flex flex-col pt-4 pb-4 mx-3 pl-2 bg-white border-gray-200 border-[1px] rounded-lg mt-4  ">
                 <div className='font-semibold text-gray-500 py-2 text-center w-full'>Scan this QR to pay</div>
                 <img src={qr} alt="" className='mx-auto' />
-                <div className=' text-gray-400 font-semibold py-2 text-center w-full px-4'>
+                {/* <div className=' text-gray-400 font-semibold py-2 text-center w-full px-4'>
                     <img src={paymentlogo} alt="" />
-                </div>
+                </div> */}
                 <div className='font-semibold text-red-500 py-2 text-center w-full'>or directly transfer to under UPI</div>
                 <div className="flex gap-2 items-center w-full justify-center px-4">
                     <div className='border-gray-400 border-[1px] rounded-lg bg-gray-100 py-3 px-2 w-3/4 text-gray-600'>
@@ -130,7 +130,7 @@ const RechargeWindow = () => {
                     </CopyToClipboard>
 
                 </div>
-                <div className='flex flex-col px-4 gap-1 border-b border-gray-100'>
+                <div className='flex flex-col px-4 gap-1 border mt-5 border-gray-100'>
                     {/* <div className='text-sm border-y-2 border-gray-50 py-3 tl'><span >Step 2: Submit Ref No/Reference No/UTR </span></div> */}
                     <input 
                     value={refno} 
