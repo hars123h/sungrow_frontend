@@ -54,7 +54,7 @@ const Vip = () => {
                             </div>
 
                             <div className="">
-                                <p className='text-[8px] text-white font-bold'><b>0</b> / 495</p>
+                                <p className='text-[8px] text-white font-bold'><b>0</b> / 535</p>
                             </div>
 
                             <div className="w-full h-1 my-[5px] relative bg-white rounded-[500px]">
