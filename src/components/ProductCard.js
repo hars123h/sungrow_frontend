@@ -23,14 +23,65 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
     } = useContext(ContextApi);
 
     const superProduct = userDetails?.plans_purchased?.filter(e => e.product_type === 0)
+    // const superProduct2 = userDetails?.plans_purchased?.filter(e => e.product_type !== 0)
 
     const [pop, setpop] = useState(false)
     const [quantity, setQuantity] = useState(1)
 
     const handelInvest = async () => {
 
-        if(userDetails?.plans_purchased?.length===0){
+        if (userDetails?.plans_purchased?.length === 0 && plan_amount !== 535) {
             toaster('Please buy 535 plan first');
+            return
+        }
+
+        if (plan_amount === 1701 && !superProduct?.some(obj => obj.plan_amount === 535)) {
+            toaster('Please buy 535 plan first');
+            return
+        }
+
+        if (plan_amount === 5157 && !superProduct?.some(obj => obj.plan_amount === 1701)) {
+            toaster('Please buy 1701 plan first');
+            return
+        }
+
+        if (plan_amount === 11000 && !superProduct?.some(obj => obj.plan_amount === 5157)) {
+            toaster('Please buy 5157 plan first');
+            return
+        }
+
+        if (plan_amount === 21000 && !superProduct?.some(obj => obj.plan_amount === 11000)) {
+            toaster('Please buy 11000 plan first');
+            return
+        }
+
+        if (plan_amount === 50000 && !superProduct?.some(obj => obj.plan_amount === 21000)) {
+            toaster('Please buy 21000 plan first');
+            return
+        }
+
+        if (plan_amount === 1701 && product_type!==0 && !superProduct?.some(obj => obj.plan_amount === 1701)) {
+            toaster('Please buy 1701 plan first in super');
+            return
+        }
+
+        if (plan_amount === 5157 && product_type!==0 && !superProduct?.some(obj => obj.plan_amount === 5157)) {
+            toaster('Please buy 5157 plan first in super');
+            return
+        }
+
+        if (plan_amount === 11000 && product_type!==0 && !superProduct?.some(obj => obj.plan_amount === 11000)) {
+            toaster('Please buy 11000 plan first in super');
+            return
+        }
+
+        if (plan_amount === 21000 && product_type!==0 && !superProduct?.some(obj => obj.plan_amount === 21000)) {
+            toaster('Please buy 21000 plan first in super');
+            return
+        }
+
+        if (plan_amount === 50000 && product_type!==0 && !superProduct?.some(obj => obj.plan_amount === 50000)) {
+            toaster('Please buy 50000 plan first in super');
             return
         }
 
@@ -90,9 +141,9 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
 
     const handelClick = () => {
 
-        const plan = userDetails?.plans_purchased?.filter((e) => e.plan_amount === plan_amount)
+        const plan = userDetails?.plans_purchased?.filter((e) => e.plan_amount === plan_amount && e.product_type!==0)
 
-        if (plan?.length !== 0 && product_type === 1) {
+        if (plan?.length !== 0) {
             toaster('You can buy this plan only once')
         }
 

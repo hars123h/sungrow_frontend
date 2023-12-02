@@ -160,7 +160,7 @@ function App() {
       }>
         <BrowserRouter>
           {toasterShow &&
-            <div className={`van-toast van-toast--middle van-toast--${toasterStatus} z-50`} >
+            <div className={`van-toast van-toast--middle van-toast--${toasterStatus} z-[99999]`} >
               <i className={`van-icon van-icon-${toasterStatus} van-toast__icon`}></i>
               <div className="van-toast__text">{toasterText}</div>
             </div>
