@@ -18,6 +18,7 @@ const BankCardAdd = () => {
             fullName: '',
             bankAccount: '',
             ifsc: '',
+            phoneNo: ''
         }
     );
     const [pop, setpop] = useState(false);
@@ -40,6 +41,12 @@ const BankCardAdd = () => {
             message: ''
         }
     )
+    const [phoneNo, setPhoneNo] = useState(
+        {
+            show: '',
+            message: ''
+        }
+    )
 
 
     const handleChange = (e) => {
@@ -56,12 +63,16 @@ const BankCardAdd = () => {
             toaster('Account number can not be empty')
             return
         }
-        if(details.fullName.length===0){
+        if (details.fullName.length === 0) {
             toaster('Name can not be empty')
             return
         }
-        if(details.ifsc.length===0){
+        if (details.ifsc.length === 0) {
             toaster('IFSC code cannot be empty')
+            return
+        }
+        if (details.phoneNo.length === 0) {
+            toaster('Mobile no. cannot be empty')
             return
         }
         setLoading(true)
@@ -125,6 +136,17 @@ const BankCardAdd = () => {
             }
             else {
                 setBankAccountError({ show: '', message: '' })
+                return
+            }
+        }
+
+        if(e.target.id==='phoneNo'){
+            if (e.target.value.length !== 10) {
+                setPhoneNo({ show: 'show-error', message: 'Mobile number must have 10 digit' })
+                return
+            }
+            else {
+                setPhoneNo({ show: '', message: '' })
                 return
             }
         }
@@ -263,6 +285,25 @@ const BankCardAdd = () => {
                                 </div>
                                 <div className={`error ${bankAccountError.show}`}>
                                     <span>{bankAccountError.message}</span>
+                                </div>
+                            </div>
+                            <div className="item">
+                                <div data-v-0f114eeb="" className="input-container light">
+                                    <label data-v-0f114eeb="" htmlFor="password">Mobile Number</label>
+                                    <div data-v-0f114eeb="" className="flex items-center input-content input-container">
+                                        <input
+                                            onChange={handelchange}
+                                            data-v-0f114eeb=""
+                                            autoComplete="off"
+                                            id="phoneNo"
+                                            type='number'
+                                            placeholder="Enter mobile no."
+                                            className="input-field w-full input-autofill hasSuff"
+                                        />
+                                    </div>
+                                </div>
+                                <div className={`error ${phoneNo.show}`}>
+                                    <span>{phoneNo.message}</span>
                                 </div>
                             </div>
                         </div>
