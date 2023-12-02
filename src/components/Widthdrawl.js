@@ -63,14 +63,14 @@ const Widthdrawl = () => {
 
         if (Number(deposit) === false || Number(deposit) <= 0) {
             toaster('Enter a valid number');
-            setnextBtn(false)
+
             return;
         }
 
         if ((Number(deposit)) < Number(amounts.mwamount)) {
             //console.log((Number(deposit)+Number(amounts.withdrawal_fee)), Number(amounts.mwamount));
             toaster(`Amount should be greater than ${amounts.mwamount}`);
-            setnextBtn(false)
+
 
             //console.log(deposit, amounts.amount);
             return;
@@ -78,19 +78,19 @@ const Widthdrawl = () => {
 
         if (withdrawDate.toDateString() === date.toDateString()) {
             toaster('you can withdraw once in a day.')
-            setnextBtn(false)
+
             return
         }
 
         if ((Number(deposit) > 50000)) {
             toaster('Amount should not be greatr than Rs 50,000');
-            setnextBtn(false)
+
             return;
         }
 
         if (((Number(deposit)) > Number(userDetails.balance))) {
             toaster('You dont have enough balance');
-            setnextBtn(false)
+
             return;
         }
         //&& otp === otpfield
@@ -119,21 +119,21 @@ const Widthdrawl = () => {
                 }).catch(e => {
                     setLoading(false)
                     toaster("some error occured")
-                    setnextBtn(false)
+
                     console.log(e);
                 })
 
             } catch (e) {
                 setLoading(false)
                 toaster('error adding document')
-                setnextBtn(false)
+
                 console.error("Error adding document: ", e);
 
             }
         } else {
             setLoading(false)
             toaster('Trade Password is incorrect');
-            setnextBtn(false)
+
             //console.log(wpassword, loc.state.withdrawalPassword);
         }
 
@@ -272,7 +272,7 @@ const Widthdrawl = () => {
                             </svg>
                         </Link>
                         {isBetween() ?
-                            <button onClick={handleWithdrawal} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
+                            <button onClick={() => { setnextBtn(true); handleWithdrawal() }} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
                             :
                             <button onClick={() => toaster('The daily withdrawal time is from 10:00:00 to 20:00:00')} disabled={nextBtn} data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">Submit</button>
                         }
