@@ -428,7 +428,7 @@ const Invest = () => {
 
                                     <ProductCard
                                         product_image={s2}
-                                        product_type={0}
+                                        product_type={1}
                                         plan_cycle={37}
                                         plan_amount={1701}
                                         plan_daily_earning={680.57}
@@ -437,7 +437,7 @@ const Invest = () => {
 
                                     <ProductCard
                                         product_image={s3}
-                                        product_type={0}
+                                        product_type={2}
                                         plan_cycle={37}
                                         plan_amount={5157}
                                         plan_daily_earning={2114.37}
@@ -446,7 +446,7 @@ const Invest = () => {
 
                                     <ProductCard
                                         product_image={s4}
-                                        product_type={0}
+                                        product_type={3}
                                         plan_cycle={37}
                                         plan_amount={11000}
                                         plan_daily_earning={4620}
@@ -455,7 +455,7 @@ const Invest = () => {
 
                                     <ProductCard
                                         product_image={s1}
-                                        product_type={0}
+                                        product_type={4}
                                         plan_cycle={37}
                                         plan_amount={21000}
                                         plan_daily_earning={9031.29}
@@ -464,7 +464,7 @@ const Invest = () => {
 
                                     <ProductCard
                                         product_image={s2}
-                                        product_type={0}
+                                        product_type={5}
                                         plan_cycle={37}
                                         plan_amount={50000}
                                         plan_daily_earning={22000}

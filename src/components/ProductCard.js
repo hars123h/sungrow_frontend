@@ -22,10 +22,18 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
         toaster, getUserDetails
     } = useContext(ContextApi);
 
+    const superProduct = userDetails?.plans_purchased?.filter(e => e.product_type === 0)
+
     const [pop, setpop] = useState(false)
     const [quantity, setQuantity] = useState(1)
 
     const handelInvest = async () => {
+
+        if(userDetails?.plans_purchased?.length===0){
+            toaster('Please buy 535 plan first');
+            return
+        }
+
         if (quantity <= 0) {
             toaster('Please a positive value!');
         } else {
