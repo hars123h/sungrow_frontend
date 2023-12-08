@@ -539,7 +539,32 @@ const Invest = () => {
                             {toogle === 'Snap Up' &&
 
                                 <>
-                                 <div className="text-center mx-auto">No Plans</div>
+                                    <ProductCard
+                                        product_image={s3}
+                                        product_type={1}
+                                        plan_cycle={3}
+                                        plan_amount={930}
+                                        plan_daily_earning={410}
+                                        product_no={1}
+                                    />
+
+                                    <ProductCard
+                                        product_image={s4}
+                                        product_type={1}
+                                        plan_cycle={10}
+                                        plan_amount={2230}
+                                        plan_daily_earning={630}
+                                        product_no={2}
+                                    />
+
+                                    <ProductCard
+                                        product_image={s3}
+                                        product_type={1}
+                                        plan_cycle={12}
+                                        plan_amount={5530}
+                                        plan_daily_earning={930}
+                                        product_no={3}
+                                    />
                                 </>
 
                             }
