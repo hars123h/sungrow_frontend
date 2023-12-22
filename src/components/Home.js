@@ -282,7 +282,7 @@ const Home = () => {
                                 <span className="van-button__text">CANCEL</span>
                             </div>
                         </button>
-                        <Link to='https://t.me/Sungrow1' type="button" className="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left text-[rgb(196,71,58)] orange_bg" >
+                        <Link to='https://t.me/TSMCOfficialChannel' type="button" className="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left text-[rgb(196,71,58)] orange_bg" >
                             <div className="van-button__content">
                                 <span className="van-button__text">JOIN</span>
                             </div>
