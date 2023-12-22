@@ -479,14 +479,14 @@ const Invest = () => {
                             {toogle === 'Give Back' &&
 
                                 <>
-                                    <ProductCard
+                                    {/* <ProductCard
                                         product_image={s1}
                                         product_type={1}
                                         plan_cycle={1}
                                         plan_amount={235}
                                         plan_daily_earning={352.5}
                                         product_no={1}
-                                    />
+                                    /> */}
 
                                     <ProductCard
                                         product_image={s2}
@@ -497,7 +497,7 @@ const Invest = () => {
                                         product_no={2}
                                     />
 
-                                    <ProductCard
+                                    {/* <ProductCard
                                         product_image={s3}
                                         product_type={3}
                                         plan_cycle={3}
@@ -531,7 +531,7 @@ const Invest = () => {
                                         plan_amount={50000}
                                         plan_daily_earning={40000}
                                         product_no={6}
-                                    />
+                                    /> */}
                                 </>
 
                             }
@@ -539,6 +539,7 @@ const Invest = () => {
                             {toogle === 'Snap Up' &&
 
                                 <>
+                                    {/* <>
                                     <ProductCard
                                         product_image={s3}
                                         product_type={1}
@@ -565,7 +566,12 @@ const Invest = () => {
                                         plan_daily_earning={930}
                                         product_no={3}
                                     />
+                                </> */}
+
+                                    <p className='text-center align-middle h-full w-full'>No Plans</p>
+
                                 </>
+
 
                             }
 
