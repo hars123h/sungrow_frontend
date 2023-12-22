@@ -45,6 +45,7 @@ const Myteams = () => {
     // console.log(typeof userDetails);
 
 
+    const origin = window.location.origin
 
 
 
@@ -166,8 +167,8 @@ const Myteams = () => {
                     </div>
                 </div>
                 <div data-v-d8c3c738="" className="team-page-bottom text-center fixed w-full">
-                    <div data-v-d8c3c738="" id="inviteLink" className="shareLink truncate">{`https://www.sungrowfmtx2.site/register?invitationCode=${userDetails?.user_invite}`}</div>
-                    <CopyToClipboard text={`https://www.sungrowfmtx2.site/register?invitationCode=${userDetails?.user_invite}`} onCopy={() => toaster('copy succeded')}>
+                    <div data-v-d8c3c738="" id="inviteLink" className="shareLink truncate">{`${origin}/register?invitationCode=${userDetails?.user_invite}`}</div>
+                    <CopyToClipboard text={`${origin}/register?invitationCode=${userDetails?.user_invite}`} onCopy={() => toaster('copy succeded')}>
                         <button data-v-0df625cb="" data-v-05d1a9d0="" type="primary" className="w-full button flex items-center justify-center button-primary default">Share Link to Invite Friends
                         </button>
                     </CopyToClipboard>

@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../images/sungrow/logo_25_m.png'
+import logo from '../images/tsmc/logo.png'
 import bp from '../images/sungrow/bp.png'
 import cl from '../images/sungrow/cl.png'
 import cs from '../images/sungrow/cs.png'
@@ -9,6 +9,8 @@ import qualilty from '../images/sungrow/qualiity.png'
 import relaibility from '../images/sungrow/relaibility.png'
 import tw from '../images/sungrow/tw.png'
 import { Link } from 'react-router-dom'
+import about1 from '../images/tsmc/about1.jpg'
+import about2 from '../images/tsmc/aboout2.jpg'
 
 const Company = () => {
     return (
@@ -24,24 +26,18 @@ const Company = () => {
                 </div>
                 <div className="p-5">
 
-                <h1 className='mb-3 font-bold mt-10'>ABOUT SUNGROW</h1>
-                    
+                    <h1 className='mb-3 font-bold mt-10'>About TSMC</h1>
 
-                    Sungrow Power Supply Co., Ltd. (“Sungrow”) is the world’s most bankable inverter brand with over 405GW installed worldwide as of June 2023. Founded in 1997 by University Professor Cao Renxian, Sungrow is a leader in the research and development of solar inverters with the largest dedicated R&D team in the industry and a broad product portfolio offering PV inverter solutions and energy storage systems for utility-scale, commercial & industrial, and residential applications, as well as internationally recognized floating PV plant solutions, NEV driving solutions, EV charging solutions and renewable hydrogen production systems. With a strong 26-year track record in the PV space, Sungrow products power over 150 countries worldwide.
-
+                    Established in 1987, TSMC is the world's first dedicated semiconductor foundry.
+                    TSMC (TWSE: 2330, NYSE: TSM) created the semiconductor Dedicated IC Foundry business model when it was founded in 1987. In 2022, TSMC served 532 customers and manufactured 12,698 products for various applications covering a variety of end markets including high performance computing, smartphones, the Internet of Things (IoT), automotive, and digital consumer electronics.
+                    <br /><br />
+                    <img src={about1} alt="" />
                     <br />
+                    Annual capacity of the manufacturing facilities managed by TSMC and its subsidiaries exceeded 15 million 12-inch equivalent wafers in 2022. These facilities include four 12-inch wafer GIGAFAB® fabs, four 8-inch wafer fabs, and one 6-inch wafer fab – all in Taiwan – as well as one 12-inch wafer fab at a wholly owned subsidiary, TSMC Nanjing Company Limited, and two 8-inch wafer fabs at wholly owned subsidiaries, TSMC Washington in the United States and TSMC China Company Limited.
+                    <br /><br />
+                    <img src={about2} alt="" />
                     <br />
-
-
-
-                    Sungrow possesses a dynamic technical R&D team that represents 40% of the personnel in the Company. The Company has also invested in its own in-house testing center approved by SGS, CSA, and TÜV Rheinland. Sungrow has the world’s largest inverter factory, with a global annual production capacity of 305GW, including 25 GW outside China.
-                    <br />
-                    <br />
-
-
-
-                    Offering a wide range of solutions and services, Sungrow is committed to providing clean power for all and is steadfast in its efforts to become the global leader in clean power conversion technology. Learn more about Sungrow by visiting .
-                </div>
+                    In December 2022, TSMC announced that, in addition to TSMC Arizona’s first fab, which is scheduled to begin production of N4 process technology in first half of 2025, the Company has also started the construction of a second fab which is scheduled to begin production of 3nm process technology in 2026. At the same time, the Company continues to execute its plan for a fab in Kumamoto, Japan, with production targeted by late 2024.</div>
             </section>
         </>
     )

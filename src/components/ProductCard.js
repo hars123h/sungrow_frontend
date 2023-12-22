@@ -351,7 +351,7 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
                     <div className="flex justify-between items-center">
                         <div className="">
                             <p className='text-sm text-[#4b4d5e] break-all whitespace-normal'>
-                                <RiVipLine size={26} className={`text-[orange] font-light `} />
+                                <RiVipLine size={26} className={`text-[#e70012] font-light `} />
                             </p>
                         </div>
                         <h2 className='text-xl'>Container Products</h2>
@@ -416,7 +416,7 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
 
                     <div className="flex items-center justify-between">
 
-                        <div className="text-[orange] text-lg font-bold">
+                        <div className="text-[#e70012] text-lg font-bold">
                             <em className=' p-0 px-[2px] border-0  font-light not-italic leading-none '>₹</em>
                             {plan_amount.toFixed(2)}
                         </div>
@@ -435,7 +435,7 @@ const ProductCard = ({ active, pre_sale, long_plan_state, product_no, product_ty
                                 </p>
                             </div>
                         } */}
-                        <div onClick={handelClick} className="w-[10vw] max-w-md max-h-md h-[10vw] bg-[orange] rounded-full font-bold flex justify-center items-center text-white">
+                        <div onClick={handelClick} className="w-[10vw] max-w-md max-h-md h-[10vw] bg-[#e70012] rounded-full font-bold flex justify-center items-center text-white">
                             <BsArrowUpRight size={20} />
 
                         </div>

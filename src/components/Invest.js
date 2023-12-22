@@ -7,10 +7,10 @@ import ProductCard from './ProductCard'
 import img202 from '../images/sungrow/teamBg.png'
 import img302 from '../images/301.png'
 import { ContextApi } from '../App'
-import s1 from '../images/sungrow/s1.png'
-import s2 from '../images/sungrow/s2.png'
-import s3 from '../images/sungrow/s3.png'
-import s4 from '../images/sungrow/s4.png'
+import s1 from '../images/tsmc/t1.jpg'
+import s2 from '../images/tsmc/t2.jpg'
+import s3 from '../images/tsmc/t3.jpg'
+import s4 from '../images/tsmc/t4.jpg'
 
 
 const Invest = () => {

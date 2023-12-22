@@ -5,7 +5,7 @@ import { ContextApi } from '../App';
 import axios from 'axios';
 import BASE_URL from '../api_url';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
-import logo from '../images/sungrow/logo_25_m.png'
+import logo from '../images/tsmc/logo.png'
 import eyeopen from '../images/sungrow/eyeopen.svg'
 import eyeclosed from '../images/sungrow/eyeclosed.svg'
 

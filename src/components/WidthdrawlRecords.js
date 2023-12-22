@@ -78,7 +78,7 @@ const WidthdrawlRecords = () => {
 
                                     <li key={index} className='my-[5px] p-[10px] bg-[#f8f9fb] rounded-[7px] flex space-x-1 items-center'>
 
-                                        <div className="text-[orange] w-10 h-10 rounded-full border border-[orange] flex justify-center items-center">
+                                        <div className="text-[#e70012] w-10 h-10 rounded-full border border-[#e70012] flex justify-center items-center">
                                             <BsArrowUp size={25} />
                                         </div>
 
@@ -101,7 +101,7 @@ const WidthdrawlRecords = () => {
                                             }
                                             {nameMapper[String(data.status)] === 'pending' &&
 
-                                                <div className={` text-right text-[orange] `}>
+                                                <div className={` text-right text-[#e70012] `}>
                                                     <p className='font-bold '>
                                                         <em className=' p-0 px-[2px] border-0 text-base font-bold not-italic leading-none '>₹</em>
                                                         {new Intl.NumberFormat().format(data.withdrawalAmount * 0.92)}

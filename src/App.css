@@ -8018,7 +8018,7 @@ input::placeholder {
 }
 
 .van-tabs__wrap .van-tabs__nav--card .van-tab.van-tab--active {
-    background: orange;
+    background: #e70012;
     border-radius: 60px;
     font-size: 24px;
     font-weight: 700
@@ -8035,7 +8035,7 @@ input::placeholder {
 }
 
 .van-notice-bar__content {
-    color: orange;
+    color: #e70012;
     font-weight: 500
 }
 
@@ -8045,7 +8045,7 @@ input::placeholder {
 
 .van-stepper .van-stepper__minus,
 .van-stepper .van-stepper__plus {
-    background: orange;
+    background: #e70012;
     border: 0;
     border-radius: 50%;
     color: #fff;
@@ -8056,7 +8056,7 @@ input::placeholder {
 .van-stepper .van-stepper__minus--disabled,
 .van-stepper .van-stepper__plus--disabled {
     background: #fcecf5;
-    color: orange
+    color: #e70012
 }
 
 .van-stepper .van-stepper__minus:before,
@@ -8075,7 +8075,7 @@ input::placeholder {
     background: inherit;
     border: 0;
     border-radius: 2px;
-    color: orange;
+    color: #e70012;
     flex: 1;
     font-size: 24px;
     font-weight: 700;
@@ -8118,9 +8118,9 @@ input::placeholder {
 
 .van-dialog {
     background: #fff;
-    border: 1px solid orange;
+    border: 1px solid #e70012;
     border-radius: 100%;
-    color: orange;
+    color: #e70012;
     padding: 64px 16px
 }
 
@@ -8130,7 +8130,7 @@ input::placeholder {
 }
 
 .van-dialog .van-dialog__header {
-    color: orange;
+    color: #e70012;
 }
 
 .van-dialog .van-dialog__footer {
@@ -8146,7 +8146,7 @@ input::placeholder {
 }
 
 .van-dialog .van-dialog__footer .van-dialog__confirm {
-    background: orange
+    background: #e70012
 }
 
 .van-dialog .van-dialog__footer .van-dialog__confirm .van-button__text {
@@ -8154,7 +8154,7 @@ input::placeholder {
 }
 
 .van-dialog .van-dialog__footer .van-dialog__cancel {
-    color: orange
+    color: #e70012
 }
 
 .van-overlay {
@@ -8174,7 +8174,7 @@ body {
     background-color: #f8f9fa;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    color: orange;
+    color: #e70012;
     font-size: 20px;
     padding-bottom: 32px;
     padding-top: 16px
@@ -8187,12 +8187,12 @@ body {
 }
 
 .home-page-placeholder {
-    /* background: rgba(255, 166, 0, 0.15); */
+    /* background: rgba(255, 0, 0, 0.15); */
     height: 80px
 }
 
 .home-page-header {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     padding: 24px 0;
     z-index: 99
 }
@@ -8216,9 +8216,9 @@ body {
 }
 
 .home-page-content-company .btn {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     border-radius: 74px;
-    color: orange;
+    color: #e70012;
     display: inline-block;
     font-weight: 500;
     margin-top: 42px;
@@ -8381,7 +8381,7 @@ body {
 
 .home-page .contact-popup-input,
 .home-page .redeemed-popup-input {
-    border: 1px solid orange;
+    border: 1px solid #e70012;
     border-radius: 12px;
     font-size: 16px;
     height: 54px;
@@ -8409,7 +8409,7 @@ body {
 }
 
 .signUp-page-header {
-    background: orange;
+    background: rgb(255, 0, 0, 0.15);
     padding-bottom: 60px;
     padding-top: 40px;
 }
@@ -8459,7 +8459,7 @@ body {
 }
 
 .phone-number-container .input-container .prefix[data-v-466dae23] {
-    color: orange;
+    color: #e70012;
     font-size: 16px;
     margin-right: 12px;
 }
@@ -8565,19 +8565,19 @@ body {
 
 .button.button-link[data-v-0df625cb] {
     background-color: inherit;
-    color: orange;
+    color: #e70012;
     -webkit-text-decoration: underline;
     text-decoration: underline;
 }
 
 .button.button-primary[data-v-0df625cb]:not(.disabled) {
-    background: orange;
+    background: #e70012;
     box-shadow: 0 4px 20px 0 rgba(205, 30, 130, .3);
     color: #fff;
 }
 
 .item .login {
-    color: orange;
+    color: #e70012;
 }
 
 .login-page {
@@ -8587,7 +8587,7 @@ body {
 }
 
 .login-page-header {
-    background: orange;
+    background: rgb(255, 0, 0, 0.15);
     padding-bottom: 100px;
     padding-top: 80px;
 }
@@ -8610,7 +8610,7 @@ body {
 }
 
 .login-page-content-box .item.forgot {
-    color: orange;
+    color: #e70012;
     font-weight: 500;
     margin-top: 32px;
     text-align: right;
@@ -8624,7 +8624,7 @@ body {
 }
 
 .forgot-page-header {
-    background: orange;
+    background: #e70012;
     padding-bottom: 100px;
     padding-top: 80px;
 }
@@ -8666,7 +8666,7 @@ body {
 }
 
 .svg-wrapper.active[data-v-840b9508] {
-    color: orange;
+    color: #e70012;
 }
 
 .bottom-bar-item .item-label[data-v-229253f1] {
@@ -8674,7 +8674,7 @@ body {
 }
 
 .bottom-bar-item.active .item-label[data-v-229253f1] {
-    color: orange;
+    color: #e70012;
 }
 
 .company-page {
@@ -8694,7 +8694,7 @@ body {
 }
 
 .company-page-content .title {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     margin-bottom: 8px;
     margin-top: 16px;
     padding: 8px 12px;
@@ -8705,7 +8705,7 @@ body {
 }
 
 .company-page-content .profile-content {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     border: 1px solid #eaeced;
     border-radius: 16px;
     padding: 16px;
@@ -8761,7 +8761,7 @@ body {
 }
 
 .company-page-bottom {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     border-radius: 24px 24px 0 0;
     padding: 16px 22px;
 }
@@ -8777,7 +8777,7 @@ body {
 }
 
 .deposit-page-content .input-amount {
-    background: orange;
+    background: #e70012;
     border-radius: 32px;
     color: #fff;
     margin-bottom: 16px;
@@ -8817,7 +8817,7 @@ body {
 }
 
 .deposit-page-content .input-amount-content input {
-    background-color: orange;
+    background-color: #e70012;
     border: none;
     border-bottom: 1px solid hsla(0, 0%, 100%, .2);
     font-size: 50px;
@@ -8841,7 +8841,7 @@ body {
 }
 
 .deposit-page-content .amount-radio-item-content {
-    color: orange;
+    color: #e70012;
     font-size: 14px;
     font-weight: 600;
 }
@@ -8853,7 +8853,7 @@ body {
 }
 
 .deposit-page-bottom .close {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     border-radius: 50%;
     flex-shrink: 0;
     margin-right: 10px;
@@ -8862,7 +8862,7 @@ body {
 }
 
 .deposit-page-bottom button {
-    background: orange;
+    background: #e70012;
     border: none;
     border-radius: 14px;
     font-size: 24px;
@@ -8885,7 +8885,7 @@ body {
 }
 
 .withdraw-page-content .input-amount {
-    background: orange;
+    background: #e70012;
     border-radius: 32px;
     color: #fff;
     margin-bottom: 16px;
@@ -8915,9 +8915,9 @@ body {
 }
 
 .withdraw-page-content .input-amount-content input {
-    background-color: orange;
+    background-color: #e70012;
     border: none;
-    border-bottom: 1px solid hsla(0,0%,100%,.2);
+    border-bottom: 1px solid hsla(0, 0%, 100%, .2);
     font-size: 50px;
     font-weight: 700;
     height: 50px;
@@ -8937,7 +8937,7 @@ body {
 
 .withdraw-page-content .trade-password input {
     background: inherit;
-    border: 1px solid rgba(95,106,111,.2);
+    border: 1px solid rgba(95, 106, 111, .2);
     border-radius: 56px;
     height: 50px;
     padding-left: 24px;
@@ -8984,7 +8984,7 @@ body {
 }
 
 .withdraw-page-bottom .close {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     border-radius: 50%;
     flex-shrink: 0;
     margin-right: 10px;
@@ -8992,7 +8992,7 @@ body {
 }
 
 .commissionInfo-page[data-v-05d1a9d0] {
-    background: orange;
+    background: #e70012;
     color: #fff;
     min-height: 100vh;
 }
@@ -9003,7 +9003,7 @@ body {
 }
 
 .commissionInfo-page-header[data-v-05d1a9d0] {
-    background: orange;
+    background: #e70012;
 }
 
 .header.light[data-v-240d21d0] {
@@ -9047,7 +9047,7 @@ body {
 }
 
 .custom-steps.vertical .custom-steps-item .step-line[data-v-18e19aaa] {
-    background-color: hsla(0,0%,100%,.4);
+    background-color: hsla(0, 0%, 100%, .4);
     height: 100%;
     left: 15px;
     overflow: hidden;
@@ -9060,7 +9060,7 @@ body {
 .custom-steps-item .step-number[data-v-18e19aaa] {
     background-color: #fff;
     border-radius: 50%;
-    color: orange;
+    color: #e70012;
     height: 30px;
     left: 0;
     min-width: 30px;
@@ -9090,12 +9090,12 @@ body {
     height: 10px;
     left: 6px;
     position: absolute;
-    transform: translate(50%,-50%);
+    transform: translate(50%, -50%);
     width: 10px;
 }
 
 .commissionInfo-page-content-step .commission[data-v-05d1a9d0] {
-    background: hsla(0,0%,100%,.15);
+    background: hsla(0, 0%, 100%, .15);
     border-radius: 24px;
     margin-top: 16px;
     overflow: hidden;
@@ -9103,7 +9103,7 @@ body {
 
 .commissionInfo-page-content-step .commission-header[data-v-05d1a9d0] {
     background-color: #fff;
-    color: orange;
+    color: #e70012;
     font-weight: 600;
     padding: 8px 16px;
 }
@@ -9163,7 +9163,7 @@ body {
 
 .commissionInfo-page-content-bottom[data-v-05d1a9d0] {
     margin-top: 48px;
-}   
+}
 
 .commissionInfo-page-content-bottom .shareLink[data-v-05d1a9d0] {
     margin-bottom: 24px;
@@ -9178,8 +9178,8 @@ body {
 }
 
 .commissionInfo-page-content-bottom button[data-v-05d1a9d0] {
-    background: #fff!important;
-    color: orange!important;
+    background: #fff !important;
+    color: #e70012 !important;
     font-weight: 700;
 }
 
@@ -9189,7 +9189,7 @@ body {
 }
 
 .team-page-header[data-v-d8c3c738] {
-    background-image: url(./images/sungrow/investBG.jpg);
+    background-image: url(./images/tsmc/about1.jpg);
     background-position: 50%;
     background-size: cover;
     color: #fff;
@@ -9209,10 +9209,10 @@ body {
 }
 
 .team-page-content-tabs[data-v-d8c3c738] {
-    background: rgba(255, 166, 0, 0.15);
+    background: rgba(255, 0, 0, 0.15);
     border-radius: 60px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .team-page-content-tabs>div[data-v-d8c3c738] {
@@ -9224,7 +9224,7 @@ body {
 }
 
 .team-page-content-tabs>div.active[data-v-d8c3c738] {
-    background: orange;
+    background: #e70012;
     border-radius: 60px;
     color: #fff;
     font-size: 24px;
@@ -9244,20 +9244,20 @@ body {
 }
 
 .team-page-content-details .statistics[data-v-d8c3c738] {
-    background: rgba(255, 166, 0, 0.30);
+    background: rgba(255, 0, 0, 0.15);
     border-radius: 22px;
     padding: 12px 24px;
 }
 
 .team-page-content-details .statistics .value[data-v-d8c3c738] {
-    color: orange;
+    color: #e70012;
     font-size: 20px;
     font-weight: 700;
     margin-left: 4px;
 }
 
 .team-page-content-details .statistics .value[data-v-d8c3c738] {
-    color: orange;
+    color: #e70012;
     font-size: 20px;
     font-weight: 700;
     margin-left: 4px;
@@ -9295,7 +9295,7 @@ body {
 }
 
 .team-page-bottom .shareLink[data-v-d8c3c738] {
-    color: orange;
+    color: #e70012;
     margin-bottom: 24px;
     -webkit-text-decoration: underline;
     text-decoration: underline;
@@ -9313,8 +9313,9 @@ body {
     min-height: 100vh;
 }
 
-.tasks-page-header, .tasks-page-header-content {
-    background: orange;
+.tasks-page-header,
+.tasks-page-header-content {
+    background: #e70012;
 }
 
 .tasks-page-header {
@@ -9327,8 +9328,9 @@ body {
     z-index: 10;
 }
 
-.tasks-page-header, .tasks-page-header-content {
-    background: orange;
+.tasks-page-header,
+.tasks-page-header-content {
+    background: #e70012;
 }
 
 .tasks-page-header .icon {
@@ -9356,24 +9358,24 @@ body {
 }
 
 
-.tasks-page-content-item{
+.tasks-page-content-item {
     border-radius: 15px;
     background: #80808014;
     padding: 15px;
     margin: 10px;
 }
 
-.tasks-page-content-item .title{
+.tasks-page-content-item .title {
     line-height: 1;
 
 }
 
-.tasks-page-content-item .subtitle{
+.tasks-page-content-item .subtitle {
     color: gray;
     margin-bottom: 20px;
 }
 
-.tasks-page-content-item .progress-bar{
+.tasks-page-content-item .progress-bar {
     background-color: white;
     border-radius: 10px;
     height: 5px;
@@ -9381,25 +9383,25 @@ body {
     width: 100%;
 }
 
-.tasks-page-content-item .progress-value{
+.tasks-page-content-item .progress-value {
     background: #5cd5fb;
     border-radius: 10px;
     height: 100%;
     max-width: 100%;
 }
 
-.progress-tips{
-    color: orange;
+.progress-tips {
+    color: #e70012;
     font-size: 12px;
     margin-bottom: 10px;
 }
 
-.orange_bg{
-    background: orange !important;
+.orange_bg {
+    background: #e70012 !important;
 }
 
-.text_Black{
-    color: orange !important;
+.text_Black {
+    color: #e70012 !important;
 }
 
-/* rgba(255, 166, 0, 0.15) */
+/* rgba(255, 0, 0, 0.15) */

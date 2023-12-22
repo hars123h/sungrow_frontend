@@ -473,7 +473,7 @@ const Task = () => {
                                     Receive
                                 </button>
                                 :
-                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[rgba(255,0,0,0.15)]">
                                     Receive
                                 </button>
                             }
@@ -500,7 +500,7 @@ const Task = () => {
                                     Receive
                                 </button>
                                 :
-                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[rgba(255,0,0,0.15)]">
                                     Receive
                                 </button>
                             }
@@ -527,7 +527,7 @@ const Task = () => {
                                     Receive
                                 </button>
                                 :
-                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[rgba(255,0,0,0.15)]">
                                     Receive
                                 </button>
                             }
@@ -554,7 +554,7 @@ const Task = () => {
                                     Receive
                                 </button>
                                 :
-                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[rgba(255,0,0,0.15)]">
                                     Receive
                                 </button>
                             }
@@ -581,7 +581,7 @@ const Task = () => {
                                     Receive
                                 </button>
                                 :
-                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[#ffe4b2]">
+                                <button disabled data-v-0df625cb="" type="primary" className="btn w-full button flex items-center justify-center text-white default bg-[rgba(255,0,0,0.15)]">
                                     Receive
                                 </button>
                             }
