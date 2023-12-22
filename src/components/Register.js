@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import BASE_URL from '../api_url';
@@ -51,6 +51,9 @@ const Register = () => {
             message: ''
         }
     )
+
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
 
 
     const secrethandel = () => {
@@ -141,14 +144,15 @@ const Register = () => {
             setInvtError({ show: 'show-error', message: 'Invitation code can not be empty' })
             return
         }
-        // fetch(`https://www.fast2sms.com/dev/bulkV2?authorization=27b58V4YOqBDMgWvNjapz1k9IHlrJfynC6w0hceRAZGoLimK3PuJC7OoiV4N2B6DjfwWKzb0lhgEetPH&variables_values=${otpfield}&route=otp&numbers=${mobno}`)
-        //     .then((response) => {
-        //         console.log(response);
-        //         toaster('OTP sent successfully');
-        //     })
-        //     .catch(error => toaster('Something went wrong'));
+        fetch(`https://www.fast2sms.com/dev/bulkV2?authorization=U1dPqEDiCO5WfZMAFwovrmz349tKBL0Hbh2eGlN8QXg7ujSRYVTSyRuW9H3LZ2Nafn5X6obgd47ACIt0&variables_values=${otpfield}&route=otp&numbers=${mobno}`)
+            .then((response) => {
+                // console.log(response);
+                setSeconds(59)
+                toaster('OTP sent successfully');
+            })
+            .catch(error => toaster('Something went wrong'));
 
-        console.log("otp", otpfield);
+        // console.log("otp", otpfield);
 
     }
 
@@ -208,6 +212,26 @@ const Register = () => {
 
     }
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (seconds > 0) {
+                setSeconds(seconds - 1);
+            }
+
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(interval);
+                } else {
+                    setSeconds(59);
+                    setMinutes(minutes - 1);
+                }
+            }
+        }, 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [seconds]);
 
 
     return (
@@ -305,7 +329,7 @@ const Register = () => {
                                     <span>{invtError.message}</span>
                                 </div>
                             </div>
-                            {/* <div className="item">
+                            <div className="item">
                                 <div data-v-0f114eeb="" className="input-container light">
                                     <label data-v-0f114eeb="" htmlFor="sms_invitation_code">SMS Invitation Code</label>
                                     <div data-v-0f114eeb="" className="flex items-center input-content input-container">
@@ -319,8 +343,13 @@ const Register = () => {
                                             className="input-field w-full input-autofill hasSuff"
                                         />
                                         <div data-v-0f114eeb="" className="suffix-icon">
-                                            <button onClick={handleMessage} data-v-0df625cb="" type="primary" className="btn button flex items-center justify-center button-link default" data-v-0f114eeb="">
-                                                Send
+                                            <button disabled={seconds > 0 || minutes > 0} onClick={handleMessage} data-v-0df625cb="" type="primary" className="btn button flex items-center justify-center button-link default" data-v-0f114eeb="">
+                                                {seconds > 0 || minutes > 0 ?
+                                                    <>
+                                                        {minutes < 10 ? `0${minutes}` : minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+                                                    </>
+                                                    :
+                                                    'Send'}
                                             </button>
                                         </div>
                                     </div>
@@ -328,7 +357,7 @@ const Register = () => {
                                 <div className={`error ${smsError.show}`} >
                                     <span>{smsError.message}</span>
                                 </div>
-                            </div> */}
+                            </div>
                             <div onClick={handleRegister} className="item"><button data-v-0df625cb="" type="primary" className="button flex items-center justify-center button-primary default w-full">
                                 SIGN UP
                             </button>

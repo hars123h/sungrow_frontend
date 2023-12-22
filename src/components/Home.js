@@ -109,8 +109,9 @@ const Home = () => {
                 <div className="home-page-content flex flex-col flex-1">
                     <div className="home-page-content-company relative">
                         <div className="tip">
-                            Sungrow is a Chinese company focused on solar technologies. The company specializes in research and development
-                        </div>
+                            People also ask <br />
+                            What is TSMC known for? <br />
+                            It is the world's second most valuable semiconductor company, the world's largest dedicated independent semiconductor foundry, and its country's largest company,                        </div>
                         <Link to={'/company'} className="btn">
                             Company Profile
                         </Link>
