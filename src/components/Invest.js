@@ -479,14 +479,14 @@ const Invest = () => {
                             {toogle === 'Give Back' &&
 
                                 <>
-                                    {/* <ProductCard
+                                    <ProductCard
                                         product_image={s1}
                                         product_type={1}
                                         plan_cycle={1}
-                                        plan_amount={235}
-                                        plan_daily_earning={352.5}
+                                        plan_amount={500}
+                                        plan_daily_earning={700}
                                         product_no={1}
-                                    /> */}
+                                    />
 
                                     <ProductCard
                                         product_image={s2}
