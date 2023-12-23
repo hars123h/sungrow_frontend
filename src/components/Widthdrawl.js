@@ -37,7 +37,7 @@ const Widthdrawl = () => {
 
     const isBetween = () => {
         var startTime = '10:00:00';
-        var endTime = '20:00:00';
+        var endTime = '17:00:00';
 
         var currentDate = new Date()
 
@@ -234,7 +234,7 @@ const Widthdrawl = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
                                         <circle cx="3" cy="3" r="3" fill="#FF8F0C"></circle>
                                     </svg>
-                                </span>The daily withdrawal time is from 10:00:00 to 20:00:00
+                                </span>The daily withdrawal time is from 10:00:00 to 17:00:00
                             </li>
                             <li>
                                 <span>
