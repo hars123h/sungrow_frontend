@@ -66,7 +66,7 @@ const BankCard = () => {
 
                                     <p className=''>{userDetails?.bank_details?.fullName}</p>
 
-                                    <p className='text-right text-4xl mt-3 font-bold'>SUNGROW</p>
+                                    <p className='text-right text-4xl mt-3 font-bold'>TSCM</p>
 
 
                                 </div>
