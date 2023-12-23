@@ -27,7 +27,7 @@ import axios from 'axios'
 import BASE_URL from '../api_url'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { FaDownload } from "react-icons/fa6";
-import Sungrow from '../images/sungrow/Sungrow.apk'
+import Sungrow from '../images/sungrow/app-release.apk'
 
 
 
@@ -211,8 +211,8 @@ const Home = () => {
                                 <div className="recommended-items-title">Task System</div>
                             </Link>
                             <a 
-                            // href={Sungrow}
-                                // download="Sungrow"
+                            href={Sungrow}
+                                download="Sungrow"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center flex-col"
