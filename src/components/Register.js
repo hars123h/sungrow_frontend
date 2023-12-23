@@ -86,14 +86,14 @@ const Register = () => {
             return
         }
 
-        // if (otp.length === 0) {
-        //     setSmsError({ show: 'show-error', message: 'SMS code can not be empty' })
-        //     return
-        // }
-        // if (otp !== otpfield) {
-        //     toaster('SMS verification code not matched', 'fail')
-        //     return
-        // }
+        if (otp.length === 0) {
+            setSmsError({ show: 'show-error', message: 'SMS code can not be empty' })
+            return
+        }
+        if (otp !== otpfield) {
+            toaster('SMS verification code not matched', 'fail')
+            return
+        }
 
         // setLoading(true);
 
