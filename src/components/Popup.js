@@ -49,7 +49,7 @@ const Popup = () => {
                             </div>
                         </div>
 
-                        <Link to={'https://t.me/Sungrow1'} className="flex justify-center items-end">
+                        <Link to={'https://t.me/TSMCOfficialChannel'} className="flex justify-center items-end">
                             <div>
                                 <img src={telegram} alt="telegram" className='w-12 m-1' />
                                 <p className='text-[#818393] text-base'>Telegram</p>
