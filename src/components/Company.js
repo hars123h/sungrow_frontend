@@ -9,7 +9,7 @@ import qualilty from '../images/sungrow/qualiity.png'
 import relaibility from '../images/sungrow/relaibility.png'
 import tw from '../images/sungrow/tw.png'
 import { Link } from 'react-router-dom'
-import about1 from '../images/tsmc/about1.jpg'
+import about1 from '../images/tsmc/companyimg.jpg'
 import about2 from '../images/tsmc/aboout2.jpg'
 
 const Company = () => {
@@ -26,18 +26,18 @@ const Company = () => {
                 </div>
                 <div className="p-5">
 
-                    <h1 className='mb-3 font-bold mt-10'>About TSMC</h1>
+                    <h1 className='mb-3 font-bold mt-10'>About Huawei</h1>
 
-                    Established in 1987, TSMC is the world's first dedicated semiconductor foundry.
-                    TSMC (TWSE: 2330, NYSE: TSM) created the semiconductor Dedicated IC Foundry business model when it was founded in 1987. In 2022, TSMC served 532 customers and manufactured 12,698 products for various applications covering a variety of end markets including high performance computing, smartphones, the Internet of Things (IoT), automotive, and digital consumer electronics.
-                    <br /><br />
+                    Consumer Business Group
+                    Huawei Consumer BG is the leader of the all-scenario AI life. It covers smartphones, PC and tablets, wearables, mobile broadband devices, family devices and device cloud services. Huawei Consumer BG is dedicated to delivering the latest technologies to consumers and sharing the happiness of technological advances with more people around the world. Walk the walk and make dreams come true.                    <br /><br />
                     <img src={about1} alt="" />
                     <br />
-                    Annual capacity of the manufacturing facilities managed by TSMC and its subsidiaries exceeded 15 million 12-inch equivalent wafers in 2022. These facilities include four 12-inch wafer GIGAFAB® fabs, four 8-inch wafer fabs, and one 6-inch wafer fab – all in Taiwan – as well as one 12-inch wafer fab at a wholly owned subsidiary, TSMC Nanjing Company Limited, and two 8-inch wafer fabs at wholly owned subsidiaries, TSMC Washington in the United States and TSMC China Company Limited.
-                    <br /><br />
-                    <img src={about2} alt="" />
+                    Who is HUAWEI
+                    Huawei is a leading global provider of information and communications technology (ICT) infrastructure and smart devices. With integrated solutions across four key domains – telecom networks, IT, smart devices, and cloud services – we are committed to bringing digital to every person, home and organization for a fully connected, intelligent world.                    <br /><br />
+                    {/* <img src={about2} alt="" /> */}
                     <br />
-                    In December 2022, TSMC announced that, in addition to TSMC Arizona’s first fab, which is scheduled to begin production of N4 process technology in first half of 2025, the Company has also started the construction of a second fab which is scheduled to begin production of 3nm process technology in 2026. At the same time, the Company continues to execute its plan for a fab in Kumamoto, Japan, with production targeted by late 2024.</div>
+                    {/* In December 2022, TSMC announced that, in addition to TSMC Arizona’s first fab, which is scheduled to begin production of N4 process technology in first half of 2025, the Company has also started the construction of a second fab which is scheduled to begin production of 3nm process technology in 2026. At the same time, the Company continues to execute its plan for a fab in Kumamoto, Japan, with production targeted by late 2024. */}
+                </div>
             </section>
         </>
     )

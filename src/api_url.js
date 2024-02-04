@@ -1,7 +1,7 @@
 // const BASE_URL = "https://whale-app-rqcs6.ondigitalocean.app/api";
 // const BASE_URL = 'https://lobster-app-5gysu.ondigitalocean.app/api'
- const BASE_URL = 'https://coral-app-72fwl.ondigitalocean.app/api'
-//const BASE_URL = 'http://localhost:8000/api'
+//  const BASE_URL = 'https://coral-app-72fwl.ondigitalocean.app/api'
+const BASE_URL = 'http://localhost:8000/api'
 // const BASE_URL = 'https://tsmc-backend.onrender.com/api'
 export default BASE_URL;
 

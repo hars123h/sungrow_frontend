@@ -11,6 +11,9 @@ import s1 from '../images/tsmc/t1.jpg'
 import s2 from '../images/tsmc/t2.jpg'
 import s3 from '../images/tsmc/t3.jpg'
 import s4 from '../images/tsmc/t4.jpg'
+import s5 from '../images/tsmc/t5.jpg'
+import s6 from '../images/tsmc/t6.jpg'
+import s7 from '../images/tsmc/t7.jpg'
 
 
 const Invest = () => {
@@ -454,7 +457,7 @@ const Invest = () => {
                                     />
 
                                     <ProductCard
-                                        product_image={s1}
+                                        product_image={s5}
                                         product_type={0}
                                         plan_cycle={37}
                                         plan_amount={21000}
@@ -463,7 +466,7 @@ const Invest = () => {
                                     />
 
                                     <ProductCard
-                                        product_image={s2}
+                                        product_image={s6}
                                         product_type={0}
                                         plan_cycle={37}
                                         plan_amount={50000}
@@ -480,7 +483,7 @@ const Invest = () => {
 
                                 <>
                                     <ProductCard
-                                        product_image={s1}
+                                        product_image={s7}
                                         product_type={1}
                                         plan_cycle={1}
                                         plan_amount={500}
@@ -489,7 +492,7 @@ const Invest = () => {
                                     />
 
                                     <ProductCard
-                                        product_image={s2}
+                                        product_image={s5}
                                         product_type={2}
                                         plan_cycle={3}
                                         plan_amount={1701}
